@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<!--Clases cargadoras de recursos desde un Loader -->
+	<bean id="ontologyResources"
+	  class="org.ontospread.model.resources.FilesResourceLoader">    
+    	<constructor-arg>
+	      <list>
+	        <value>OntoNodrizaFull-local.owl</value>
+	  	  </list>
+	    </constructor-arg>
+  </bean>
+
+  <bean id="relationResources"
+    class="org.ontospread.model.resources.FilesResourceLoader">    
+    <constructor-arg>
+      <list>
+        <value>relation-weights.rdf</value>
+      </list>
+    </constructor-arg>
+  </bean>
+
+  	<!--Clases contenedoras de los recursos a cargar.-->
+	<bean id="relationResourcesModelWrapper"
+	  class="org.ontospread.model.loader.JenaRDFModelWrapper"
+        singleton="true">
+	  <constructor-arg> <ref bean="relationResources"/> </constructor-arg>
+  </bean>
+
+  <bean id="ontologyResourcesModelWrapper"
+    class="org.ontospread.model.loader.JenaOWLModelWrapper "
+    singleton="true">
+    <constructor-arg> <ref bean="ontologyResources"/> </constructor-arg>
+  </bean>
+  <!--DAO-->
+  <bean id="ontologyDAO" class="org.ontospread.dao.JenaOntologyDAOImpl">
+    <constructor-arg> <ref bean="ontologyResourcesModelWrapper" /> </constructor-arg>
+  </bean>
+  <!--State-->
+  <bean id="ontoSpreadState" class="org.ontospread.state.OntoSpreadState">
+    <property name="initialConcepts">
+      <list>
+        <bean id="concept1" class="org.ontospread.to.ScoredConceptTO">
+          <constructor-arg><value>http://websemantica.fundacionctic.org/ontologias/bopa/empleado.owl#Vacaciones</value></constructor-arg>
+          <constructor-arg><value>1.0</value></constructor-arg>          
+        </bean>
+        <bean id="concept2" class="org.ontospread.to.ScoredConceptTO">
+          <constructor-arg><value>http://websemantica.fundacionctic.org/ontologias/bopa/ensamble.owl#EmpleadoDeFincas</value></constructor-arg>
+          <constructor-arg><value>1.0</value></constructor-arg>          
+        </bean>
+      </list>
+    </property>
+  </bean>
+  <!--Process-->
+  <bean id="preAdjustmentConfig" class="org.ontospread.process.pre.OntoSpreadPreAdjustmentConfigImpl">
+    <constructor-arg> <value>10.0</value> </constructor-arg>
+  </bean>
+  <bean id="preAdjustment" class="org.ontospread.process.pre.OntoSpreadPreAdjustmentImpl">
+    <property name="ontoPreAdjustmentConfig"><ref bean="preAdjustmentConfig"/></property>
+  </bean>
+  
+  <bean id="postAdjustment" class="org.ontospread.process.post.OntoSpreadPostAdjustmentImpl">
+  </bean>
+  
+  <bean id="run" class="org.ontospread.process.run.OntoSpreadRunImpl">
+    <constructor-arg> <ref bean="ontologyDAO" /> </constructor-arg>
+    <constructor-arg> <ref bean="stopPairStrategy" /> </constructor-arg>
+    <constructor-arg> <ref bean="selectPairStrategy" /> </constructor-arg>
+    <constructor-arg> <ref bean="relationWeight" /> </constructor-arg>
+    <constructor-arg> <ref bean="degradationFunction" /> </constructor-arg>
+  </bean>
+  
+  <bean id="relationWeight" class="org.ontospread.constraints.OntoSpreadRelationWeightRDFImpl">
+    <constructor-arg> <ref bean="relationResourcesModelWrapper" /> </constructor-arg>
+  </bean>
+  
+  <bean id="process" class="org.ontospread.process.OntoSpreadProcess">
+    <constructor-arg> <ref bean="ontologyDAO" /> </constructor-arg>
+    <constructor-arg> <ref bean="preAdjustment" /> </constructor-arg>
+    <constructor-arg> <ref bean="run" /> </constructor-arg>
+    <constructor-arg> <ref bean="postAdjustment" /> </constructor-arg>
+    <constructor-arg> <ref bean="relationWeight" /> </constructor-arg>
+    
+  </bean>
+  <!--Player-->
+  <bean id="player" class="org.ontospread.player.SpreadDebugPlayer">
+    <constructor-arg> <ref bean="process" /> </constructor-arg>
+    <constructor-arg> <ref bean="ontoSpreadState" /> </constructor-arg>
+  </bean>
+
+<!--Restrictions-->
+  <bean id="minConcepts" class="org.ontospread.restrictions.common.OntoSpreadRestrictionMinConcepts">
+    <constructor-arg><value>3</value></constructor-arg>
+  </bean>
+  <bean id="maxConcepts" class="org.ontospread.restrictions.common.OntoSpreadRestrictionMaxConcepts">
+    <constructor-arg><value>5</value></constructor-arg>
+  </bean>
+  <bean id="minActivation" class="org.ontospread.restrictions.common.OntoSpreadRestrictionMinActivationValue">
+    <constructor-arg><value>0.3</value></constructor-arg>
+  </bean>
+  <bean id="context" class="org.ontospread.restrictions.common.OntoSpreadRestrictionContext">
+    <constructor-arg><value>http://context.uri</value></constructor-arg>
+    <constructor-arg><value>2</value></constructor-arg>    
+  </bean>
+  <bean id="time" class="org.ontospread.restrictions.common.OntoSpreadRestrictionNotMaxTime">
+    <constructor-arg><value>1000</value></constructor-arg>
+  </bean>
+  <bean id="restrictionsStop" class="org.ontospread.restrictions.OntoSpreadCompositeRestriction">
+    <property name="restrictions">
+      <list>
+        <ref bean="minConcepts"/>
+        <ref bean="maxConcepts"/>
+        <ref bean="minActivation"/>
+      </list>
+    </property>
+  </bean>
+  <bean id="restrictionsSelect" class="org.ontospread.restrictions.OntoSpreadCompositeRestriction">
+    <property name="restrictions">
+      <list>
+        <ref bean="minActivation"/>
+      </list>
+    </property>
+  </bean>
+  <!--Strategies-->
+  <bean id="simpleStrategy" class="org.ontospread.strategy.OntoSpreadSimpleStrategy">
+    <constructor-arg><ref bean="restrictionsStop"/></constructor-arg>
+  </bean>
+  
+  <bean id="selectStrategy" class="org.ontospread.strategy.OntoSpreadSelectConceptStrategy">
+    <constructor-arg><ref bean="restrictionsSelect"/></constructor-arg>
+  </bean>
+  <!--Visitor-->
+  <bean id="booleanVisitor" class="org.ontospread.restrictions.visitor.OntoSpreadBooleanRestrictionVisitor">
+  </bean>
+  <!--Pairs-->
+  <bean id="stopPairStrategy" class="org.ontospread.strategy.pair.OntoSpreadStrategyVisitorPair">
+    <constructor-arg><ref bean="simpleStrategy"/></constructor-arg>
+    <constructor-arg><ref bean="booleanVisitor"/></constructor-arg>
+  </bean>
+  <bean id="selectPairStrategy" class="org.ontospread.strategy.pair.OntoSpreadStrategyVisitorPair">
+    <constructor-arg><ref bean="selectStrategy"/></constructor-arg>
+    <constructor-arg><ref bean="booleanVisitor"/></constructor-arg>
+  </bean>
+  <!--Degradation-->
+  <bean id="degradationFunction" class="org.ontospread.process.run.OntoSpreadDegradationFunctionImpl">
+  </bean>
+</beans>
+

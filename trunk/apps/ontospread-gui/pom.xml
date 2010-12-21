@@ -1,0 +1,216 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--
+  <parent>
+	<artifactId>ontospread-all</artifactId>
+  	<groupId>org.ontospread</groupId>
+	<version>0.1-SNAPSHOT</version>
+  </parent>
+-->
+
+   <groupId>org.ontospread</groupId>
+  <artifactId>ontospread-gui</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>OntoSpread, GUI</name>
+  <packaging>jar</packaging>
+  <description>Graphical interface to handle spread activation library.</description>
+<!--
+  <modules>
+    <module>../ontospread</module>
+  </modules>
+-->
+  <dependencies>
+    <!--SWT-->
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>forms</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>jface</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>osgi</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>runtime</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>swt-linux-gtk</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>swt-win32</artifactId>
+      <version>3.0m8</version>      
+    </dependency>
+     <dependency>
+      <groupId>jpowergraph</groupId>
+      <artifactId>common</artifactId>
+      <version>0.2</version>      
+    </dependency>
+    <dependency>
+      <groupId>jpowergraph</groupId>
+      <artifactId>swt</artifactId>
+      <version>0.2</version>      
+    </dependency>
+
+<!--
+    <dependency>
+	<groupId>org.eclipse.swt</groupId>
+	<artifactId>org.eclipse.swt</artifactId>
+	<version>3.2.1</version>
+    </dependency>
+    -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>2.0.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring</artifactId>
+        <version>2.0.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>2.0.4</version>
+      </dependency>
+
+    <dependency>
+      <groupId>${pom.groupId}</groupId>
+      <artifactId>ontospread</artifactId>
+	<version>0.1-SNAPSHOT</version>
+    </dependency>
+
+  </dependencies>
+
+   <issueManagement>
+      <system>SourceForge</system>
+      <url>http://sourceforge.net/tracker/?group_id=191148</url>
+    </issueManagement>
+
+    <scm>
+      <connection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread-gui</connection>
+      <developerConnection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread-gui</developerConnection>
+      <url>http://ontospread.svn.sourceforge.net/viewvc/ontospread/trunk/apps/ontospread-gui</url>
+    </scm>
+
+
+  <licenses>
+    <license>
+      <name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+            <distribution>repo</distribution>
+      <comments/>
+    </license>
+  </licenses>
+
+
+ <developers>
+    <developer>
+      <id>chema_ar</id>
+      <name>Jose María Alvarez Rodriguez</name>
+      <email>chema.ar@gmail.com</email>
+      <url></url>
+      <organization/>
+      <organizationUrl/>
+      <roles>
+	<role>Project Admin</role>
+	<role>Developer</role>
+     </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Jose Emilio Labra Gayo</name>
+      <email/>
+      <url>http://www.di.uniovi.es/~labra</url>
+      <organization>Universidad de Oviedo</organization>
+      <organizationUrl>http://www.uniovi.es</organizationUrl>
+      <roles>
+	<role>Project Manager</role>
+      </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </contributor>
+
+    <contributor>
+      <name>Diego Berrueta Muñoz</name>
+      <email/>
+      <url>http://www.berrueta.net</url>
+      <organization/>
+      <organizationUrl/>
+      <roles>
+	<role>Project Manager</role>
+      </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </contributor>
+
+  </contributors>
+
+
+<build>
+
+    <plugins>
+      
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+          <encoding>utf-8</encoding>
+          <showDeprecation>true</showDeprecation>
+          <executable>${JAVA_1_5_HOME}/bin/javac</executable>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>src/assembly/bin.xml</descriptor>
+          </descriptors>
+          <!--
+            <descriptorRefs>
+            <descriptorRef>project</descriptorRef>
+            </descriptorRefs>
+          -->
+        </configuration>
+      </plugin>
+	</plugins>
+</build>
+
+<!--Site -->
+  <distributionManagement>
+   <site>
+     <id>ontospread-website</id>
+     <url>scp://chema_ar@ontospread.sf.net:/home/groups/o/on/ontospread/htdocs/ontospread-gui</url>
+   </site>
+ </distributionManagement>
+</project>

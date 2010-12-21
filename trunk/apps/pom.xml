@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>ontospread-all</artifactId>
+  <groupId>org.ontospread</groupId>
+  <version>0.1-SNAPSHOT</version>
+  <name>OntoSpread Project</name>
+  <packaging>pom</packaging>
+  <url>http://ontospread.sf.net</url>
+  
+  
+  <modules>
+    <module>ontospread</module>
+    <module>ontospread-test</module>  
+<!--    <module>ontospread-gui</module>-->
+  </modules>
+  
+    <scm>
+      <connection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps</connection>
+      <developerConnection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps</developerConnection>
+      <url>http://ontospread.svn.sourceforge.net/viewvc/ontospread/trunk/apps</url>
+    </scm>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+         <!-- <source>1.5</source>-->
+          <target>1.4</target>
+          <encoding>utf-8</encoding>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+      </plugin>
+      
+      <!--
+        <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jalopy-maven-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <configuration>
+        <convention>gt2/jalopy.xml</convention>
+        <failOnError>false</failOnError>
+        </configuration>
+        <dependencies>
+        <dependency>
+        <groupId>org.geotools</groupId>
+        <artifactId>build-configs</artifactId>
+        <version>1.0</version>
+        </dependency>
+        </dependencies>
+        </plugin>
+      -->
+    </plugins>
+    
+  </build>
+  
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+      </plugin>
+      
+      
+      <!--
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        </plugin>
+      -->
+      
+      
+    </plugins>
+    
+  </reporting>
+  
+  
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>Codehaus Snapshots</id>
+      <name>Codehaus snapshots plugin repository</name>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>   
+    
+    <pluginRepository>
+      <id>java.net</id>
+      <name>java.net Maven Repository</name>
+      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <layout>legacy</layout>        
+    </pluginRepository>
+    
+    
+    
+  </pluginRepositories>
+  
+  
+  
+  <!--Site -->
+  <distributionManagement>
+    <site>
+      <id>ontospread-website</id>
+      <url>scp://chema_ar@ontospread.sf.net:/home/groups/o/on/ontospread/htdocs</url>
+    </site>
+  </distributionManagement>
+  
+  <!--Repositories-->
+  
+  <repositories>
+    <repository>
+      <id>java.net</id>
+      <name>java.net Maven Repository</name>
+      <url>https://maven-repository.dev.java.net/nonav/repository</url>
+      <layout>legacy</layout>
+    </repository>
+  </repositories>
+  
+</project>

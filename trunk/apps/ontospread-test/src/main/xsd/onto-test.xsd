@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://ontospread.sf.net" 
+	 xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	targetNamespace="http://ontospread.sf.net" 
+	elementFormDefault="qualified" 	
+	attributeFormDefault="unqualified"
+	   jxb:extensionBindingPrefixes="xjc"
+           jxb:version="1.0">
+
+    <xs:include schemaLocation="../../../../ontospread/src/main/xsd/ontospreadstate-model.xsd"></xs:include>
+ <xs:annotation>
+  <xs:appinfo>
+   <jxb:globalBindings generateIsSetMethod="true">
+    <xjc:serializable uid="12343"/>
+    <xjc:simple/>    
+   </jxb:globalBindings>
+  </xs:appinfo>
+ </xs:annotation>
+
+    <!--Test-->
+    <xs:complexType name="integerIterator">
+        <xs:sequence>
+            <xs:element name="init" type="xs:int"/>
+            <xs:element name="step" type="xs:int"/>
+            <xs:element name="stop" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="floatIterator">
+        <xs:sequence>
+            <xs:element name="init" type="xs:float"/>
+            <xs:element name="step" type="xs:float"/>
+            <xs:element name="stop" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="doubleIterator">
+        <xs:sequence>
+            <xs:element name="init" type="xs:double"/>
+            <xs:element name="step" type="xs:double"/>
+            <xs:element name="stop" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="longIterator">
+        <xs:sequence>
+            <xs:element name="init" type="xs:long"/>
+            <xs:element name="step" type="xs:long"/>
+            <xs:element name="stop" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="resourcesType">
+        <xs:sequence>
+            <xs:element name="location" type="xs:anyURI" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="restrictionType" abstract="true"/>
+    <xs:complexType name="minConceptsRestriction">
+        <xs:complexContent>
+            <xs:extension base="restrictionType">
+                <xs:sequence>
+                    <xs:element name="config" type="integerIterator"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="maxConceptsRestriction">
+        <xs:complexContent>
+            <xs:extension base="restrictionType">
+                <xs:sequence>
+                    <xs:element name="config" type="integerIterator"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="contextRestriction">
+        <xs:complexContent>
+            <xs:extension base="restrictionType">
+                <xs:sequence>
+                    <xs:element name="context" type="xs:anyURI"/>
+                    <xs:element name="retries" type="integerIterator"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="activationRestriction">
+        <xs:complexContent>
+            <xs:extension base="restrictionType">
+                <xs:sequence>
+                    <xs:element name="config" type="doubleIterator"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="timeRestriction">
+        <xs:complexContent>
+            <xs:extension base="restrictionType">
+                <xs:sequence>
+                    <xs:element name="config" type="longIterator"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+  
+    <xs:element name="restriction" type="restrictionType"/>
+    
+    <xs:complexType name="restrictions-type">
+    	<xs:sequence>
+        	<xs:element ref="restriction" maxOccurs="unbounded"/>
+ 		 </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ontoSpreadConfig-type">
+        <xs:sequence> 
+           <xs:element name="functions" type="functionTypeList"></xs:element>
+           <xs:element name="prizePaths" type="xs:boolean"></xs:element>  
+           <xs:element name="restrictions" type="restrictions-type"/>
+           <xs:element name="relations" type="relations-type"/>      
+           <xs:element name="initialConcepts" type="initial-concepts-type"/>        
+      </xs:sequence>
+   </xs:complexType>
+    <xs:complexType name="relations-type">
+         <xs:sequence>
+            <xs:element name="location" type="xs:anyURI" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+             
+                   
+    <xs:complexType name="initial-concepts-type">
+        <xs:sequence>
+            <xs:element name="value" type="xs:double"></xs:element>
+            <xs:element name="initialConcept" type="initial-concept-type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="initial-concept-type">
+        <xs:sequence>
+            <xs:element name="uri" type="xs:string"></xs:element>
+            <xs:element name="value" type="xs:double"></xs:element>
+        </xs:sequence>
+    </xs:complexType>  
+    <xs:simpleType name="formatType"> 
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="tex"/>
+            <xs:enumeration value="html"/>            
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="functionType"> 
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="H1"/>     
+            <xs:enumeration value="H2"/>                      
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="functionTypeList">
+        <xs:sequence>
+            <xs:element name="function" type="functionType" maxOccurs="unbounded" minOccurs="1"></xs:element>            
+        </xs:sequence>
+    </xs:complexType>  
+    <xs:complexType name="formatTypeList">
+        <xs:sequence>
+            <xs:element name="format" type="formatType" maxOccurs="unbounded" minOccurs="0"></xs:element>            
+        </xs:sequence>
+    </xs:complexType>  
+        <xs:complexType name="test-type">
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>   
+                <xs:element name="formats" type="formatTypeList"/>  
+                <xs:element name="outputDirectory" type="xs:anyURI"/>                   
+                <xs:element name="resources" type="resourcesType"/>                
+                <xs:element name="ontoSpreadConfig" type="ontoSpreadConfig-type"/>               
+            </xs:sequence>
+        </xs:complexType>
+
+  <xs:element name="test" type="test-type"/>
+
+ <xs:complexType name="test-battery-type">
+  <xs:sequence>   
+    <xs:element ref="test" minOccurs="1" maxOccurs="unbounded"/>
+  </xs:sequence>
+ </xs:complexType>
+    
+ 
+ <xs:element name="test-battery" type="test-battery-type"/>
+ 
+    <!--Report-->
+
+    <xs:complexType name="test-info-report">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>   
+            <xs:element name="resources" type="resourcesType"/>                
+            <xs:element name="ontoSpreadConfig" type="ontoSpreadConfig-report"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ontoSpreadConfig-report">
+        <xs:sequence>
+            <xs:element name="activation" type="xs:double"/>
+            <xs:element name="minConcepts" type="xs:int"/>
+            <xs:element name="maxConcepts" type="xs:int"/>
+            <xs:element name="time" type="xs:long"/>
+            <xs:element name="context" type="xs:string"/>
+            <xs:element name="retries" type="xs:int"/>
+            <xs:element name="prizePaths" type="xs:boolean"/>
+            <xs:element name="function" type="functionType"/>
+            <xs:element name="relations" type="relations-type"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="test-report-type">
+        <xs:sequence>
+            <xs:element name="test-report" type="test-info-report" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="ontoSpreadStateXML" type="ontoSpreadStateType"></xs:element>
+            <xs:element name="ontologyStats" type="statTOListType"></xs:element>  
+        </xs:sequence>
+    </xs:complexType>
+
+ 
+     
+    <xs:complexType name="report-battery-type">
+        <xs:sequence>
+            <xs:element name="report" type="test-report-type" minOccurs="1" maxOccurs="unbounded"/>        
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="report-battery" type="report-battery-type">
+    </xs:element>
+
+    <xs:complexType name="statTOType">
+        <xs:sequence>
+            <xs:element name="type" type="xs:anyURI"/>
+            <xs:element name="value" type="xs:anyURI"></xs:element>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="statTOListType">
+        <xs:sequence>
+            <xs:element name="statTO" type="statTOType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

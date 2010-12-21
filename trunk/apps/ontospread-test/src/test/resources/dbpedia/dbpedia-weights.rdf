@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:onto="http://ontospread.sf.net#"> 
+  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#default"
+      onto:point="0.0" /> <!-- disable default relations -->
+  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#SUPERCLASS"
+      onto:point="0.5"/>  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#SUBCLASS"
+      onto:point="0.2"/>
+   <rdf:Description
+      rdf:about="http://ontospread.sf.net#INSTANCE"
+      onto:point="0.0"/>  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#INSTANCE_OF"
+      onto:point="0.0"/>
+      
+ <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment" onto:point="0.0"/>
+ <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label" onto:point="0.0"/>
+ <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" onto:point="0.0"/>
+ <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#subject" onto:point="0.0"/>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#sameAs" onto:point="0.0"/>
+ <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment" onto:point="0.0"/>
+ 
+ <rdf:Description rdf:about="http://dbpedia.org/property/judicialDistrict" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/title" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/spanishName" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/img" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/cityofbirth" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/deathPlace" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/birthPlace" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/mayor" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-ja" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikiPageUsesTemplate" onto:point="0.2"/>
+
+
+
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/dateDensity" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/aboutProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/capital" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/cityofbirth" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/ground" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-pl" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageCoatOfArmsSize" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/nativeName" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageCoatOfArms" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/deathPlace" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/cityofbirth" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/ground" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/depiction" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikiPageUsesTemplate" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikiPageUsesTemplate" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/placeOfBirth" onto:point="0.2"/>
+
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/politicalPartyLink" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/altitude" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/population" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/density" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/birthPlace" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/hasPhotoCollection" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-fr" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/website" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/location" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikiPageUsesTemplate" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/deathPlace" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/nativeLanguage" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/birthPlace" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/place" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-sv" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/geolinksCityscaleProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/aboutProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/community" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/postalCode" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/title" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-fi" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-es" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/aboutProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/province" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/politicalParty" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/capital" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-nl" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageFlagSize" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/majorShrine" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/patronage" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-ru" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageCityMapCaption" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/communityLink" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/datePopulation" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-it" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/judicialDistrict" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/page" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/area" onto:point="0.2"/>
+
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/commonsProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/title" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-de" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/provinceLink" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageCityMapSize" onto:point="0.2"/>
+
+
+ <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-pt" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/wikipage-zh" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageCityMap" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/ground" onto:point="0.2"/>
+
+ <rdf:Description rdf:about="http://dbpedia.org/property/abstract" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/geolinksCityscaleProperty" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/imageFlag" onto:point="0.2"/>
+ <rdf:Description rdf:about="http://dbpedia.org/property/reference" onto:point="0.2"/>
+</rdf:RDF>     

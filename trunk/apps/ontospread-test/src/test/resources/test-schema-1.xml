@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-battery xmlns="http://ontospread.sf.net"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+    <!--xsi:schemaLocation="http://ontospread.sf.net file:/home/chema/pfc/ontospread/trunk/apps/ontospread-test/src/main/xsd/onto-test.xsd"-->
+    
+    <test>
+        <id>Example 1-test</id>
+        <formats>
+            <format>tex</format>
+        </formats>  
+        <outputDirectory>c:/tests</outputDirectory>
+        <resources>
+            <location>OntoNodrizaFull-local.owl</location>
+        </resources>
+        <ontoSpreadConfig>
+            <functions>
+                <function>H1</function>
+            </functions>
+            <prizePaths>true</prizePaths>
+            <restrictions>
+                <restriction xsi:type="activationRestriction">
+                    <config>
+                        <init>0.3</init>
+                        <step>0.1</step>
+                        <stop>1</stop>
+                    </config>  
+                </restriction>
+                <!--
+                    <restriction xsi:type="contextRestriction">
+                    <context>http://valid.context.1</context>
+                    <retries>
+                    <init>10</init>
+                    <step>1</step>
+                    <stop>10</stop>
+                    </retries> 
+                    </restriction>
+                --> 
+                <restriction xsi:type="maxConceptsRestriction">
+                    <config>
+                        <init>6</init>
+                        <step>1</step>
+                        <stop>6</stop>
+                    </config>                    
+                </restriction>
+                <restriction xsi:type="minConceptsRestriction">
+                    <config>
+                        <init>3</init>
+                        <step>1</step>
+                        <stop>3</stop>
+                    </config>                    
+                </restriction>
+                -->
+                <!--
+                    <restriction xsi:type="timeRestriction">
+                    <config>
+                    <init>10</init>
+                    <step>1</step>
+                    <stop>20</stop>
+                    </config>  
+                    </restriction>
+                -->
+            </restrictions>
+            <relations>
+                <location>relation-weights.rdf</location>
+            </relations>
+            <initialConcepts>
+                <!--This value can be conflicted with min activation value -->
+                <value>1.0</value>
+                <initialConcept>
+                    <uri>http://websemantica.fundacionctic.org/ontologias/bopa/empleado.owl#Vacaciones</uri>
+                    <value>1.0</value>
+                </initialConcept>
+                <initialConcept>
+                    <uri>http://websemantica.fundacionctic.org/ontologias/bopa/ensamble.owl#EmpleadoDeFincas</uri>
+                    <value>1.0</value>
+                </initialConcept>
+            </initialConcepts>
+        </ontoSpreadConfig>
+    </test>
+</test-battery>

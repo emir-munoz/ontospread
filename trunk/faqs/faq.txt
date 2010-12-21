@@ -1,0 +1,10 @@
+1-Error link swt win 32-http://www.eclipse.org/swt/faq.php#missingdll
+
+swt-gdip-win32-3232.dll
+swt-wgl-win32-3232.dll
+swt-win32-3232.dll
+swt-awt-win32-3232.dll
+
+Put this dlls in the java library path.
+
+

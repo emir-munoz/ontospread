@@ -1,0 +1,13 @@
+<projectDescription>
+  <name>ontospread-gui</name>
+  <comment>Graphical interface to handle spread activation library.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

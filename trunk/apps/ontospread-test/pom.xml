@@ -1,0 +1,296 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--
+  <parent>
+  	<groupId>org.ontospread</groupId>
+	<artifactId>ontospread-all</artifactId>
+	<version>0.1-SNAPSHOT</version>
+        <relativePath>.../pom.xml</relativePath>
+  </parent>
+-->
+
+
+  <groupId>org.ontospread</groupId>
+  <artifactId>ontospread-test</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>OntoSpread, Test</name>
+  <packaging>jar</packaging>
+  <description>Set of tests to validate spread activation.</description>
+<!--
+  <modules>
+    <module>../ontospread</module>
+  </modules>
+-->
+
+<!--Commons-->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
+  <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+  </dependency>
+
+  <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+  </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+
+<!--XML-Proccessing -->
+  <dependency>
+    <groupId>xalan</groupId>
+    <artifactId>xalan</artifactId>
+    <version>2.7.0</version>
+  </dependency>
+<!--
+  <dependency>
+    <groupId>xerces</groupId>
+    <artifactId>xerces</artifactId>
+    <version>2.4.0</version>
+  </dependency>
+  -->
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.7.1</version>
+    </dependency>
+
+<!--Jena -->
+    <dependency>
+      <groupId>net.sourceforge.jena</groupId>
+      <artifactId>jena</artifactId>
+      <version>2.4</version>
+      <exclusions>	
+	<exclusion>
+	  <artifactId>xmlbeans-jsr173-api</artifactId>
+	  <groupId>xmlbeans</groupId>
+	</exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency> 
+      <groupId>icu4j</groupId>
+      <artifactId>icu4j</artifactId>
+      <version>3.6</version>
+    </dependency>
+
+    <dependency> 
+      <groupId>net.sourceforge.jena</groupId>
+      <artifactId>arq</artifactId>
+      <version>2.0</version>
+    </dependency>
+
+   <dependency> 
+      <groupId>net.sourceforge.jena</groupId>
+      <artifactId>iri</artifactId>
+      <version>2.4</version>
+    </dependency>
+
+<!--Pellet, not complete -->
+    <dependency>
+      <groupId>com.owldl.pellet</groupId>
+      <artifactId>pellet</artifactId>
+      <version>1.4-RC1</version>
+    </dependency>
+
+   <dependency>
+      <groupId>aterm</groupId>
+      <artifactId>aterm</artifactId>
+      <version>1.6</version>
+    </dependency>
+
+<!--JAXB -->
+<dependency>
+  <groupId>jaxb</groupId>
+  <artifactId>jaxb-api</artifactId>
+  <version>1.0.5</version>
+</dependency>
+<dependency>
+  <groupId>jaxb</groupId>
+  <artifactId>jaxb-impl</artifactId>
+  <version>1.0.5</version>
+</dependency>
+<dependency>
+  <groupId>jaxb</groupId>
+  <artifactId>jaxb-libs</artifactId>
+  <version>1.0.5</version>
+</dependency>
+
+<dependency>
+  <groupId>jaxb</groupId>
+  <artifactId>jaxb-api</artifactId>
+  <version>2.0-SNAPSHOT</version>
+</dependency>
+<dependency>
+  <groupId>jaxb</groupId>
+  <artifactId>jaxb-impl</artifactId>
+  <version>2.0-SNAPSHOT</version>
+</dependency>
+
+    <dependency>
+      <groupId>${pom.groupId}</groupId>
+      <artifactId>ontospread</artifactId>
+	<version>0.1-SNAPSHOT</version>
+    </dependency>
+
+  </dependencies>
+
+<!--Repositorios -->
+  
+  <repositories>
+	<repository>
+		<id>java.net</id>
+		<name>java.net Maven Repository</name>
+		<url>https://maven-repository.dev.java.net/nonav/repository</url>
+		<layout>legacy</layout>
+	</repository>
+  </repositories>
+
+    <issueManagement>
+      <system>SourceForge</system>
+      <url>http://sourceforge.net/tracker/?group_id=191148</url>
+    </issueManagement>
+
+    <scm>
+      <connection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread-test</connection>
+      <developerConnection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread-test</developerConnection>
+      <url>http://ontospread.svn.sourceforge.net/viewvc/ontospread/trunk/apps/ontospread-test</url>
+    </scm>
+
+
+  <licenses>
+    <license>
+      <name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+      <distribution>repo</distribution>
+      <comments/>
+    </license>
+  </licenses>
+
+
+ <developers>
+    <developer>
+      <id>chema_ar</id>
+      <name>Jose María Alvarez Rodriguez</name>
+      <email>chema.ar@gmail.com</email>
+      <url></url>
+      <organization/>
+      <organizationUrl/>
+      <roles>
+	<role>Project Admin</role>
+	<role>Developer</role>
+     </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Jose Emilio Labra Gayo</name>
+      <email/>
+      <url>http://www.di.uniovi.es/~labra</url>
+      <organization>Universidad de Oviedo</organization>
+      <organizationUrl>http://www.uniovi.es</organizationUrl>
+      <roles>
+	<role>Project Manager</role>
+      </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </contributor>
+
+    <contributor>
+      <name>Diego Berrueta Muñoz</name>
+      <email/>
+      <url>http://www.berrueta.net</url>
+      <organization/>
+      <organizationUrl/>
+      <roles>
+	<role>Project Manager</role>
+      </roles>
+      <timezone>2</timezone>
+      <properties/>
+    </contributor>
+
+  </contributors>
+
+<!--Build plugins -->
+  
+ 
+<build>
+
+    <plugins>
+      
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<configuration>
+	  <source>1.5</source>
+	  <target>1.5</target>
+	  <encoding>utf-8</encoding>
+	  <showDeprecation>true</showDeprecation>
+	  <executable>${JAVA_1_5_HOME}/bin/javac</executable>
+	</configuration>
+      </plugin>
+
+	<plugin>
+		<groupId>com.sun.tools.xjc.maven2</groupId>
+		<artifactId>maven-jaxb-plugin</artifactId>
+		<executions>
+			<execution>
+				<goals>
+					<goal>generate</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration>  		
+			<packageName>org.ontospread.tester.xmlbind</packageName>
+			<generatePackage>org.ontospread.tester.xmlbind</generatePackage>
+		     <schemaDirectory>src/main/xsd</schemaDirectory>
+			<generateDirectory>${project.build.directory}/jaxb-source</generateDirectory>
+			<extension>true</extension>
+			<verbose>true</verbose>
+		    <strict>true</strict>
+		</configuration>
+	</plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>src/assembly/bin.xml</descriptor>
+          </descriptors>
+          <!--
+            <descriptorRefs>
+            <descriptorRef>project</descriptorRef>
+            </descriptorRefs>
+          -->
+        </configuration>
+      </plugin>
+      
+   </plugins>
+</build>
+
+<!--Site -->
+  <distributionManagement>
+   <site>
+     <id>ontospread-website</id>
+     <url>scp://chema_ar@ontospread.sf.net:/home/groups/o/on/ontospread/htdocs/ontospread-test</url>
+   </site>
+ </distributionManagement>
+
+</project>

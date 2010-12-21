@@ -1,0 +1,84 @@
+<project name="OntoSpread GUI" default="make.tar.gz">
+	<property name="src.java.dir" value="src/main/java"/>	
+	<property name="src.resources.dir" value="src/main/resources"/>
+	<property name="src.test.dir" value="src/test"/>
+	<property name="src.test.resources.dir" value="src/test/resources"/>
+	<property name="src.bin.dir" value="src/bin"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="target.dir" value="target"/>
+	<property name="report.dir" value="test"/>
+	<property name="app.name" value="ontospread-gui-0.1-SNAPSHOT"/>
+		
+	<target name="clean">
+		<delete dir="${target.dir}"></delete>
+	</target>
+	<target name="init">
+			<mkdir dir="${target.dir}/classes"></mkdir>
+	</target>
+		
+	<target name="compile" depends="clean,init">
+		<javac srcdir="${src.java.dir}" destdir="${target.dir}/classes">
+		   		<classpath>		   			 
+		   				<fileset dir="${lib.dir}">
+		   					<include name="*.jar"/>
+		    				</fileset>
+		    			</classpath>
+		    </javac>
+	</target>
+	
+	<target name="make.jar" depends="compile, allocate.resources">
+		<jar jarfile="${target.dir}/${app.name}.jar" basedir="${target.dir}/classes"/>
+	</target>
+	
+	<target name="make.tar.gz" depends="make.jar"><!--depends test-->
+		<tar destfile="${target.dir}/${app.name}.tar">		 			
+		   			<tarfileset dir="${target.dir}">
+		   				    <include name="*.jar"/>		    				
+		   			</tarfileset>
+					<tarfileset dir="${src.bin.dir}">
+						<include name="**/*"/>		    				
+					</tarfileset>
+		    		<tarfileset dir="${lib.dir}"  preserveLeadingSlashes="true"/>
+		          </tar>
+		    		<gzip zipfile="${target.dir}/${app.name}.tar.gz" src="${target.dir}/${app.name}.tar"/>
+		    		<delete file="${target.dir}/${app.name}.tar"/>
+	</target>
+	
+
+	<target name="allocate.resources">
+		<copy todir="${target.dir}/classes">
+			<fileset dir="${src.resources.dir}">
+			    <include name="**/*"/>
+			</fileset>
+		</copy>			
+		
+	</target>
+	<target name="test" depends="compile">
+			<delete dir="${target.dir}/${report.dir}"/>
+			<mkdir dir="${target.dir}/${report.dir}"/>
+			<junit fork="yes" printsummary="yes" haltonfailure="false">
+				<classpath>
+					<pathelement location="${target.dir}/classes"/>
+					<pathelement location="${src.test.resources.dir}"/>								
+					<fileset dir="${lib.dir}">
+						<include name="*.jar"/>
+					</fileset>
+				</classpath>
+				<batchtest fork="yes" todir="${report.dir}">
+					<fileset dir="${src.test.dir}">
+						<include name="**/Test*.java"/>
+					</fileset>
+				</batchtest>
+				<formatter type="xml"/>
+			</junit>
+		</target>
+		<target name="report" depends="test">
+			<mkdir dir="${target.dir}/${report.dir}/html"/>
+			<junitreport todir="${target.dir}/${report.dir}/html">
+				<fileset dir="${target.dir}/${report.dir}/">
+					<include name="TEST-*.xml"/>
+				</fileset>
+				<report format="frames" todir="${target.dir}/${report.dir}/html"/>
+			</junitreport>
+		</target>
+</project>

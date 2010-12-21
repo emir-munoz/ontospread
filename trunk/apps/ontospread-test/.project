@@ -1,0 +1,13 @@
+<projectDescription>
+  <name>ontospread-test</name>
+  <comment>Set of tests to validate spread activation.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
