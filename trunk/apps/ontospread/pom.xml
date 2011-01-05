@@ -102,16 +102,16 @@
 	</repository>
   </repositories>
 
- <!--DEPRECATED:-->
+ 
    <issueManagement>
-      <system>SourceForge</system>
-      <url>http://sourceforge.net/tracker/?group_id=191148</url>
+      <system>Code Google</system>
+      <url>http://code.google.com/p/ontospread</url>
     </issueManagement>
 
     <scm>
-      <connection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread</connection>
-      <developerConnection>scm:svn:https://ontospread.svn.sourceforge.net/svnroot/ontospread/trunk/apps/ontospread</developerConnection>
-      <url>http://ontospread.svn.sourceforge.net/viewvc/ontospread/trunk/apps/ontospread</url>
+      <connection>scm:hg:https://ontospread.googlecode.com/hg/trunk/apps/ontospread</connection>
+      <developerConnection>scm:hg:https://ontospread.googlecode.com/hg/trunk/apps/ontospread</developerConnection>
+      <url>https://ontospread.googlecode.com/hg/</url>
     </scm>
 
   <licenses>
@@ -211,14 +211,9 @@
 		    <strict>true</strict>
 		</configuration>
            </plugin>
-           <!-- Don't forget Java 5!! -->
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-compiler-plugin</artifactId>
-               <configuration>
-                   <source>1.5</source>
-                   <target>1.5</target>
-               </configuration>
+	<plugin>
+               <artifactId>maven-checkstyle-plugin</artifactId>
+        </plugin>
    </plugins>
 </build>
 
