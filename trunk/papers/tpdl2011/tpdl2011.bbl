@@ -1,0 +1,143 @@
+\begin{thebibliography}{10}
+
+\bibitem{Agosti1993}
+Maristella Agosti and Fabio Crestani.
+\newblock {A} {M}ethodology for the {A}utomatic {C}onstruction of a {H}ypertext
+  for {I}nformation {R}etrieval.
+\newblock In {\em SAC '93: Proceedings of the 1993 ACM/SIGAPP symposium on
+  Applied computing}, pages 745--753, New York, NY, USA, 1993. ACM Press.
+
+\bibitem{CoreJ2ee}
+Deepak Alur, John Crupi, and Dan Malks.
+\newblock {\em Core J2EE Patterns: Best Practices and Design Strategies, 1/e}.
+\newblock Prentice Hall, 2001.
+
+\bibitem{AndersonTheory}
+John~R. Anderson.
+\newblock {A} {S}preading {A}ctivation {T}heory of {M}emory.
+\newblock {\em Verbal Learning and Verbal Behavior}, (1):261--295, 1983.
+
+\bibitem{Baeza99}
+Ricardo~A. Baeza-Yates and Berthier~A. Ribeiro-Neto.
+\newblock {\em {M}odern {I}nformation {R}etrieval}.
+\newblock ACM Press / Addison-Wesley, 1999.
+
+\bibitem{XP}
+Kent Beck.
+\newblock {\em Extreme Programming Explained: Embrace Change}.
+\newblock Addison-Wesley Professional, 1999.
+
+\bibitem{bopaEstonia}
+Diego Berrueta, Jose~Emilio Labra, and Luis Polo.
+\newblock Searching over public administration legal documents using
+  ontologies.
+\newblock In {\em Proceedings of Joint Conferente On Knowledge-Based Software
+  Engineering (JCKBSE 2006)}, pages 167 -- 175, July--August 2006.
+
+\bibitem{Bruijin2006}
+Jos~de Bruijn, Marc Ehrig, Cristina Feier, Francisco Mart\'{i}n-Recuerda,
+  Fran\c{c}ois Scharffe, and Moritz Weiten.
+\newblock {O}ntology {M}ediation, {M}erging and {A}ligning.
+\newblock In {\em Semantic Web Technologies}. Wiley, UK, 2006.
+
+\bibitem{Chen95}
+H.~Chen and T.~Ng.
+\newblock {A}n {A}lgorithmic {A}pproach to {C}oncept {E}xploration in a {L}arge
+  {K}nowledge {N}etwork (automatic thesaurus consultation): {S}ymbolic
+  {B}ranch-and-{B}ound search vs. connectionist {H}opfield net activation.
+\newblock {\em J. Am. Soc. Inf. Sci.}, 46(5):348--369, 1995.
+
+\bibitem{Cohen1987}
+Paul~R. Cohen and Rick Kjeldsen.
+\newblock {I}nformation {R}etrieval by {C}onstrained {S}preading {A}ctivation
+  in {S}emantic {N}etworks.
+\newblock {\em Inf. Process. Manage.}, 23(4):255--268, 1987.
+
+\bibitem{SpreadingActivationIR}
+F.~Crestani.
+\newblock {A}pplication of {S}preading {A}ctivation {T}echniques in
+  {I}nformation {R}etrieval.
+\newblock {\em Artificial Intelligence Review}, (11):453--482, 1997.
+
+\bibitem{Cui03}
+H.~Cui, J.~Wen, J.~Nie, and W.~Ma.
+\newblock {Q}uery {E}xpansion by {M}ining {U}ser {L}ogs.
+\newblock {\em IEEE Transaction on Knowledge and Data Engineering},
+  15(4):829--839, July 2003.
+
+\bibitem{Fowler1999}
+Martin Fowler.
+\newblock {\em Refactoring: Improving the Design of Existing Code}.
+\newblock Addison-Wesley, Boston, MA, USA, 1999.
+
+\bibitem{Gamma}
+Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
+\newblock {\em Design Patterns}.
+\newblock {Addison-Wesley Professional}, January 1995.
+
+\bibitem{GelgiVD05}
+Fatih Gelgi, Srinivas Vadrevu, and Hasan Davulcu.
+\newblock {I}mproving {W}eb {D}ata {A}nnotations with {S}preading {A}ctivation.
+\newblock In {\em WISE}, pages 95--106, 2005.
+
+\bibitem{Gendreau}
+Michel Gendreau.
+\newblock An introduction to tabu search.
+\newblock {\em Handbook of Metaheuristics}, (1):37--54, 2003.
+
+\bibitem{Glover1990}
+F.~Glover.
+\newblock {T}abu {S}earch: {A} {T}utorial.
+\newblock {\em Interfaces, Vol. 20, :4, 74-94}, 1990.
+
+\bibitem{229953}
+Brian Henderson-Sellers.
+\newblock {\em Object-Oriented Metrics: Measures of Complexity}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1996.
+
+\bibitem{turtle91inference}
+H.R.Turtle.
+\newblock {\em {{I}nference {N}etworks for {D}ocument {R}etrieval}}.
+\newblock PhD thesis, University Illinois, Urbana, IL, USA., 1991.
+
+\bibitem{Kobayashi00}
+Mei Kobayashi and Koichi Takeda.
+\newblock {I}nformation {R}etrieval on the {W}eb.
+\newblock {\em ACM Computing Surveys}, 32(2):144--173, 2000.
+
+\bibitem{767402}
+Jian-Yun Nie.
+\newblock {Q}uery {E}xpansion and {Q}uery {T}ranslation as {L}ogical
+  {I}nference.
+\newblock {\em J. Am. Soc. Inf. Sci. Technol.}, 54(4):335--346, 2003.
+
+\bibitem{Scott1981}
+Scott~Everett Preece.
+\newblock {\em {A} {S}preading {A}ctivation {N}etwork {M}odel for {I}nformation
+  {R}etrieval}.
+\newblock PhD thesis, University Illinois, Urbana, IL, USA., 1981.
+
+\bibitem{RochaSA04}
+Cristiano Rocha, Daniel Schwabe, and Marcus~Poggi de~Arag{\~a}o.
+\newblock {A} {H}ybrid {A}pproach for {S}earching in the {S}emantic {W}eb.
+\newblock In {\em WWW}, pages 374--383, 2004.
+
+\bibitem{2917612}
+Kinga Schumacher, Michael Sintek, and Leo Sauermann.
+\newblock {C}ombining {F}act and {D}ocument {R}etrieval with {S}preading
+  {A}ctivation for {S}emantic {D}esktop {S}earch.
+\newblock pages 569--583. 2008.
+
+\bibitem{XueHYZCM04}
+Gui-Rong Xue, Shen Huang, Yong Yu, Hua-Jun Zeng, Zheng Chen, and Wei-Ying Ma.
+\newblock {O}ptimizing {W}eb {S}earch {U}sing {S}preading {A}ctivation on the
+  {C}lickthrough {D}ata.
+\newblock In {\em WISE}, pages 409--414, 2004.
+
+\bibitem{ziegler-lausen-04}
+C.~N. Ziegler and G.~Lausen.
+\newblock {S}preading {A}ctivation {M}odels for {T}rust {P}ropagation.
+\newblock In {\em Proceedings of the 2004 IEEE International Conference on
+  e-Technology, e-Commerce and e-Service (EEE’04)}, pages 83--97, 2004.
+
+\end{thebibliography}

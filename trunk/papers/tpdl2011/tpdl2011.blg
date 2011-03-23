@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: tpdl2011.aux
+The style file: plain.bst
+Database file #1: bib/web.bib
+Database file #2: bib/references.bib
+Database file #3: bib/diseno.bib
+Warning--there's a number but no volume in AndersonTheory
+Warning--there's a number but no volume in SpreadingActivationIR
+Warning--there's a number but no volume in Gendreau
+Warning--empty booktitle in 2917612
+Warning--empty publisher in 2917612
+You've used 25 entries,
+            2118 wiz_defined-function locations,
+            666 strings with 8179 characters,
+and the built_in function-call counts, 8435 in all, are:
+= -- 828
+> -- 350
+< -- 7
++ -- 140
+- -- 114
+* -- 544
+:= -- 1367
+add.period$ -- 78
+call.type$ -- 25
+change.case$ -- 124
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 362
+empty$ -- 701
+format.name$ -- 114
+if$ -- 1817
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 29
+newline$ -- 128
+num.names$ -- 50
+pop$ -- 165
+preamble$ -- 1
+purify$ -- 107
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 511
+swap$ -- 90
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 88
+warning$ -- 5
+while$ -- 80
+width$ -- 27
+write$ -- 273
+(There were 5 warnings)
