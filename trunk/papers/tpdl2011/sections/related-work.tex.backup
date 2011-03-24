@@ -1,0 +1,23 @@
+Since SA was introduced by~\cite{Collins_Loftus_1975} in the field of 
+psycho linguistics and semantic priming it has been applied to the resolution
+of problems with regards to the behaviour of the brain using a connectionist method
+to provide an ``intelligent'' way to retrieve information and data. 
+
+The use of SA was motivated due to the research on graph exploration~\cite{Scott1981,AndersonTheory,Cohen1987}. Nevertheless
+the sucess of this technique is specially relevant to the fields of Document~\cite{Cui03,turtle91inference,Schumacher+2008search} 
+and Information Retrieval~\cite{SpreadingActivationIR,Helmut2004,Agosti1993,Grinberg:2011:ASA:1940632.1940674,Scott1981}.
+
+In recent years and regarding the emerging use of ontologies in the Semantic Web area new applications of SA have
+appeared to explore concepts~\cite{Qiu93} and browse taxonomies and grap-based knowledge 
+structures~\cite{Chen95,DBLP:journals/cogsr/KatiforiVD10,DBLP:journals/ijsc/DixKLVS10,liu_et_al_2005}. Other
+application of this technique lies in the data mining~\cite{paper:troussov:2008} field.
+
+Moreover some scenarios have taken advantage of SA to provide new enriched services
+of annotation~\cite{GelgiVD05,Chen:2007:PSA:1780653.1780702}, tagging~\cite{labraTagging2007,LabraWesoNet} or
+recommendation~\cite{cite{citeulike:3779904,gouws-vanrooyen-engelbrecht:2010:CCSR}. It has been also used in the development of 
+semantic search~\cite{conf-sofsem-Suchal08,Wolverton94retrievingsemantically} engines
+based on hybrid approaches~\cite{bopaEstonia,RochaSA04}, user query expansion~\cite{767402}
+combining metadata and user information or improving web data annotations~\cite{GelgiVD05}.
+
+
+

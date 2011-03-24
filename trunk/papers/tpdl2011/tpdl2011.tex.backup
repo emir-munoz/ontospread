@@ -86,54 +86,33 @@ WESO RG, Universidad de Oviedo, Oviedo, Asturias, Spain,\\
 \begin{abstract}
 The present article introduces the ONTOSPREAD API for the development,
 configuration, customization and execution of the Spreading Activation
-techniques in the field of the Semantic Web. These techniques have been used to
-the efficient exploration of knowledge bases based on semantic networks in
-Information or Document Retrieval areas. ONTOSPREAD enables the implementation
-of the Spreading Activation algorithm on RDF models and datasets, implicit graph structures. It
-implements the process of activation and spread of concepts in ontologies
-applying different restrictions like weight degradation according to the
-distance or the converging paths reward. The main application of Spreading Activation
-lies in two different areas: 1) construction of hybrid semantic search engines 2) ranking of
-resources according to an input set of weighted resources. Finally an evaluation
-methodology and an example using the Galen ontology are provided 
-to validate the goodness and the capabilities of the proposed approach.
+techniques over semantic networks and more specifically over RDF graphs and ontologies 
+arising from the Semantic Web area. These techniques have been used to
+the efficient exploration and querying of large and heterogenuos knowledge bases 
+based on semantic networks in the Information or Document Retrieval domains. 
+ONTOSPREAD implements the double process of activation and spread of concepts in ontologies, implicit
+graph structure, applying different restrictions of the original model like weight degradation 
+according to the distance or others comming from the extension of these techniques like
+the converging paths reward. The main application of Spreading Activation
+lies in two different areas of interest to digital libraries: 1) construction of hybrid semantic search engines 2) ranking of
+resources according to an input set of weighted resources. These techniques provide a whole framework to ease
+the information access and the accesibility, common required features in the management
+of new and existing digital libraries. Finally an evaluation methodology and 
+an example using the Galen ontology are provided to validate the goodness and the capabilities of 
+this framework.
 \end{abstract}
 
 \section{Introduction}
-
-%Digital Libraries: description and needs
-
-The improvements in digitization lead us to a new environment in which digital libraries and archives are designed and used
-in a new way. This situation implies new challenges in the digital formats, storage (information is continuously growing) and
-information retrieval models. Following the recommendations of the European Commision~\footnote{Commission Communication ``i2010: digital libraries``} the digital libraries are
-a key factor to bring out the full economic and cultural potential of Europe’s cultural and scientific heritage 
-through the Internet. The online presence of material from different cultures and in different languages will
-make it easier for citizens to appreciate their own cultural heritage as well as the heritage
-of other European countries. Besides its fundamental cultural value, cultural material is an important resource for new
-added value services. That is whay more sophisticated software tools and methods are needed to meet the expectations of users easing
-the information retrieval of these large datasets and overcoming the classical problems of information overloading. 
-
-Initiatives like Semantic Web and Linked Data tries to define vocabularies and ontologies enabling
-the data interoperability and sharing that enable by means of the Web infrastructure the access
-to the contents across different platforms and applications. The development of tools using these common
-data formats and models is largely implemented but some algorithms and methods are not yet promoted to these
-initiatives in a standard way previnting the improvement and effectiveness of information access. In this sense
-Spreading Activation (hereafter SA) techniques introduced by~\cite{Collins_Loftus_1975} in the field of 
-psycho linguistics and semantic priming proposing a model in which all relevant information is mapped
-on a graph as nodes with a certain ''activation value``. Relations between two concepts
-are represented by a weighted edge. If a node is activated their activation value is spread
-to their neighbour nodes. These techniques were adopted 
-
-
-
-%One of the common problems related to the exploitation of digital libraries lies in the lack of services that take advantage of these valuable information and in most of the cases only the data is available. 
-
-
-
-%SEmantic web and linked data
-%Algorithms
-%Spreading activation 
+\input{sections/intro}
 \subsection{Main Contributions}
+The proposed work aims to afford a SA techniques framework to ease the configuration, customization 
+and execution of these techniques over semantic networks and more specifically over RDF graphs and ontologies. It is relevant
+to digital libraries access and interoperability due these techniques provide a set of proven algorithms for retrieving and
+recommending information resources in large knowledge bases. Following the specific contributions are listed:
+\begin{itemize}
+ \item 
+\end{itemize}
+
 \section{Background}
 In this section, the theoretical model of \textit{SA} is reviewed to illustrate the basic components and
 the operations performed by the SA techniques during their execution. This model is made up of 
@@ -205,7 +184,7 @@ set of activated concepts.
 
 \end{description}
 
-\section{Related Work}
+\section{Related Work}\label{related-work}
 \section{ONTOSPREAD}
 \subsection{Constrained Spreading Activation}
 One of the main features of the SA techniques are their flexibility to fit to 

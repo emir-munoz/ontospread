@@ -2,52 +2,57 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tpdl2011.aux
 The style file: plain.bst
 Database file #1: bib/references.bib
+Repeated entry---line 315 of file bib/references.bib
+ : @inproceedings{GelgiVD05
+ :                         ,
+I'm skipping whatever remains of this entry
 A bad cross reference---entry "conf-sofsem-Suchal08"
 refers to entry "conf/sofsem/2008-2", which doesn't exist
 Warning--I didn't find a database entry for "XP"
 Warning--I didn't find a database entry for "conf/sofsem/2008-2"
+Warning--there's a number but no volume in AndersonTheory
 Warning--there's a number but no volume in SpreadingActivationIR
 Warning--empty booktitle in labraTagging2007
 Warning--empty booktitle in paper:troussov:2008
-You've used 29 entries,
+You've used 34 entries,
             2118 wiz_defined-function locations,
-            714 strings with 11029 characters,
-and the built_in function-call counts, 11846 in all, are:
-= -- 1184
-> -- 537
-< -- 15
-+ -- 209
-- -- 178
-* -- 800
-:= -- 1846
-add.period$ -- 97
-call.type$ -- 29
-change.case$ -- 167
+            744 strings with 11632 characters,
+and the built_in function-call counts, 12740 in all, are:
+= -- 1269
+> -- 583
+< -- 14
++ -- 227
+- -- 192
+* -- 867
+:= -- 2047
+add.period$ -- 111
+call.type$ -- 34
+change.case$ -- 189
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 500
-empty$ -- 939
-format.name$ -- 178
-if$ -- 2616
+cite$ -- 38
+duplicate$ -- 522
+empty$ -- 1003
+format.name$ -- 192
+if$ -- 2763
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 31
-newline$ -- 148
-num.names$ -- 62
-pop$ -- 209
+int.to.str$ -- 34
+missing$ -- 34
+newline$ -- 173
+num.names$ -- 72
+pop$ -- 221
 preamble$ -- 1
-purify$ -- 142
+purify$ -- 159
 quote$ -- 0
-skip$ -- 372
+skip$ -- 374
 stack$ -- 0
-substring$ -- 755
-swap$ -- 167
-text.length$ -- 15
+substring$ -- 782
+swap$ -- 150
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 3
-while$ -- 110
-width$ -- 31
-write$ -- 334
-(There was 1 error message)
+type$ -- 128
+warning$ -- 4
+while$ -- 120
+width$ -- 36
+write$ -- 387
+(There were 2 error messages)

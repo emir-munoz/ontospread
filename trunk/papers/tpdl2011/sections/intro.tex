@@ -1,0 +1,53 @@
+%Digital Libraries: description and needs
+
+The improvements in digitization lead us to a new environment in which digital libraries and archives are designed and used
+in a new way. This situation implies new challenges in the digital formats, storage (information is continuously growing) and
+information retrieval models. Following the recommendations of the European Commision~\cite{DigitalLibraries} the digital libraries are
+a key factor to bring out the full economic and cultural potential of Europe’s cultural and scientific heritage 
+through the Internet. The online presence of material from different cultures and in different languages will
+make it easier for citizens to appreciate their own cultural heritage as well as the heritage
+of other European countries. Besides its fundamental cultural value, cultural material is an important resource for new
+added value services. That is why more sophisticated software tools and methods are needed to meet the expectations of users easing
+the information retrieval of these large datasets and overcoming the classical problems of information overloading. 
+
+Initiatives like Semantic Web and Linked Data~\cite{LinkedData} tries to define vocabularies and ontologies enabling
+the data interoperability and sharing that enable by means of the Web infrastructure the access
+to the contents across different platforms and applications. The development of tools using these common
+data formats and models is largely implemented and representative to digital libraries
+but some algorithms and methods are not yet promoted to work with them in a standard way preventing 
+the improvement and effectiveness of information access. 
+
+In this sense Spreading Activation technique (hereafter SA) introduced by~\cite{Collins_Loftus_1975}, in the field of 
+psycho linguistics and semantic priming, purpose a model in which all relevant information is mapped
+on a graph as nodes with a certain ''activation value``. Relations between two concepts
+are represented by a weighted edge. If a node is activated their activation value is spread
+to their neighbor nodes. This technique was adopted by the computer science community and applied
+to the resolution of different problems, see Sect.~\ref{related-work}. In the field of digital libraries
+this technique can ease the information access providing a connectionist method to retrieve data like
+brain can do. Although SA is widely used, more specifically in recent years have been successfully applied 
+to ontologies, a common and standard API is missing and each third party interested in their application
+ must to implement its own version~\cite{SpreadingLarkc} of SA.
+
+Taking into account this new information realm and the leading features of putting together 
+the SA and the Semantic Web technologies, new enriched services of searching, 
+matchmaking, recommendation or contextualization can be implemented to fulfill the requirements
+of access information in digital libraries of different trending scopes like e-procurement, 
+legal document databases~\cite{bopaEstonia}, e-tourism or e-health.
+
+\subsection{Main Contributions}
+The proposed work aims to afford a framework for SA to ease the configuration, customization 
+and execution of them over semantic networks and more specifically over RDF graphs and ontologies. It is relevant
+to digital libraries access and interoperability due to the fact that this technique provides
+a set of proven algorithms for retrieving and recommending information resources in large knowledge bases. 
+Following the specific contributions of this work are listed:
+\begin{itemize}
+ \item Study and revision of the classical constrained SA.
+ \item Study and definition of new restrictions for SA applied to ontologies and RDF graphs.
+ \item Implementation of a whole and extensible framework (called ONTOSPREAD API).
+to customize and perform the SA based on good practices in software programming.
+\item Outlining of a methodology to configure and refine the execution of SA.
+\item An example of configuration and refinement applying SA over a well-known ontology, the Galen ontology.
+\end{itemize}
+
+
+%FIXME: This paper is structured as follows...

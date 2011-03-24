@@ -9,27 +9,32 @@ Maristella Agosti and Fabio Crestani.
 
 \bibitem{CoreJ2EEPatterns}
 Deepak Alur, John Crupi, and Dan Malks.
-\newblock {\em Core J2EE Patterns: Best Practices and Design Strategies}.
+\newblock {\em {Core J2EE Patterns: Best Practices and Design Strategies}}.
 \newblock Sun Microsystems, 2003.
+
+\bibitem{AndersonTheory}
+John~R. Anderson.
+\newblock {A} {S}preading {A}ctivation {T}heory of {M}emory.
+\newblock {\em Verbal Learning and Verbal Behavior}, (1):261--295, 1983.
 
 \bibitem{Helmut2004}
 Helmut Berger, Michael Dittenbach, and Dieter Merkl.
-\newblock An adaptive information retrieval system based on associative
-  networks.
+\newblock {An adaptive information retrieval system based on associative
+  networks}.
 \newblock In {\em CRPIT '04: Proceedings of the first Asian-Pacific conference
   on Conceptual modelling}, pages 27--36, Darlinghurst, Australia, Australia,
   2004. Australian Computer Society, Inc.
 
 \bibitem{bopaEstonia}
 Diego Berrueta, Jose~Emilio Labra, and Luis Polo.
-\newblock Searching over public administration legal documents using
-  ontologies.
+\newblock {Searching over Public Administration Legal Documents Using
+  Ontologies}.
 \newblock In {\em Proceedings of Joint Conferente On Knowledge-Based Software
   Engineering (JCKBSE 2006)}, pages 167 -- 175, July--August 2006.
 
 \bibitem{Chen:2007:PSA:1780653.1780702}
 Abon Chen, Hsin-Hsi Chen, and Polly Huang.
-\newblock Predicting social annotation by spreading activation.
+\newblock {Predicting social annotation by spreading activation}.
 \newblock In {\em Proceedings of the 10th international conference on Asian
   digital libraries: looking back 10 years and forging new frontiers},
   ICADL'07, pages 277--286, Berlin, Heidelberg, 2007. Springer-Verlag.
@@ -52,27 +57,39 @@ Allen~M Collins and Elizabeth~F Loftus.
 \newblock A spreading activation theory of semantic processing.
 \newblock {\em Psychological Review}, 82(6):407--428, 1975.
 
+\bibitem{DigitalLibraries}
+European~Commission Communications.
+\newblock {On the Digitisation and Online Accesibility of Cultural Material and
+  Digital Preservation}.
+\newblock Commission recommendation, European Commission, 2006.
+
 \bibitem{SpreadingActivationIR}
 F.~Crestani.
 \newblock {A}pplication of {S}preading {A}ctivation {T}echniques in
   {I}nformation {R}etrieval.
 \newblock {\em Artificial Intelligence Review}, (11):453--482, 1997.
 
+\bibitem{Cui03}
+H.~Cui, J.~Wen, J.~Nie, and W.~Ma.
+\newblock {Q}uery {E}xpansion by {M}ining {U}ser {L}ogs.
+\newblock {\em IEEE Transaction on Knowledge and Data Engineering},
+  15(4):829--839, July 2003.
+
 \bibitem{DBLP:journals/ijsc/DixKLVS10}
 Alan~J. Dix, Akrivi Katifori, Giorgos Lepouras, Costas Vassilakis, and Nadeem
   Shabir.
-\newblock Spreading activation over ontology-based resources: from personal
-  context to web scale reasoning.
+\newblock {Spreading Activation over Ontology-Based Resources: from Personal
+  Context to Web Scale Reasoning}.
 \newblock {\em Int. J. Semantic Computing}, 4(1):59--102, 2010.
 
 \bibitem{Fowler1999}
 Martin Fowler.
-\newblock {\em Refactoring: Improving the Design of Existing Code}.
+\newblock {\em {Refactoring: Improving the Design of Existing Code}}.
 \newblock Addison-Wesley, Boston, MA, USA, 1999.
 
 \bibitem{Gamma}
 Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
-\newblock {\em Design Patterns}.
+\newblock {\em {Design Patterns}}.
 \newblock {Addison-Wesley Professional}, January 1995.
 
 \bibitem{citeulike:3779904}
@@ -86,15 +103,15 @@ Qi~Gao, Junwei Yan, and Min Liu.
 \bibitem{labraTagging2007}
 Jose Emilio~Labra Gayo, Patricia~Ordo\'{n}ez de~Pablos, and Juan M.~Cueva
   Lovelle.
-\newblock Combining collaborative tagging and ontologies in image retrieval
-  systems.
+\newblock {Combining Collaborative Tagging and Ontologies in Image Retrieval
+  Systems}.
 \newblock 2007.
 
 \bibitem{LabraWesoNet}
 Jose Emilio~Labra Gayo, Patricia~Ordo\'{n}ez de~Pablos, and Juan Manuel~Cueva
   Lovelle.
-\newblock Wesonet: Applying semantic web technologies and collaborative tagging
-  to multimedia web information systems.
+\newblock {WESONet: Applying semantic web technologies and collaborative
+  tagging to multimedia web information systems}.
 \newblock {\em Comput. Hum. Behav.}, 26:205--209, March 2010.
 
 \bibitem{GelgiVD05}
@@ -104,30 +121,48 @@ Fatih Gelgi, Srinivas Vadrevu, and Hasan Davulcu.
 
 \bibitem{gouws-vanrooyen-engelbrecht:2010:CCSR}
 Stephan Gouws, G-J van Rooyen, and Herman~A. Engelbrecht.
-\newblock Measuring conceptual similarity by spreading activation over
-  wikipedia's hyperlink structure.
+\newblock {Measuring Conceptual Similarity by Spreading Activation over
+  Wikipedia's Hyperlink Structure}.
 \newblock In {\em Proceedings of the {2nd} Workshop on {The People's Web Meets
   NLP: Collaboratively Constructed Semantic Resources}}, pages 46--54, Beijing,
   China, August 2010. Coling 2010 Organizing Committee.
 
 \bibitem{Grinberg:2011:ASA:1940632.1940674}
 Maurice Grinberg, Vladimir Haltakov, and Hristo Stefanov.
-\newblock Approximate spreading activation for efficient knowledge retrieval
-  from large datasets.
+\newblock {Approximate Spreading Activation for Efficient Knowledge Retrieval
+  from Large Datasets}.
 \newblock In {\em Proceeding of the 2011 conference on Neural Nets WIRN10:
   Proceedings of the 20th Italian Workshop on Neural Nets}, pages 326--333,
   Amsterdam, The Netherlands, The Netherlands, 2011. IOS Press.
 
+\bibitem{LinkedData}
+Tom Heath and Christian Bizer.
+\newblock {\em {Linked Data: Evolving the Web into a Global Data Space}},
+  volume~1.
+\newblock Synthesis Lectures on the Semantic Web: Theory and Technology, Morgan
+  \& Claypool, 2011.
+
+\bibitem{turtle91inference}
+H.R.Turtle.
+\newblock {\em {{I}nference {N}etworks for {D}ocument {R}etrieval}}.
+\newblock PhD thesis, University Illinois, Urbana, IL, USA., 1991.
+
 \bibitem{DBLP:journals/cogsr/KatiforiVD10}
 Akrivi Katifori, Costas Vassilakis, and Alan~J. Dix.
-\newblock Ontologies and the brain: Using spreading activation through
-  ontologies to support personal interaction.
+\newblock {Ontologies and the brain: Using spreading activation through
+  ontologies to support personal interaction}.
 \newblock {\em Cognitive Systems Research}, 11(1):25--41, 2010.
 
 \bibitem{liu_et_al_2005}
 W.~Liu, A.~Weichselbraun, A.~Scharl, and E.~Chang.
-\newblock Semi-automatic ontology extension using spreading activation.
+\newblock {Semi-Automatic Ontology Extension Using Spreading Activation}.
 \newblock {\em Universal Knowledge Management}, 0(1):50--58, 2005.
+
+\bibitem{767402}
+Jian-Yun Nie.
+\newblock {Q}uery {E}xpansion and {Q}uery {T}ranslation as {L}ogical
+  {I}nference.
+\newblock {\em J. Am. Soc. Inf. Sci. Technol.}, 54(4):335--346, 2003.
 
 \bibitem{Scott1981}
 Scott~Everett Preece.
@@ -137,7 +172,7 @@ Scott~Everett Preece.
 
 \bibitem{Qiu93}
 Yonggang Qiu and Hans-Peter Frei.
-\newblock Concept-based query expansion.
+\newblock {Concept-based query expansion}.
 \newblock In {\em Proceedings of {SIGIR}-93, 16th {ACM} International
   Conference on Research and Development in Information Retrieval}, pages
   160--169, Pittsburgh, US, 1993.
@@ -149,43 +184,36 @@ Cristiano Rocha, Daniel Schwabe, and Marcus~Poggi de~Arag{\~a}o.
 
 \bibitem{Schumacher+2008search}
 Kinga Schumacher, Michael Sintek, and Leo Sauermann.
-\newblock Combining metadata and document search with spreading activation for
-  semantic desktop search.
+\newblock {Combining Metadata and Document Search with Spreading Activation for
+  Semantic Desktop Search}.
 \newblock In Sean Bechhofer, Manfred Hauswirth, Jörg Hoffmann, and Manolis
   Koubarakis, editors, {\em Proc. of ESWC}, pages 569--583. Springer, June
   2008.
 
 \bibitem{conf-sofsem-Suchal08}
 Ján Suchal.
-\newblock On finding power method in spreading activation search.
+\newblock {On finding power method in spreading activation search.}
 \newblock In Viliam Geffert, Juhani Karhumäki, Alberto Bertoni, Bart Preneel,
   Pavol Návrat, and Mária Bieliková, editors, {\em SOFSEM (2)}, pages
   124--130. Safarik University, Kosice, Slovakia, 2008.
 
+\bibitem{SpreadingLarkc}
+Proletina Todorova, Atanas Kiryakov, Damyan Ognyanoff, Ivan Peikov, Ruslan
+  Velkov, and Zdravko Tashev.
+\newblock {D2.4.1 Spreading Activation Components (v1)}.
+\newblock Deliverable or research project, LarKC FP7 project–215535, 2009.
+
 \bibitem{paper:troussov:2008}
 Alexander Troussov, Mikhail Sogrin, John Judge, and Dmitri Botvich.
-\newblock Mining socio-semantic networks using spreading activation technique.
+\newblock {Mining Socio-Semantic Networks Using Spreading Activation
+  Technique}.
 \newblock 2008.
-
-\bibitem{Tsatsaronis:2007:WSD:1625275.1625555}
-George Tsatsaronis, Michalis Vazirgiannis, and Ion Androutsopoulos.
-\newblock Word sense disambiguation with spreading activation networks
-  generated from thesauri.
-\newblock In {\em Proceedings of the 20th international joint conference on
-  Artifical intelligence}, pages 1725--1730, San Francisco, CA, USA, 2007.
-  Morgan Kaufmann Publishers Inc.
 
 \bibitem{Wolverton94retrievingsemantically}
 By~Michael Wolverton, Michael Wolverton, Michael Wolverton, Barbara Hayes-roth,
   and Barbara Hayes-roth.
-\newblock Retrieving semantically distant analogies with knowledge-directed
-  spreading activation.
+\newblock {Retrieving Semantically Distant Analogies with Knowledge-Directed
+  Spreading Activation}.
 \newblock In {\em In Proceedings AAAI-94}, pages 56--61. AAAI Press, 1994.
-
-\bibitem{XueHYZCM04}
-Gui-Rong Xue, Shen Huang, Yong Yu, Hua-Jun Zeng, Zheng Chen, and Wei-Ying Ma.
-\newblock {O}ptimizing {W}eb {S}earch {U}sing {S}preading {A}ctivation on the
-  {C}lickthrough {D}ata.
-\newblock In {\em WISE}, pages 409--414, 2004.
 
 \end{thebibliography}
