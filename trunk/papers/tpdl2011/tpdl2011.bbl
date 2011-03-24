@@ -7,25 +7,18 @@ Maristella Agosti and Fabio Crestani.
 \newblock In {\em SAC '93: Proceedings of the 1993 ACM/SIGAPP symposium on
   Applied computing}, pages 745--753, New York, NY, USA, 1993. ACM Press.
 
-\bibitem{CoreJ2ee}
+\bibitem{CoreJ2EEPatterns}
 Deepak Alur, John Crupi, and Dan Malks.
-\newblock {\em Core J2EE Patterns: Best Practices and Design Strategies, 1/e}.
-\newblock Prentice Hall, 2001.
+\newblock {\em Core J2EE Patterns: Best Practices and Design Strategies}.
+\newblock Sun Microsystems, 2003.
 
-\bibitem{AndersonTheory}
-John~R. Anderson.
-\newblock {A} {S}preading {A}ctivation {T}heory of {M}emory.
-\newblock {\em Verbal Learning and Verbal Behavior}, (1):261--295, 1983.
-
-\bibitem{Baeza99}
-Ricardo~A. Baeza-Yates and Berthier~A. Ribeiro-Neto.
-\newblock {\em {M}odern {I}nformation {R}etrieval}.
-\newblock ACM Press / Addison-Wesley, 1999.
-
-\bibitem{XP}
-Kent Beck.
-\newblock {\em Extreme Programming Explained: Embrace Change}.
-\newblock Addison-Wesley Professional, 1999.
+\bibitem{Helmut2004}
+Helmut Berger, Michael Dittenbach, and Dieter Merkl.
+\newblock An adaptive information retrieval system based on associative
+  networks.
+\newblock In {\em CRPIT '04: Proceedings of the first Asian-Pacific conference
+  on Conceptual modelling}, pages 27--36, Darlinghurst, Australia, Australia,
+  2004. Australian Computer Society, Inc.
 
 \bibitem{bopaEstonia}
 Diego Berrueta, Jose~Emilio Labra, and Luis Polo.
@@ -34,11 +27,12 @@ Diego Berrueta, Jose~Emilio Labra, and Luis Polo.
 \newblock In {\em Proceedings of Joint Conferente On Knowledge-Based Software
   Engineering (JCKBSE 2006)}, pages 167 -- 175, July--August 2006.
 
-\bibitem{Bruijin2006}
-Jos~de Bruijn, Marc Ehrig, Cristina Feier, Francisco Mart\'{i}n-Recuerda,
-  Fran\c{c}ois Scharffe, and Moritz Weiten.
-\newblock {O}ntology {M}ediation, {M}erging and {A}ligning.
-\newblock In {\em Semantic Web Technologies}. Wiley, UK, 2006.
+\bibitem{Chen:2007:PSA:1780653.1780702}
+Abon Chen, Hsin-Hsi Chen, and Polly Huang.
+\newblock Predicting social annotation by spreading activation.
+\newblock In {\em Proceedings of the 10th international conference on Asian
+  digital libraries: looking back 10 years and forging new frontiers},
+  ICADL'07, pages 277--286, Berlin, Heidelberg, 2007. Springer-Verlag.
 
 \bibitem{Chen95}
 H.~Chen and T.~Ng.
@@ -59,11 +53,12 @@ F.~Crestani.
   {I}nformation {R}etrieval.
 \newblock {\em Artificial Intelligence Review}, (11):453--482, 1997.
 
-\bibitem{Cui03}
-H.~Cui, J.~Wen, J.~Nie, and W.~Ma.
-\newblock {Q}uery {E}xpansion by {M}ining {U}ser {L}ogs.
-\newblock {\em IEEE Transaction on Knowledge and Data Engineering},
-  15(4):829--839, July 2003.
+\bibitem{DBLP:journals/ijsc/DixKLVS10}
+Alan~J. Dix, Akrivi Katifori, Giorgos Lepouras, Costas Vassilakis, and Nadeem
+  Shabir.
+\newblock Spreading activation over ontology-based resources: from personal
+  context to web scale reasoning.
+\newblock {\em Int. J. Semantic Computing}, 4(1):59--102, 2010.
 
 \bibitem{Fowler1999}
 Martin Fowler.
@@ -75,41 +70,59 @@ Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
 \newblock {\em Design Patterns}.
 \newblock {Addison-Wesley Professional}, January 1995.
 
+\bibitem{citeulike:3779904}
+Qi~Gao, Junwei Yan, and Min Liu.
+\newblock {A Semantic Approach to Recommendation System Based on User Ontology
+  and Spreading Activation Model}.
+\newblock In {\em NPC '08: Proceedings of the 2008 IFIP International
+  Conference on Network and Parallel Computing}, pages 488--492, Washington,
+  DC, USA, 2008. IEEE Computer Society.
+
+\bibitem{labraTagging2007}
+Jose Emilio~Labra Gayo, Patricia~Ordo\'{n}ez de~Pablos, and Juan M.~Cueva
+  Lovelle.
+\newblock Combining collaborative tagging and ontologies in image retrieval
+  systems.
+\newblock 2007.
+
+\bibitem{LabraWesoNet}
+Jose Emilio~Labra Gayo, Patricia~Ordo\'{n}ez de~Pablos, and Juan Manuel~Cueva
+  Lovelle.
+\newblock Wesonet: Applying semantic web technologies and collaborative tagging
+  to multimedia web information systems.
+\newblock {\em Comput. Hum. Behav.}, 26:205--209, March 2010.
+
 \bibitem{GelgiVD05}
 Fatih Gelgi, Srinivas Vadrevu, and Hasan Davulcu.
 \newblock {I}mproving {W}eb {D}ata {A}nnotations with {S}preading {A}ctivation.
 \newblock In {\em WISE}, pages 95--106, 2005.
 
-\bibitem{Gendreau}
-Michel Gendreau.
-\newblock An introduction to tabu search.
-\newblock {\em Handbook of Metaheuristics}, (1):37--54, 2003.
+\bibitem{gouws-vanrooyen-engelbrecht:2010:CCSR}
+Stephan Gouws, G-J van Rooyen, and Herman~A. Engelbrecht.
+\newblock Measuring conceptual similarity by spreading activation over
+  wikipedia's hyperlink structure.
+\newblock In {\em Proceedings of the {2nd} Workshop on {The People's Web Meets
+  NLP: Collaboratively Constructed Semantic Resources}}, pages 46--54, Beijing,
+  China, August 2010. Coling 2010 Organizing Committee.
 
-\bibitem{Glover1990}
-F.~Glover.
-\newblock {T}abu {S}earch: {A} {T}utorial.
-\newblock {\em Interfaces, Vol. 20, :4, 74-94}, 1990.
+\bibitem{Grinberg:2011:ASA:1940632.1940674}
+Maurice Grinberg, Vladimir Haltakov, and Hristo Stefanov.
+\newblock Approximate spreading activation for efficient knowledge retrieval
+  from large datasets.
+\newblock In {\em Proceeding of the 2011 conference on Neural Nets WIRN10:
+  Proceedings of the 20th Italian Workshop on Neural Nets}, pages 326--333,
+  Amsterdam, The Netherlands, The Netherlands, 2011. IOS Press.
 
-\bibitem{229953}
-Brian Henderson-Sellers.
-\newblock {\em Object-Oriented Metrics: Measures of Complexity}.
-\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1996.
+\bibitem{DBLP:journals/cogsr/KatiforiVD10}
+Akrivi Katifori, Costas Vassilakis, and Alan~J. Dix.
+\newblock Ontologies and the brain: Using spreading activation through
+  ontologies to support personal interaction.
+\newblock {\em Cognitive Systems Research}, 11(1):25--41, 2010.
 
-\bibitem{turtle91inference}
-H.R.Turtle.
-\newblock {\em {{I}nference {N}etworks for {D}ocument {R}etrieval}}.
-\newblock PhD thesis, University Illinois, Urbana, IL, USA., 1991.
-
-\bibitem{Kobayashi00}
-Mei Kobayashi and Koichi Takeda.
-\newblock {I}nformation {R}etrieval on the {W}eb.
-\newblock {\em ACM Computing Surveys}, 32(2):144--173, 2000.
-
-\bibitem{767402}
-Jian-Yun Nie.
-\newblock {Q}uery {E}xpansion and {Q}uery {T}ranslation as {L}ogical
-  {I}nference.
-\newblock {\em J. Am. Soc. Inf. Sci. Technol.}, 54(4):335--346, 2003.
+\bibitem{liu_et_al_2005}
+W.~Liu, A.~Weichselbraun, A.~Scharl, and E.~Chang.
+\newblock Semi-automatic ontology extension using spreading activation.
+\newblock {\em Universal Knowledge Management}, 0(1):50--58, 2005.
 
 \bibitem{Scott1981}
 Scott~Everett Preece.
@@ -117,27 +130,57 @@ Scott~Everett Preece.
   {R}etrieval}.
 \newblock PhD thesis, University Illinois, Urbana, IL, USA., 1981.
 
+\bibitem{Qiu93}
+Yonggang Qiu and Hans-Peter Frei.
+\newblock Concept-based query expansion.
+\newblock In {\em Proceedings of {SIGIR}-93, 16th {ACM} International
+  Conference on Research and Development in Information Retrieval}, pages
+  160--169, Pittsburgh, US, 1993.
+
 \bibitem{RochaSA04}
 Cristiano Rocha, Daniel Schwabe, and Marcus~Poggi de~Arag{\~a}o.
 \newblock {A} {H}ybrid {A}pproach for {S}earching in the {S}emantic {W}eb.
 \newblock In {\em WWW}, pages 374--383, 2004.
 
-\bibitem{2917612}
+\bibitem{Schumacher+2008search}
 Kinga Schumacher, Michael Sintek, and Leo Sauermann.
-\newblock {C}ombining {F}act and {D}ocument {R}etrieval with {S}preading
-  {A}ctivation for {S}emantic {D}esktop {S}earch.
-\newblock pages 569--583. 2008.
+\newblock Combining metadata and document search with spreading activation for
+  semantic desktop search.
+\newblock In Sean Bechhofer, Manfred Hauswirth, Jörg Hoffmann, and Manolis
+  Koubarakis, editors, {\em Proc. of ESWC}, pages 569--583. Springer, June
+  2008.
+
+\bibitem{conf-sofsem-Suchal08}
+Ján Suchal.
+\newblock On finding power method in spreading activation search.
+\newblock In Viliam Geffert, Juhani Karhumäki, Alberto Bertoni, Bart Preneel,
+  Pavol Návrat, and Mária Bieliková, editors, {\em SOFSEM (2)}, pages
+  124--130. Safarik University, Kosice, Slovakia, 2008.
+
+\bibitem{paper:troussov:2008}
+Alexander Troussov, Mikhail Sogrin, John Judge, and Dmitri Botvich.
+\newblock Mining socio-semantic networks using spreading activation technique.
+\newblock 2008.
+
+\bibitem{Tsatsaronis:2007:WSD:1625275.1625555}
+George Tsatsaronis, Michalis Vazirgiannis, and Ion Androutsopoulos.
+\newblock Word sense disambiguation with spreading activation networks
+  generated from thesauri.
+\newblock In {\em Proceedings of the 20th international joint conference on
+  Artifical intelligence}, pages 1725--1730, San Francisco, CA, USA, 2007.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem{Wolverton94retrievingsemantically}
+By~Michael Wolverton, Michael Wolverton, Michael Wolverton, Barbara Hayes-roth,
+  and Barbara Hayes-roth.
+\newblock Retrieving semantically distant analogies with knowledge-directed
+  spreading activation.
+\newblock In {\em In Proceedings AAAI-94}, pages 56--61. AAAI Press, 1994.
 
 \bibitem{XueHYZCM04}
 Gui-Rong Xue, Shen Huang, Yong Yu, Hua-Jun Zeng, Zheng Chen, and Wei-Ying Ma.
 \newblock {O}ptimizing {W}eb {S}earch {U}sing {S}preading {A}ctivation on the
   {C}lickthrough {D}ata.
 \newblock In {\em WISE}, pages 409--414, 2004.
-
-\bibitem{ziegler-lausen-04}
-C.~N. Ziegler and G.~Lausen.
-\newblock {S}preading {A}ctivation {M}odels for {T}rust {P}ropagation.
-\newblock In {\em Proceedings of the 2004 IEEE International Conference on
-  e-Technology, e-Commerce and e-Service (EEE’04)}, pages 83--97, 2004.
 
 \end{thebibliography}

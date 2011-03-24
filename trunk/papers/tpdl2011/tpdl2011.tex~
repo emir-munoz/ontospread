@@ -475,7 +475,7 @@ and RDF are supported.
 
 \begin{figure}[htb]
 \centering
-	\includegraphics[width=8cm]{diagramas/general}
+%	\includegraphics[width=8cm]{diagramas/general}
 \caption{ONTOSPREAD Overview Diagram}
 \label{fig:diagramas/general}
 \end{figure}
@@ -1001,9 +1001,24 @@ changes.\end{inparaenum}
 % \end{itemize}
 % 
 % 
-% \bibliographystyle{plain}
+%\nocite{*}
+
+Formal\cite{Scott1981,Cohen1987}
+Data mining\cite{paper:troussov:2008}
+Information Retrieval\cite{SpreadingActivationIR,Helmut2004,Agosti1993,Grinberg:2011:ASA:1940632.1940674}
+Concept exploration\cite{Qiu93} and ontologies\cite{Chen95,DBLP:journals/cogsr/KatiforiVD10,DBLP:journals/ijsc/DixKLVS10,liu_et_al_2005}
+Annotations\cite{GelgiVD05,Chen:2007:PSA:1780653.1780702}
+Tagging\cite{labraTagging2007}
+Web Search\cite{XueHYZCM04}
+Natural Language\cite{Tsatsaronis:2007:WSD:1625275.1625555}
+Recommendations\cite{citeulike:3779904,gouws-vanrooyen-engelbrecht:2010:CCSR}
+Semantic Search\cite{conf-sofsem-Suchal08,Wolverton94retrievingsemantically,Schumacher+2008search,bopaEstonia,RochaSA04,LabraWesoNet}
+Ing. software\cite{CoreJ2EEPatterns}
+
+
+\bibliographystyle{plain}
 % %\bibliographystyle{unsrt}
 % %\bibliographystyle{acm}
-% \bibliography{bib/web,bib/references,bib/diseno}
+\bibliography{bib/references}
 % \renewcommand{\bibname}{References}
 \end{document}

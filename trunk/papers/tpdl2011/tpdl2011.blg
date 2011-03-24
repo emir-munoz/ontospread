@@ -1,53 +1,53 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tpdl2011.aux
 The style file: plain.bst
-Database file #1: bib/web.bib
-Database file #2: bib/references.bib
-Database file #3: bib/diseno.bib
-Warning--there's a number but no volume in AndersonTheory
+Database file #1: bib/references.bib
+A bad cross reference---entry "conf-sofsem-Suchal08"
+refers to entry "conf/sofsem/2008-2", which doesn't exist
+Warning--I didn't find a database entry for "XP"
+Warning--I didn't find a database entry for "conf/sofsem/2008-2"
 Warning--there's a number but no volume in SpreadingActivationIR
-Warning--there's a number but no volume in Gendreau
-Warning--empty booktitle in 2917612
-Warning--empty publisher in 2917612
-You've used 25 entries,
+Warning--empty booktitle in labraTagging2007
+Warning--empty booktitle in paper:troussov:2008
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            666 strings with 8179 characters,
-and the built_in function-call counts, 8435 in all, are:
-= -- 828
-> -- 350
-< -- 7
-+ -- 140
-- -- 114
-* -- 544
-:= -- 1367
-add.period$ -- 78
-call.type$ -- 25
-change.case$ -- 124
+            705 strings with 10865 characters,
+and the built_in function-call counts, 11521 in all, are:
+= -- 1152
+> -- 524
+< -- 15
++ -- 203
+- -- 174
+* -- 775
+:= -- 1792
+add.period$ -- 94
+call.type$ -- 28
+change.case$ -- 162
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 362
-empty$ -- 701
-format.name$ -- 114
-if$ -- 1817
+cite$ -- 31
+duplicate$ -- 489
+empty$ -- 912
+format.name$ -- 174
+if$ -- 2548
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 29
-newline$ -- 128
-num.names$ -- 50
-pop$ -- 165
+int.to.str$ -- 28
+missing$ -- 30
+newline$ -- 143
+num.names$ -- 60
+pop$ -- 206
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 138
 quote$ -- 0
-skip$ -- 248
+skip$ -- 364
 stack$ -- 0
-substring$ -- 511
-swap$ -- 90
-text.length$ -- 7
+substring$ -- 728
+swap$ -- 166
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
-warning$ -- 5
-while$ -- 80
-width$ -- 27
-write$ -- 273
-(There were 5 warnings)
+type$ -- 106
+warning$ -- 3
+while$ -- 107
+width$ -- 30
+write$ -- 323
+(There was 1 error message)
