@@ -76,9 +76,9 @@ Labra Gayo}
 \email{\{diego.berrueta,luis.polo\}@fundacionctic.org},\\ 
  WWW home page: \texttt{http://www.fundacionctic.org}
 \and
-WESO RG, Universidad de Oviedo,
-\email{\{UO1548,labra\}@uniovi.es},\\ 
- WWW home page: \texttt{http://www.uniovi.es}
+WESO RG, Universidad de Oviedo, Oviedo, Asturias, Spain,\\
+\email{\{josem.alvarez,jelabra\}@weso.es},\\ 
+ WWW home page: \texttt{http://www.weso.es}
 }
 
 \maketitle
@@ -101,13 +101,47 @@ to validate the goodness and the capabilities of the proposed approach.
 
 \section{Introduction}
 
+%Digital Libraries: description and needs
+
+The improvements in digitization lead us to a new environment in which digital libraries and archives are designed and used
+in a new way. This situation implies new challenges in the digital formats, storage (information is continuously growing) and
+information retrieval models. Following the recommendations of the European Commision~\footnote{Commission Communication ``i2010: digital libraries``} the digital libraries are
+a key factor to bring out the full economic and cultural potential of Europe’s cultural and scientific heritage 
+through the Internet. The online presence of material from different cultures and in different languages will
+make it easier for citizens to appreciate their own cultural heritage as well as the heritage
+of other European countries. Besides its fundamental cultural value, cultural material is an important resource for new
+added value services. That is whay more sophisticated software tools and methods are needed to meet the expectations of users easing
+the information retrieval of these large datasets and overcoming the classical problems of information overloading. 
+
+Initiatives like Semantic Web and Linked Data tries to define vocabularies and ontologies enabling
+the data interoperability and sharing that enable by means of the Web infrastructure the access
+to the contents across different platforms and applications. The development of tools using these common
+data formats and models is largely implemented but some algorithms and methods are not yet promoted to these
+initiatives in a standard way previnting the improvement and effectiveness of information access. 
+
+In this sense Spreading Activation (hereafter SA) techniques introduced by~\cite{Collins_Loftus_1975}, in the field of 
+psycho linguistics and semantic priming, proposing a model in which all relevant information is mapped
+on a graph as nodes with a certain ''activation value``. Relations between two concepts
+are represented by a weighted edge. If a node is activated their activation value is spread
+to their neighbour nodes. These techniques were adopted by the computer science community and applied
+to the resolution of different problems, see Sect.~\ref{related-work}. In the field of digital libraries
+these techniques can ease the information access providing a connectionist method to retrieve data like
+brain does. Although SA techniques are widely used, more specifically in recent years have been successfully applied 
+to ontologies, a common and standard API is missing and each third party interested in their application
+ must to implement its own version of SA techniques.
+
+
+The paper is structured as follows: FIXME
+
 \subsection{Main Contributions}
+
+In this paper the authors propose an standard and configurable API for SA techniques
 \section{Background}
 In this section, the theoretical model of \textit{SA} is reviewed to illustrate the basic components and
 the operations performed by the SA techniques during their execution. This model is made up of 
 a conceptual network of nodes connected through relations (conceptual graph). 
 Taking into account that nodes represent domain objects or classes and edges relations among them, 
-it is possible take them as a semantic network in which SA can be applied. 
+it is possible to stablish a semantic network in which SA can be applied. 
 The processing performed by the algorithm is based on a thorough method to go down the graph using an iterative model. 
 Each iteration is comprised of a set of beats, a stepwise method, and the checking of a stop
 condition. Following~\cite{SpreadingActivationIR} the basic definitions made are presented:
@@ -173,11 +207,11 @@ set of activated concepts.
 
 \end{description}
 
-\section{Related Work}
+\section{Related Work}\label{related-work}
 \section{ONTOSPREAD}
 \subsection{Constrained Spreading Activation}
 One of the main features of the SA techniques are their flexibility to fit to 
-the resolution of different problems. From the configuration point of view
+the resolution of different kind of problems. From the configuration point of view
 some constraints presented in~\cite{Cohen1987} have been customized improving
 the expected outcomes of the execution according to the domain problem. Following these
 constraints are defined:
@@ -188,7 +222,7 @@ constraints are defined:
 the number of needed steps to reach and activate them.
 
 \item [Path:] the activation path is built by the activation process from a node
-to other and can be guided according to the weights of relations (edges). 
+to other and this process can be guided according to the weights of relations (edges). 
 
 \item [Multiple outputs (Fan-Out):] nodes ``highly connected'' can 
 guide to a misleading situation in which activated and spread nodes are not representative, these nodes
@@ -200,7 +234,7 @@ value, $I_i$, is greater than a threshold activation constant $\jmath$.
 
 \end{description}
 
-The abovementioned theoretical model in Sect.\ref{sa} is a good start point to design
+The abovementioned theoretical model in Sect.\ref{sa} is an excellent start point to design
 an API for \textit{SA} but from the domain expert point of view some requirements are missing (FIXME: ref) to provide
 a configurable set of techniques based on \textit{SA}. That is why a set of extensions are proposed to deal
 with the specific features of ontologies and RDF graphs.
@@ -208,7 +242,7 @@ with the specific features of ontologies and RDF graphs.
 \begin{description}
 
 \item[Context of activation $\mathbb{D}_{com}$:] concepts can be defined in different
-domains or schemes. The double process of activation and spreading  will only be carried out in the
+domains or schemes. The double process of activation and spreading will only be carried out in the
 context $\mathbb{D}_{com}$.
 
 
@@ -217,8 +251,8 @@ Let $\mathbb{D}_{com}$ an active domain, if a concept $c_i$ is activated o
 spread then $c_{i} \in \mathbb{D}_{com}$.
 \end{definition}
 
-\item[Minimum activation value $N_{\min}$ :] only concepts with an activation
-value $N_k$ greater than $N_{\min}$ will be spread. This constraint comes from
+\item[Minimum activation value $N_{\min}$ :] concepts with an activation
+value $N_k$ greater than $N_{\min}$ will only be spread. This constraint comes from
 the theorical model of \textit{SA}.
 
 \item[Maximum number of spread concepts $\mathbb{M}$ :] the process of
@@ -260,7 +294,7 @@ activation value have to decrease if the distance from $\Phi$ grows thus
 the algorithm follows a path from $c_l$ to $c_j$: $I_l > I_j$.
 
 
-The function $h_1$ penalizes the output of the concepts (decreasing their rank)
+The function $h_1$ penalizes the output of concepts (decreasing their rank)
 far from the ``activation core'' and rewards closed concepts. Thus, let $d_j$,
 where $d_j = min\{d_{lj}:\forall n_l \in \Phi\}$:
 
@@ -285,7 +319,7 @@ degradation of the concept using the number of iterations $k$:
 
 The entry point to\textit{SA} techniques is the set of initial concepts
 ($Q_{sem}$) that will generate a new set of the most relevant concepts
-($Q'_{sem}$). Ontologies are a graph where each node $n_i$ represents a concept
+($Q'_{sem}$). Ontologies based on the RDF graph model are a graph where each node $n_i$ represents a concept
 $c_i$ and the edge $\omega_{ji}$ is the semantic relation between $c_j$ y $c_i$.
 The final result of the algorithm is a set of sorted pairs $(n_i, I_i)$
 that build $Q'_{sem}$, where $n_i\approx c_i$ and $I_i\approx w_i$ (the
@@ -402,7 +436,7 @@ is the number of times that a concept $c_i$ must be rewarded.
 \subsection{Refining Spreading Activation}
 The whole configuration of the algorithm can be made by default but a customization
 to a particular domain should be performed by a domain expert taking into account the
-specific issues of this domain and considering as a new stage of the ontology o graph modelling process.
+specific issues of this domain and considering it as a new stage of the ontology o graph modelling process.
 
 \begin{enumerate}
   \item The algorithm is highly coupled to the target ontology and domain. 
@@ -412,7 +446,7 @@ specific issues of this domain and considering as a new stage of the ontology o 
   the key point to customize \textit{SA} techniques. 
 \end{enumerate}
 
-Since \textit{SA} uses the weights of relations to calculate the activation
+Since \textit{SA} uses weights in relations (or edges) to calculate the activation
 value of the concepts, different ``patterns'', see Table
 \ref{guidingspreading}, have been identified to manage the direction of the spreading process.
 
@@ -442,13 +476,13 @@ through a certain relation $\mathcal{R}$.  & $\mathcal{R}$ \\
 \label{guidingspreading}
 \end{table} 
 
-These control patterns can be put together in order to fit as possible the focus
+These control patterns can be put together in order to fit as much as possible the focus
 and direction of the double process of activation and spreading.
 
 \subsection{Design and implementation of ONTOSPREAD API}
 ONTOSPREAD API is addressed by an open design and 
-the application of best practices on software design~\cite{Gamma,CoreJ2ee} and development~\cite{XP,Fowler1999}.
-patterns. The next basic objects need to implement \textit{SA} techniques have been identified.
+the application of best practices on software design~\cite{Gamma,CoreJ2EEPatterns} and development~\cite{XP,Fowler1999}. 
+The next basic objects need to implement \textit{SA} techniques have been identified.
 
 \begin{itemize}
 
@@ -480,15 +514,15 @@ and RDF are supported.
 \label{fig:diagramas/general}
 \end{figure}
 
-\subsection{Designing of the state for \textit{SA}}
+\subsection{Designing the state of \textit{SA}}
 The keypoint to design the algorithm lies in how and where
-the information will be available at different iterations. Secondly, an unique entry points
+the information will be available at different iterations. Secondly, an unique entry point
 to the state of the algorithm should be available trying to avoid
-illegal accesses to the states. This object stores the next information: \begin{inparaenum}\item Spread
+illegal accesses to the state. This object stores the next information: \begin{inparaenum}\item Spread
 concepts. \item Active concepts. \item Paths of activation. \item Concept to be
-spread. \item Generic swap area (to share information). \end{inparaenum}
+spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
 
-\subsection{Designing of restrictions for \textit{SA}}
+\subsection{Designing the restrictions of \textit{SA}}
 The extensibility and flexibility of the algorithm is subjected to a good design
 of the restrictions and to the procedure of their evaluation. 
 The next features and design patterns are used to design and implement the model of restrictions for SA:
@@ -497,7 +531,7 @@ The next features and design patterns are used to design and implement the model
 evaluated to a boolean value.
   \item Conditions or actions in the algorithm can be comprised of several
 restrictions.
-  \item The extension points of  the algorithm, included through a
+  \item The extension points of the algorithm, included through a
 \textit{Template Method} design pattern, are strategies to carry out an specific
 action. Each strategy can be subjected to one or several restrictions.
 \item Each restriction can be simple or comprised of others.
@@ -506,7 +540,7 @@ action. Each strategy can be subjected to one or several restrictions.
   \item One strategy implies one restriction (or a set of them) thus the strategy
 is a client of the \textit{Composite} of restrictions.
   \item The evaluation of the restrictions to get their value (boolean) is
-carried out   through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
+carried out  through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
 composite objects.
   \item The evaluation process consists on:
   \begin{inparaenum}
