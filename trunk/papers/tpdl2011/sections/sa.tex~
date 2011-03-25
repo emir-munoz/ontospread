@@ -1,7 +1,11 @@
+In this section, the definitions of classical restrictions of SA and new extensions
+of the algorithm are provided. Afterwards the outstanding parts of the API are presented 
+putting up a generic and extensible framework to the SA technique.
+
 \subsection{Constrained Spreading Activation}
-One of the leading features of SA techniques are their flexibility to fit to 
+One of the leading features of SA technique is its flexibility to fit to 
 the resolution of different kind of problems. From the configuration point of view
-some constraints presented in~\cite{Cohen1987} have been customized improving
+some constraints presented in~\cite{Cohen1987} have been customized to improve
 the expected outcomes of the execution according to the domain problem. 
 
 \begin{description}
@@ -14,23 +18,22 @@ to other and this process can be guided according to the weights of relations (e
 
 \item [Multiple outputs (Fan-Out):] nodes ``highly connected'' can 
 guide to a misleading situation in which activated and spread nodes are not representative, these nodes
-should be skipped of penalized by the algorithm.
-
+should be skipped or penalized by the algorithm.
 
 \item [Threshold activation:] a node $n_i$ will be spread $iif$ its activation
 value, $I_i$, is greater than a threshold activation constant $\jmath$.
 
 \end{description}
 
-The abovementioned theoretical model in Sect.\ref{sa} is an excellent start point to design
-an API for \textit{SA} but from the domain expert point of view some requirements are missing (FIXME: ref) to provide
-a configurable set of techniques based on \textit{SA}. That is why a set of extensions are proposed to deal
-with the specific features of ontologies and RDF graphs.
+The aforementioned theoretical model is an excellent start point to design
+an API for \textit{SA} but from the domain expert point of view some configuration requirements to apply this technique 
+to ontologies are missing. That is why a set of extensions are proposed to 
+deal with the specific features of ontologies and RDF graphs.
 
 \begin{description}
 
 \item[Context of activation $\mathbb{D}_{com}$:] concepts can be defined in different
-domains or schemes. The double process of activation and spreading will only be carried out in the
+domains or schemes. The double process of activation and spreading will only be performed in the
 context $\mathbb{D}_{com}$.
 
 
@@ -39,20 +42,20 @@ Let $\mathbb{D}_{com}$ an active domain, if a concept $c_i$ is activated o
 spread then $c_{i} \in \mathbb{D}_{com}$.
 \end{definition}
 
-\item[Minimum activation value $N_{\min}$ :] concepts with an activation
-value $N_k$ greater than $N_{\min}$ will only be spread. This constraint comes from
-the theorical model of \textit{SA}.
+\item[Minimum activation value $N_{\min}$ :] only concepts with an activation
+value $N_k$ greater than $N_{\min}$ will be spread. This constraint comes from
+the theoretical model of \textit{SA}.
 
 \item[Maximum number of spread concepts $\mathbb{M}$ :] the process of
-activation and spreading will be executed, at the most, until $\mathbb{M}$ concepts
+activation and spreading will be performed, at the most, until $\mathbb{M}$ concepts
 had been spread.
 
 \item[Minimum number of spread concepts $\mathbb{M_{\min}}$ :] the process of
-activation and spreading will be executed, at least, $\mathbb{M_{\min}}$ concepts had
+activation and spreading will be performed, at least, $\mathbb{M_{\min}}$ concepts had
 been spread.
 
 \item[Time of activation $t$:] the process of activation and spreading
-will be executed, at the most, during $t$ units of time.
+will be performed, at the most, during $t$ units of time.
 
 \item[Output Degradation $O_j$:] one of the keypoints to improve and customize
 the algorithm is to define a function $h$ that penalizes the output value $O_j$
@@ -77,8 +80,8 @@ O_j = h_0(I_j) = I_j
 
 \item Customization using {\bf distance}: $h_1$ calculates the level activation
 of the concept $c_j$  according to the distance from the initial concept $c_l
-\in \Phi$\footnote{Set of initial concepts.} that has activated it. The
-activation value have to decrease if the distance from $\Phi$ grows thus
+\in \Phi$\footnote{Set of initial concepts.} to the node that has activated it. The
+activation value should decrease if the distance from $\Phi$ grows thus
 the algorithm follows a path from $c_l$ to $c_j$: $I_l > I_j$.
 
 
@@ -103,14 +106,14 @@ degradation of the concept using the number of iterations $k$:
 
 \end{description}
 
-\subsection{Design of Spreading Activation}\label{impl-sa}
+\subsection{Specification of the algorithm}\label{impl-sa}
 
-The entry point to\textit{SA} techniques is the set of initial concepts
+The entry point to SA technique is the set of initial concepts
 ($Q_{sem}$) that will generate a new set of the most relevant concepts
 ($Q'_{sem}$). Ontologies based on the RDF graph model are a graph where each node $n_i$ represents a concept
 $c_i$ and the edge $\omega_{ji}$ is the semantic relation between $c_j$ y $c_i$.
 The final result of the algorithm is a set of sorted pairs $(n_i, I_i)$
-that build $Q'_{sem}$, where $n_i\approx c_i$ and $I_i\approx w_i$ (the
+that builds $Q'_{sem}$, where $n_i\approx c_i$ and $I_i\approx w_i$ (the
 relevance of the concept).
 
 The implementation of \textit{SA}, see Algorithm.\ref{alg:as}, comprises of two sets of concepts that
@@ -153,7 +156,7 @@ I^0_i=\begin{cases}%
 \end{equation}
 
 at $k$ iteration, the activation value of $c_i$ from element
-$c_j^{k}$ that activates $c_i$ is calculated as follows:
+$c_j^{k}$ to $c_i$ is calculated as follows:
 
 \begin{equation}
 I^k_i=\begin{cases}%
@@ -186,8 +189,9 @@ I^k_i=\begin{cases}%
 
 \subsection{Improving Spreading Activation}\label{improve:sa}
 Some improvements in the calculus of the activation value of a
-concept have been introduced in order to get FIXME. If some paths of activation converge to the same node and the
-source nodes are different then this node should be important and a reward is applied to the nodes presented
+concept have been introduced in order to get a more complete and accurate technique. 
+If some paths of activation converge to the same node, see Fig.~\ref{fig:prize-sa} and the source nodes are different 
+then this node should be relevant and a reward is applied to the nodes presented
 in these paths. 
 
 \begin{definition}
@@ -204,7 +208,7 @@ I^*_i = g(I_i,p_i)
 
 In this case, a relaxed reward function has been chosen, Eq. \ref{f:recompensa},
 and, it is applied in the \textit{Postadjustment} stage, thus the
-original semantics and behaviour of \textit{SA} algorithm is not broken. 
+original semantics and behavior of \textit{SA} algorithm remains. 
 
 \begin{equation}\label{f:recompensa}
 g(x,y) = x (\log(y+1)+1)
@@ -223,8 +227,9 @@ is the number of times that a concept $c_i$ must be rewarded.
   
 \subsection{Refining Spreading Activation}
 The whole configuration of the algorithm can be made by default but a customization
-to a particular domain should be performed by a domain expert taking into account the
-specific issues of this domain and considering it as a new stage of the ontology o graph modelling process.
+to a particular domain should be carried out by a domain expert taking into account the
+specific issues of this domain and considering it as a new stage of 
+the ontology o graph modeling process:
 
 \begin{enumerate}
   \item The algorithm is highly coupled to the target ontology and domain. 
@@ -234,8 +239,8 @@ specific issues of this domain and considering it as a new stage of the ontology
   the key point to customize \textit{SA} techniques. 
 \end{enumerate}
 
-Since \textit{SA} uses weights in relations (or edges) to calculate the activation
-value of the concepts, different ``patterns'', see Table
+Since \textit{SA} uses weights in relations  to calculate the activation
+value of the concepts, different ``patterns'', see Tab.
 \ref{guidingspreading}, have been identified to manage the direction of the spreading process.
 
 \begin{table}[htb]
@@ -254,13 +259,13 @@ the current. & ``superclass''\\
   	 Nominal& It seeks for the activation of instances instead of concepts. &
 ``instance of'' \\
 	\hline
-  	 Cross&  It seeks for the activation of concepts and instances connected
+  	 Crossing&  It seeks for the activation of concepts and instances connected
 through a certain relation $\mathcal{R}$.  & $\mathcal{R}$ \\
      \hline
 
     \hline	
     \end{tabular}
-    \caption{Patterns of direction control in \textit{SA}.}
+    \caption{Patterns to manage the direction of SA.}
 \label{guidingspreading}
 \end{table} 
 
@@ -268,15 +273,14 @@ These control patterns can be put together in order to fit as much as possible t
 and direction of the double process of activation and spreading.
 
 \subsection{Design and implementation of ONTOSPREAD API}
-ONTOSPREAD API is addressed by an open design and 
-the application of best practices on software design~\cite{Gamma,CoreJ2EEPatterns} and development~\cite{XP,Fowler1999}. 
-The next basic objects need to implement \textit{SA} techniques have been identified.
-
+ONTOSPREAD API is addressed by an open and extensible design applying
+best practices on software design~\cite{Gamma,CoreJ2EEPatterns} and development~\cite{XP,Fowler1999}. 
+The next basic objects to implement \textit{SA} technique have been identified.
 \begin{itemize}
 
 \item The \textit{Player} class handles the execution of the algorithm in a
       stepwise way. This is an application of the \textit{Iterator}
-      design pattern to the activation and spreading processes. The state
+      design pattern to perform the activation and spreading processes. The state
       of the algorithm is captured in a separate class,
       \textit{OntoSpreadState} thus it is possible to serialize the
       state and back to a previous one.
@@ -290,10 +294,9 @@ The next basic objects need to implement \textit{SA} techniques have been identi
 \textit{OntoSpreadPostAdjustment}.\end{inparaenum}
 
 Moreover, the process carries on the information about the knowledge base using the DAO
-pattern thus the API is independent from the modelling language of the semantic network. Currently, OWL
+pattern thus the API is independent from the modeling language of the semantic network. Currently, OWL
 and RDF are supported.
 \end{itemize}
-
 
 \begin{figure}[htb]
 \centering
@@ -306,14 +309,14 @@ and RDF are supported.
 The keypoint to design the algorithm lies in how and where
 the information will be available at different iterations. Secondly, an unique entry point
 to the state of the algorithm should be available trying to avoid
-illegal accesses to the state. This object stores the next information: \begin{inparaenum}\item Spread
+illegal accesses. This object stores the next information: \begin{inparaenum}\item Spread
 concepts. \item Active concepts. \item Paths of activation. \item Concept to be
 spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
 
 \subsection{Designing the restrictions of \textit{SA}}
 The extensibility and flexibility of the algorithm is subjected to a good design
-of the restrictions and to the procedure of their evaluation. 
-The next features and design patterns are used to design and implement the model of restrictions for SA:
+of the restrictions and their evaluation process. The next features and design patterns 
+are used to design and implement the model of restrictions of SA:
 \begin{itemize}
   \item Any restriction can be considered as a simple restriction and can be
 evaluated to a boolean value.
@@ -322,169 +325,94 @@ restrictions.
   \item The extension points of the algorithm, included through a
 \textit{Template Method} design pattern, are strategies to carry out an specific
 action. Each strategy can be subjected to one or several restrictions.
-\item Each restriction can be simple or comprised of others.
-\textit{Composite} pattern.
+\item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
   \item Each action is an strategy. \textit{Strategy} pattern.
-  \item One strategy implies one restriction (or a set of them) thus the strategy
+  \item A strategy implies one restriction (or a set of them) thus the strategy
 is a client of the \textit{Composite} of restrictions.
   \item The evaluation of the restrictions to get their value (boolean) is
-carried out  through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
+carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
 composite objects.
-  \item The evaluation process consists on:
-% \begin{inparaenum}
-%   \item Apply the strategy, this step modifies the execution and reporting
-% of batch tests. It provides a framework to configure, combine and load several
-% configurations for \textit{SA} and obtain results. We have designed a XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} xml design
-% pattern to build the configuration of the \textit{SA} process. The designing of
-% this vocabulary is oriented to be used with JAXB, this technology allow us the
-% generation of Java classes automatically and we can marshalling and
-% unmarshalling objects providing a good way to configure, load and serialize
-% different configurations. The main goal to define a new XML vocabulary can be
-% arguable, but this vocabulary is not a new XML to be interchanged among
-% applications, we only use inside OntoSpreadTest and to provie state of the algorithm. 
-%   \item Validate the changes, the restricctions assert the
-% changes.\end{inparaenum}
-
+  \item The evaluation process consists on: apply the strategy that modifies the state
+of the algorithm and assert this change of state by means of the restrictions applied
+to this strategy.
 \end{itemize}
 
+\subsection{Development of ONTOSPREAD API and Supporting Tools}
+The development of the API has been performed using Semantic Web and Java technologies
+like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
+http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
+Maven\footnote{\url{http://maven.apache.org}} o
+Spring\footnote{\url{http://www.springframework.org/}}.
 
+Besides two tools are provided to test and debug different configurations
+of the algorithm:
 
-%\begin{figure}[htb]
-%\centering
-%	\includegraphics[width=8cm]{diagramas/restricciones}
-%\caption{Diagrama general de restricciones \textit{SA}}
-%\label{fig:diagramas/restricciones}
-%\end{figure}
+\begin{itemize}
+ \item [ONTOSPREAD-TEST] it is a tool for the automatic execution and reporting
+of batch tests. It provides an user-oriented framework to configure, combine and load several
+configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
+vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
+pattern has been defined to build the configuration of the \textit{SA} process.
+ The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
+automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
+load and serialize the different configurations and results. 
 
+\item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
+using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
+the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
+ run (one step or stepwise) and view the evolution of the semantic network 
+ with the concepts (activated, spread, weights, relations, etc.).
+\end{itemize}
 
-% \subsection{OntoSpread development}
-% 
-% The development of the API has been carried out using Semantic Web tecnologies
-% and web development tecnology as: Java programming language, 
-% Jena\footnote{\url{http://jena.sf.net}} API, 
-% JAXB\footnote{\url{
-% http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
-% Maven\footnote{\url{http://maven.apache.org}} o
-% Spring\footnote{\url{http://www.springframework.org/}}. We have built a
-% graphical viewer and debugger,
-% \textit{OntoSpread Inspector}, using the graph library
-% JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
-% SWT\footnote{\url{http://www.eclipse.org/swt/}}.
-% 
-% \subsubsection{Source code metrics}
-% 
-% We have extracted, using Eclipse\footnote{\url{http://www.eclipse.org}} and the
-% metrics plugin\footnote{\url{http://metrics.sf.net/}},  
-% some source code metrics (only for OntoSpread API) to show and mesaure its
-% quality. We present the most meaningful source code metrics, 
-% see Table \ref{tabla:metricas-valores}, based on the definitions
-% in~\cite{229953}. These metrics measures cohesion and coupling of the software and can be useful
-% to decide if the code is well structured.
-% 
-%    \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
-%         
-%         \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
-% \textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endfirsthead
-%         \caption[]{Source Code Metrics (continue)}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
-% \textit{Std.
-%         Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endhead
-%         \hline
-%         \multicolumn{7}{|c|}{Continue $\ldots$}\\
-%         \hline
-%         \endfoot
-%         \hline
-%         \endlastfoot
-% 		TLOC&Total Lines of Code.&5272&&&& \\ \hline
-%     		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
-% 		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
-% 		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
-% 		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
-% 		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
-% 		%NOP&Number of Packages.&42&&&& \\ \hline
-% 		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
-% 		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
-% 		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
-% 		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
-% 		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
-% 		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
-% 		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
-% 		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
-% 		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
-% 		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
-% 		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
-% 		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
-% 		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
-%     	 \hline
-%         \end{longtable}      
-% 
-% 
-% All of these values are in the default range defined in the plugin thus we can
-% assure the quality of the source code with the desired feautures of \textit{high
-% cohesion} and \textit{low coupling}.
-% 		
-% 
-% \subsection{OntoSpread tools}
-% 
-% The development of a new API requires a test bed to ensure: \begin{inparaenum} 
-% \item the functional requirements of the API, we must check if the algorithm
-% implements the \textit{SA} model. Black box tests. \item White Box tests, we
-% have made 50 unit tests.
-%                                                             \end{inparaenum} 
-% However, these tests are programmer oriented and we want to provide tools that
-% can be used to test the API with nontechnical people. Therefore, we have
-% designed and implemented two different tools:
-% \begin{description}
-% 
-%  \item [OntoSpreadTest.] it is a tool for the automatic execution and reporting
-% of batch tests. It provides a framework to configure, combine and load several
-% configurations for \textit{SA} and obtain results. We have designed a XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} xml design
-% pattern to build the configuration of the \textit{SA} process. The designing of
-% this vocabulary is oriented to be used with JAXB, this technology allow us the
-% generation of Java classes automatically and we can marshalling and
-% unmarshalling objects providing a good way to configure, load and serialize
-% different configurations. The main goal to define a new XML vocabulary can be
-% arguable, but this vocabulary is not a new XML to be interchanged among
-% applications, we only use inside OntoSpreadTest and to provide an easy way to
-% handle XML configurations in Java through JAXB. E.g. the XML vocabulary belong
-% us configure restrictions as an iterative model, Fig. \ref{example-iterator}.
-% Summarizing, OntoSpreadTest is an interpreter of our XML vocabuluary.
-% 
-% \begin{figure}
-% \lstset{language=XML}
-% \begin{lstlisting}
-% <restriction xsi:type="activationRestriction">
-%  <config>
-%    <init>0.3</init>
-%    <step>0.1</step>
-%    <stop>1</stop>
-%  </config>  
-% </restriction>
-% \end{lstlisting}
-% \caption{Configuring a restriction.}
-% \label{example-iterator}
-% \end{figure}
-% 
-% \item[OntoSpread Inspector.] It is a graphical debugger,
-%  of \textit{SA} algorithm. It follows the idea of an
-%  inspector inside an ide and belongs: configure, load, run (one step or stepwise)
-%  and view the evolution of the semantic network with the concepts (activated,
-%  spread, weights, relations, etc.). The main goal of this tool is provide an
-%  environment to debug, inspect and change the state of the algorithm.
-% 
-% \end{description}
+Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
+metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
+quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
+of the software.
+   \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
+        
+        \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
+\textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endfirsthead
+        \caption[]{Source Code Metrics (continue)}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
+\textit{Std.
+        Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endhead
+        \hline
+        \multicolumn{7}{|c|}{Continue $\ldots$}\\
+        \hline
+        \endfoot
+        \hline
+        \endlastfoot
+		TLOC&Total Lines of Code.&5272&&&& \\ \hline
+    		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
+		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
+		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
+		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
+		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
+		%NOP&Number of Packages.&42&&&& \\ \hline
+		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
+		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
+		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
+		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
+		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
+		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
+		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
+		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
+		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
+		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
+		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
+		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
+		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
+    	 \hline
+        \end{longtable}      
 
-
-\subsubsection{ONTOSPREAD supporting tools}
-\subsection{Use Cases and Scenarios}
+All of these values are in the default range defined in the plugin thus the quality of the source code 
+with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
