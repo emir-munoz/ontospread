@@ -348,7 +348,7 @@ Besides two tools are provided to test and debug different configurations
 of the algorithm:
 
 \begin{itemize}
- \item [ONTOSPREAD-TEST] it is a tool for the automatic execution and reporting
+ \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
 of batch tests. It provides an user-oriented framework to configure, combine and load several
 configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
 vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design

@@ -86,13 +86,13 @@ Fundación CTIC, Gij\'{o}n, Asturias, Spain,\\
 \begin{abstract}
 The present article introduces the ONTOSPREAD API for the development,
 configuration, customization and execution of the Spreading Activation
-techniques over graph-based structures more specifically over semantic networks, 
-RDF graphs and ontologies arising from the Semantic Web area. These techniques have been used to
+technique over graph-based structures more specifically over semantic networks, 
+RDF graphs and ontologies arising from the Semantic Web area. This technique has been used to
 the efficient exploration and querying of large and heterogeneous knowledge bases 
 based on semantic networks in the Information or Document Retrieval domains. 
 ONTOSPREAD implements the double process of activation and spread of concepts in ontologies, implicit
 graph structures, applying different restrictions of the original model like weight degradation 
-according to the distance or others coming from the extension of these techniques like
+according to the distance or others coming from the extension of this technique like
 the converging paths reward. The main application of Spreading Activation
 lies in two different areas of interest to digital libraries: 1) construction of hybrid semantic search engines 2) ranking of
 information resources according to an input set of weighted resources. These techniques provide a whole framework to ease
@@ -109,11 +109,11 @@ this framework applied to digital libraries.
 \section{Related Work}\label{related-work}
 \input{sections/related-work}
 \section{ONTOSPREAD API}
-%\input{sections/sa}
+\input{sections/sa}
 \section{Evaluation of ONTOSPREAD API}
-%\input{sections/evaluation}
+\input{sections/evaluation}
 \section{Conclussions and Future Work}
-%\input{sections/conclussions}
+\input{sections/conclussions}
 
 
 \bibliographystyle{plain}
