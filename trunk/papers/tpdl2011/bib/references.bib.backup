@@ -1,9 +1,11 @@
 %Spreading Activation
 
-@article{Collins_Loftus_1975, title={A spreading activation theory of semantic processing}, volume={82}, url={http://content.apa.org/journals/rev/82/6/407}, abstractNote={Presents a spreading-activation theory of human semantic processing, which can be applied to a wide range of recent experimental results. The theory is based on M. R. Quilliantextquoterights (1967) theory of semantic memory search and semantic preparation, or priming. In conjunction with this, several misconceptions concerning Quilliantextquoterights theory are discussed. A number of additional assumptions are proposed for his theory to apply it to recent experiments. The present paper shows how the extended theory can account for results of several production experiments by E. F. Loftus, J. F. Juola and R. C. Atkinsontextquoterights (1971) multiple-category experiment, C. Conradtextquoterights (1972) sentence-verification experiments, and several categorization experiments on the effect of semantic relatedness and typicality by K. J. Holyoak and A. L. Glass (1975), L. J. Rips et al (1973), and E. Rosch (1973). The paper also provides a critique of the Rips et al model for categorization judgments.}, number={6}, journal={Psychological Review}, author={Collins, Allen M and Loftus, Elizabeth F}, year={1975}, pages={407-428}}
+@article{Collins_Loftus_1975, title={A spreading activation theory of semantic processing}, volume={82}, 
+url={http://content.apa.org/journals/rev/82/6/407}, 
+abstractNote={Presents a spreading-activation theory of human semantic processing, which can be applied to a wide range of recent experimental results. The theory is based on M. R. Quilliantextquoterights (1967) theory of semantic memory search and semantic preparation, or priming. In conjunction with this, several misconceptions concerning Quilliantextquoterights theory are discussed. A number of additional assumptions are proposed for his theory to apply it to recent experiments. The present paper shows how the extended theory can account for results of several production experiments by E. F. Loftus, J. F. Juola and R. C. Atkinsontextquoterights (1971) multiple-category experiment, C. Conradtextquoterights (1972) sentence-verification experiments, and several categorization experiments on the effect of semantic relatedness and typicality by K. J. Holyoak and A. L. Glass (1975), L. J. Rips et al (1973), and E. Rosch (1973). The paper also provides a critique of the Rips et al model for categorization judgments.}, number={6}, journal={Psychological Review}, author={AM. Collins and EF. Loftus}, year={1975}, pages={407-428}}
 
 @article{AndersonTheory,
- author = {John R. Anderson},
+ author = {JR. Anderson},
  title = {{A} {S}preading {A}ctivation {T}heory of {M}emory},
  journal={Verbal Learning and Verbal Behavior},
  vol={22},
@@ -23,7 +25,7 @@
 }
 
 @inproceedings{Helmut2004,
- author = {Helmut Berger and Michael Dittenbach and Dieter Merkl},
+ author = {H. Berger and M. Dittenbach and D. Merkl},
  title = {{An adaptive information retrieval system based on associative networks}},
  booktitle = {CRPIT '04: Proceedings of the first Asian-Pacific conference on Conceptual modelling},
  year = {2004},
@@ -54,9 +56,19 @@
     year = "1991",
     url = "citeseer.ist.psu.edu/turtle91inference.html" }
 
+@Article{Cui03,
+  author = 	 {H. Cui and J. Wen and J. Nie and W. Ma},
+  title = 	 {{Q}uery {E}xpansion by {M}ining {U}ser {L}ogs},
+  journal = 	 {IEEE Transaction on Knowledge and Data Engineering},
+  year = 	 2003,
+  volume =	 15,
+  number =	 4,
+  pages =	 {829--839},
+  month =	 {July}
+}
 
 @phdthesis{Scott1981,
- author = {Scott Everett Preece},
+ author = {SE. Preece},
  title = {{A} {S}preading {A}ctivation {N}etwork {M}odel for {I}nformation {R}etrieval},
  year = {1981},
 
@@ -65,7 +77,7 @@
  }
 
 @inproceedings{Agosti1993,
- author = {Maristella Agosti and Fabio Crestani},
+ author = {M. Agosti and F. Crestani},
  title = {{A} {M}ethodology for the {A}utomatic {C}onstruction of a {H}ypertext for {I}nformation {R}etrieval},
  booktitle = {SAC '93: Proceedings of the 1993 ACM/SIGAPP symposium on Applied computing},
  year = {1993},
@@ -79,7 +91,7 @@
  
  
 @article{Cohen1987,
- author = {Paul R. Cohen and Rick Kjeldsen},
+ author = {PR. Cohen and R. Kjeldsen},
  title = {{I}nformation {R}etrieval by {C}onstrained {S}preading {A}ctivation in {S}emantic {N}etworks},
  journal = {Inf. Process. Manage.},
  volume = {23},
@@ -94,7 +106,7 @@
 
   
 @inproceedings{ Qiu93,
-    author = "Yonggang Qiu and Hans-Peter Frei",
+    author = "Y. Qiu and HP. Frei",
     title = {{Concept-based query expansion}},
     booktitle = "Proceedings of {SIGIR}-93, 16th {ACM} International Conference on Research and Development in Information Retrieval",
     address = "Pittsburgh, US",
@@ -143,9 +155,7 @@
 } 
 
 @article{DBLP:journals/cogsr/KatiforiVD10,
-  author    = {Akrivi Katifori and
-               Costas Vassilakis and
-               Alan J. Dix},
+  author    = {A. Katifori and C. Vassilakis and AJ. Dix},
   title     = {{Ontologies and the brain: Using spreading activation through
                ontologies to support personal interaction}},
   journal   = {Cognitive Systems Research},
@@ -287,6 +297,30 @@
     publisher = {AAAI Press}
 }
 
+
+@article{767402,
+ author = {Jian-Yun Nie},
+ title = {{Q}uery {E}xpansion and {Q}uery {T}ranslation as {L}ogical {I}nference},
+ journal = {J. Am. Soc. Inf. Sci. Technol.},
+ volume = {54},
+ number = {4},
+ year = {2003},
+ issn = {1532-2882},
+ pages = {335--346},
+ doi = {http://dx.doi.org/10.1002/asi.10214},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+ }
+
+@inproceedings{GelgiVD05,
+  author    = {Fatih Gelgi and
+               Srinivas Vadrevu and
+               Hasan Davulcu},
+  title     = {{I}mproving {W}eb {D}ata {A}nnotations with {S}preading {A}ctivation},
+  booktitle = {WISE},
+  year      = {2005},
+  pages     = {95-106},  
+}
 
 
 @inproceedings{Schumacher+2008search,

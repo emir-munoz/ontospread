@@ -6,130 +6,50 @@ of them is fundamental to get the desired outputs. The methodology to test the i
 of the algorithm is subjected to these conditions but a step-wise refinement method can be outlined:
 \begin{enumerate}
   \item Use a semantic network (ontology, etc.) well-known: concepts and relations.
-  \item Define potential set of initial concepts ($Q_{sem}$) and their initial activation value (commonly $1.0$).
+  \item Define a potential set of initial concepts ($\Phi$) and their initial activation value (commonly $1.0$).
   \item Specify the weights of the relations to that domain knowledge.
   \item Combine the different restrictions provided by the API.
   \item Select the degradation function.
   \item Add the reward techniques to increase the activation value of certain nodes.
   \item Try to evaluate new activation functions for their further implementation.
-  \item Repeat these steps until getting the most appropriated set of output concepts ($Q'_{sem}$)
-  to that domain knowledge
+  \item Repeat these steps until getting the most appropriated set of output concepts to that domain knowledge.
 \end{enumerate}
 
-To apply this methodology, the Galen Ontology has been selected. It is the reference ontology in the
-biomedicine domain and it is widely used in reasoning and decision support processes. The design of
-the experiment depends on: the ontology (the API is not restricted to work with only one ontology),
-the weights of relations, the set of initial concepts, the set of restrictions, the degradation function and the extensions to reward nodes. Following these variables
-are specified to run the algorithm and get a good refinement of SA in the selected domain. The structure of the Galen ontology 
-is summarized in Tab \ref{table:info-ontologia}:
+To apply this methodology, the Galen Ontology~\footnote{\url{http://www.opengalen.org/}} has been selected. 
+It is the reference ontology in the biomedicine domain and it is widely used in reasoning and decision support processes. 
+The design of the experiment depends on: the ontology, the weights of relations, 
+the set of initial concepts, the set of restrictions, the degradation function and the extensions to reward nodes.
+ Following these variables are specified to run the algorithm and get a good refinement of SA in the selected domain. 
 
-\begin{longtable}[c]{|l|r|} 
-\caption{Galen Ontology.}\label{table:info-ontologia}\\    
-\hline
-  \multicolumn{2}{|c|}{\textbf{Stats of Galen Ontology}}\\ \hline
-  \textit{Type} &  \textit{Number} \\\hline
-
-\endhead
-
-    Object Properties&0 \\ \hline    
-    Clases&0 \\ \hline
-    Enumerated Classes&0 \\ \hline
-    Union Classes&0 \\ \hline
-    ComplementOf Classes&0 \\ \hline
-    Intersection Classes&0 \\ \hline
-    Restrictions&0 \\ \hline    
-    Instances&0\\ \hline
-\end{longtable}
-
-The set of initial concepts ($Q_{sem}$) with an initial value $1.0$ is: ``\#Foo'' and ``\#Bar''. The weights of the 
+The set of initial concepts ($\Phi$) with an initial value $1.0$ is: ``\#Foo'' and ``\#Bar''. The weights of the 
 relations are fixed to a default value of $1.0$. The refinement of the algorithm will enable us to get
-a set of output concepts ($Q'_{sem}$) similar to the process that a brain will do. The degradation functions
+a set of output concepts similar to the process that a brain will do. The degradation functions
 and the reward technique will be alternatively combined checking the output of the algorithm. Finally, the restrictions 
 and their configuration values are listed in Tab.~\ref{tabla:test-restricciones}.
 
 \begin{table}[htb]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tabular}{|p{8cm}|p{2cm}|}
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
 \hline
-        \multicolumn{2}{|c|}{\textbf{Restriction Values}}\\        
+        Config \& Stats/Test&T1&T2&T3&T4\\ \hline
         \hline
-        \textit{Type} &  \textit{Value} \\ \hline
-    Minimum activation value $N_{\min}$ &0 \\ \hline
-    Minimum number of spread concepts $\mathbb{M_{\min}}$&0 \\ \hline
-    Maximum number of spread concepts $\mathbb{M}$&0 \\ \hline
-    Time of activation $t$&0 \\ \hline
-    Context of activation $\mathbb{D}_{com}$&DEFAULT (\textit{retries}=0)\\ \hline
-   		\hline
-		\end{tabular}
-		\caption{Restrictions to test SA.}
-		\label{tabla:test-restricciones}
+        Minimum activation value $N_{\min}$ &$0$ &$0$ &$0$ &$0$ \\ \hline
+	Maximum number of spread concepts $\mathbb{M}$&$0$ &$0$ &$0$ &$0$\\ \hline
+	Minimum number of spread concepts $\mathbb{M_{\min}}$&$0$ &$0$ &$0$ &$0$  \\ \hline
+	Time of activation $t$&$0$ &$0$ &$0$ &$0$ \\ \hline
+	Output Degradation $O_j$ & $h_1$ &$0$ &$0$ &$0$\\ \hline
+	Reward &No &$0$ &$0$ &$0$\\ \hline
+	\hline
+	Context of activation $\mathbb{D}_{com}$&DEFAULT (\textit{retries}=0) &$0$ &$0$ &$0$\\ \hline
+	Activated Nodes &$0$ &$0$ &$0$ &$0$ \\ \hline
+	Spread Nodes &$0$ &$0$ &$0$ &$0$ \\ \hline
+	Highest activation value &$0$ &$0$ &$0$ &$0$\\ \hline
+	Deepest spread path &$0$ &$0$ &$0$ &$0$ \\ \hline
+\hline
+\end{tabular}
+  \caption{Configuration and statistics of results after the execution and refinement of SA over the Galen ontology.}
+  \label{tabla:test-restricciones}
   \end{center}
 \end{table} 
 
-The execution of the first test get the next results, see Tab.~\ref{tabla:a1}:
-
-\begin{longtable}{|p{10cm}|p{4cm}|}        
-        \caption{Results of the first test.}
-        \label{tabla:a1}\\ \hline
-        \multicolumn{2}{|c|}{\textbf{Output Metrics}}\\
-        \hline
-        \textit{Type} &  \textit{Value} \\
-        \hline
-        \endfirsthead
-        \caption[]{Results of the first test (continues).}\\
-        \hline
-        \endhead
-        \hline
-        \multicolumn{2}{|c|}{$\ldots$}\\
-        \hline
-        \endfoot
-        \hline
-        \endlastfoot	    
-	                Spread Nodes & $0$ \\ \hline
-		        Activated Nodes& $0$ \\ \hline
-		        Highest activation value & $0$ \\ \hline
-		        Deepest spread path &  $\infty$ \\ \hline
-		        Time of activation $t$ & $0$\\ \hline
-		        Degradation function &$h_1$\\ \hline
-		        Reward &No\\ \hline
-         \multicolumn{2}{|c|}{\textbf{$Q'_{sem}$}}\\\hline
-           \textit{URI} &  \textit{Value} \\ \hline
-	        \#Foo&  $0$ \\ \hline
-	         \multicolumn{2}{|c|}{\ldots}\\\hline
-     \end{longtable}      
-
-After that the configuration is changed to use the reward of converging paths and adjusting the restrictions with the next values:
-FIXME: values. The results of this execution are demonstrated in Tab.~\ref{tabla:a2}
-
-\begin{longtable}{|p{10cm}|p{4cm}|}        
-        \caption{Results of the second test.}
-        \label{tabla:a2}\\ \hline
-        \multicolumn{2}{|c|}{\textbf{Output Metrics}}\\
-        \hline
-        \textit{Type} &  \textit{Value} \\
-        \hline
-        \endfirsthead
-        \caption[]{Results of the second test (continues).}\\
-        \hline
-        \endhead
-        \hline
-        \multicolumn{2}{|c|}{$\ldots$}\\
-        \hline
-        \endfoot
-        \hline
-        \endlastfoot	    
-	                Spread Nodes & $0$ \\ \hline
-		        Activated Nodes& $0$ \\ \hline
-		        Highest activation value & $0$ \\ \hline
-		        Deepest spread path &  $\infty$ \\ \hline
-		        Time of activation $t$ & $0$\\ \hline
-		        Degradation function &$h_1$\\ \hline
-		        Reward &No\\ \hline
-         \multicolumn{2}{|c|}{\textbf{$Q'_{sem}$}}\\\hline
-           \textit{URI} &  \textit{Value} \\ \hline
-	        \#Foo&  $0$ \\ \hline
-	         \multicolumn{2}{|c|}{\ldots}\\\hline
-     \end{longtable}    
-
-FIXME: Concluir esultados
