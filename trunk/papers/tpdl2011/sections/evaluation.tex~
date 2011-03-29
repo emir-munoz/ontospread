@@ -1,14 +1,14 @@
 The validation of the algorithm depends on the configuration of the activation and spreading processes to
 fit it to the different domain issues. SA is determined by the target semantic network and therefore
-the domain knowledge (concepts and relations) defined is the key part to adjust its behavior. On the other
-hand, taking into account that the activation and spreading is guided by the weights of relations the specification
-of them is fundamental to get the desired outputs. The methodology to test the implementation
+the defined domain knowledge (concepts and relations) is the key part to adjust its behavior. On the other
+hand, taking into account that the activation and spreading is guided by the weights of relations their specification 
+is fundamental to get the desired outputs. The methodology to test the implementation
 of the algorithm is subjected to these conditions but a step-wise refinement method can be outlined:
 \begin{enumerate}
-  \item Use a semantic network (ontology, etc.) well-known: concepts and relations.
-  \item Define a potential set of initial concepts ($\Phi$) and their initial activation value (commonly $1.0$).
+  \item Use a well-known semantic network (ontology, etc.): concepts and relations.
+  \item Define a potential set of initial concepts ($\Phi$) and their initial activation value (usually $1.0$).
   \item Specify the weights of the relations to that domain knowledge.
-  \item Combine the different restrictions provided by the API.
+  \item Combine the different restrictions provided by the framework.
   \item Select the degradation function.
   \item Add the reward techniques to increase the activation value of certain nodes.
   \item Try to evaluate new activation functions for their further implementation.
@@ -17,39 +17,43 @@ of the algorithm is subjected to these conditions but a step-wise refinement met
 
 To apply this methodology, the Galen Ontology~\footnote{\url{http://www.opengalen.org/}} has been selected. 
 It is the reference ontology in the biomedicine domain and it is widely used in reasoning and decision support processes. 
-The design of the experiment depends on: the ontology, the weights of relations, 
-the set of initial concepts, the set of restrictions, the degradation function and the extensions to reward nodes.
- Following these variables are specified to run the algorithm and get a good refinement of SA in the selected domain. 
-
-The set of initial concepts ($\Phi$) with an initial value $1.0$ is: ``\#Foo'' and ``\#Bar''. The weights of the 
+The design of the experiment depends on: the ontology, the weights of relations, the set of initial concepts, 
+the set of restrictions, the degradation function and the extensions to reward nodes. The set of initial 
+concepts ($\Phi$) with an initial value $1.0$ is: ``\#AdvancedBreastCancer'' and ``\#NAMEDSymptom''. The weights of the 
 relations are fixed to a default value of $1.0$. The refinement of the algorithm will enable us to get
 a set of output concepts similar to the process that a brain will do. The degradation functions
-and the reward technique will be alternatively combined checking the output of the algorithm. Finally, the restrictions 
-and their configuration values are listed in Tab.~\ref{tabla:test-restricciones}.
+and the reward technique will be alternatively combined checking the output of the algorithm. 
 
-\begin{table}[htb]
+\begin{table}[!h]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
 \hline
-        Config \& Stats/Test&T1&T2&T3&T4\\ \hline
+        \textbf{Config \& Stats/Test}&$T_1$&$T_2$&$T_3$&$T_4$&$T_5$&$T_6$\\ \hline
         \hline
-        Minimum activation value $N_{\min}$ &$0$ &$0$ &$0$ &$0$ \\ \hline
-	Maximum number of spread concepts $\mathbb{M}$&$0$ &$0$ &$0$ &$0$\\ \hline
-	Minimum number of spread concepts $\mathbb{M_{\min}}$&$0$ &$0$ &$0$ &$0$  \\ \hline
-	Time of activation $t$&$0$ &$0$ &$0$ &$0$ \\ \hline
-	Output Degradation $O_j$ & $h_1$ &$0$ &$0$ &$0$\\ \hline
-	Reward &No &$0$ &$0$ &$0$\\ \hline
+        Minimum activation value $N_{\min}$ &$1.0$ &$1.0$ &$1.0$ &$1.0$&$1.0$&$1.0$ \\ \hline
+	Maximum number of spread concepts $\mathbb{M}$&$50$ &$50$ &$10$ &$10$&$50$&$50$\\ \hline
+	Minimum number of spread concepts $\mathbb{M_{\min}}$&$20$ &$20$ &$5$ &$5$&$20$&$20$  \\ \hline
+	Output Degradation $O_j$ & $h_1$ &$h_2$ &$h_1$ &$h_2$&$h_1$&$h_2$\\ \hline
+	Reward (No,Yes) &N &N &N &N&Y&Y\\ \hline
 	\hline
-	Context of activation $\mathbb{D}_{com}$&DEFAULT (\textit{retries}=0) &$0$ &$0$ &$0$\\ \hline
-	Activated Nodes &$0$ &$0$ &$0$ &$0$ \\ \hline
-	Spread Nodes &$0$ &$0$ &$0$ &$0$ \\ \hline
-	Highest activation value &$0$ &$0$ &$0$ &$0$\\ \hline
-	Deepest spread path &$0$ &$0$ &$0$ &$0$ \\ \hline
-\hline
+	Context of activation $\mathbb{D}_{com}$&\multicolumn{6}{|c|}{DEFAULT} \\ \hline
+	Activated Nodes &$62$ &$79$ &$15$ &$15$&$62$&$79$ \\ \hline
+	Spread Nodes &$20$ &$20$ &$5$ &$5$&$20$&$20$ \\ \hline
+	Highest activation value &$7.5$ &$3.9896$ &$1.5$ &$1.90$&$7.5$&$3.9896$\\ \hline
+	Deepest spread path &$10$ &$16$&$2$ &$2$&$10$&$16$\\ \hline
+	Concepts (name:value) & NAMED Symptom: $7.5$, Primate: $2.28$ &Multi Cellular Eukaryota: $3.9896$, Opis thokonts: $3.9885$ &NAMED Symptom: $1.5$, Advanced Breast Cancer: $2.28$ &NAMED Symptom: $1.90$, Advanced Breast Cancer: $1.90$&NAMED Symptom: $7.5$, Primate: $2.28$&Multi Cellular Eukaryota: $3.9896$, Opis thokonts: $3.9885$ \\ \hline
+	Time (msec.) & $9$ &$8$ &$2$ &$3$&$11$&$12$ \\ \hline
 \end{tabular}
   \caption{Configuration and statistics of results after the execution and refinement of SA over the Galen ontology.}
   \label{tabla:test-restricciones}
   \end{center}
 \end{table} 
 
+After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} some statistics have been extracted out of the results. 
+The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
+of the algorithm through the graph and the structure of Galen ontology (23,141 concepts and 950 relations). 
+It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
+that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
+algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
+large databases with enriched queries.

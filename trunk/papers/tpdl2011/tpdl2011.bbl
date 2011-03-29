@@ -9,13 +9,12 @@ JR. Anderson.
 D.~Berrueta, JE. Labra, and L.~Polo.
 \newblock {Searching over Public Administration Legal Documents Using
   Ontologies}.
-\newblock In {\em Proc. of JCKBSE 2006}, pages 167 -- 175, July--August 2006.
+\newblock In {\em Proc. of JCKBSE 2006}, pages 167 -- 175, 2006.
 
 \bibitem{Chen:2007:PSA:1780653.1780702}
 A.~Chen, H-H. Chen, and P.~Huang.
 \newblock {Predicting social annotation by spreading activation}.
-\newblock In {\em Proc. of ICADL'07}, ICADL'07, pages 277--286, Berlin,
-  Heidelberg, 2007. Springer-Verlag.
+\newblock In {\em Proc. of ICADL'07}, pages 277--286, Berlin, Heidelberg, 2007.
 
 \bibitem{Chen95}
 H.~Chen and T.~Ng.
@@ -59,7 +58,7 @@ S.~Gouws, G-J.~Van Rooyen, and HE. Engelbrecht.
   Wikipedia's Hyperlink Structure}.
 \newblock In {\em Proceedings of the {2nd} Workshop on {The People's Web Meets
   NLP: Collaboratively Constructed Semantic Resources}}, pages 46--54, Beijing,
-  China, August 2010. Coling 2010 Organizing Committee.
+  China, August 2010.
 
 \bibitem{turtle91inference}
 H.R.Turtle.
@@ -119,12 +118,12 @@ J.~Suchal.
 \newblock {On finding power method in spreading activation search.}
 \newblock In Viliam Geffert, Juhani Karhumäki, Alberto Bertoni, Bart Preneel,
   Pavol Návrat, and Mária Bieliková, editors, {\em SOFSEM (2)}, pages
-  124--130. Safarik University, Kosice, Slovakia, 2008.
+  124--130. Safarik University, Slovakia, 2008.
 
 \bibitem{SpreadingLarkc}
 P.~Todorova, A.~Kiryakov, D.~Ognyanoff, I.~Peikov, R.~Velkov, and Z.~Tashev.
 \newblock {D2.4.1 Spreading Activation Components (v1)}.
-\newblock Deliverable or research project, LarKC FP7 project–215535, 2009.
+\newblock Technical report, LarKC FP7 project–215535, 2009.
 
 \bibitem{paper:troussov:2008}
 A.~Troussov, M.~Sogrin, J.~Judge, and D.~Botvich.

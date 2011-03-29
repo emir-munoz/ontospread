@@ -22,17 +22,14 @@ is the weight of the relation between $n_j$ and $n_i$.
 If there is not relation between $n_j$ and $n_i$ then
 $\omega_{ji} = 0$. 
 
-
 The activation function $f$ is used to evaluate the ``weight'' of a node and
 decide if the concept is active.
-
 
 \begin{equation}
 N_i=f(I_i)=\begin{cases} 0 & \text{if $I_i < \jmath_i$} \\ 1 &
 \text{if $I_i > \jmath_i$}
 \\ \end{cases}
 \end{equation}
-
 
 $N_i$ is $1$ if the node has been activated or 0 otherwise. 
 $\jmath_i$, the threshold activation value for node $i$, depends on the application

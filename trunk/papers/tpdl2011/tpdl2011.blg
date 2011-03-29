@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: tpdl2011.aux
 The style file: plain.bst
 Database file #1: bib/references.bib
-Repeated entry---line 313 of file bib/references.bib
+Repeated entry---line 310 of file bib/references.bib
  : @inproceedings{GelgiVD05
  :                         ,
 I'm skipping whatever remains of this entry
@@ -14,16 +14,16 @@ Warning--empty booktitle in labraTagging2007
 Warning--empty booktitle in paper:troussov:2008
 You've used 22 entries,
             2118 wiz_defined-function locations,
-            659 strings with 8299 characters,
-and the built_in function-call counts, 8473 in all, are:
-= -- 841
+            654 strings with 8193 characters,
+and the built_in function-call counts, 8447 in all, are:
+= -- 834
 > -- 385
 < -- 9
 + -- 149
 - -- 126
-* -- 585
-:= -- 1354
-add.period$ -- 71
+* -- 580
+:= -- 1349
+add.period$ -- 69
 call.type$ -- 22
 change.case$ -- 123
 chr.to.int$ -- 0
@@ -31,17 +31,17 @@ cite$ -- 25
 duplicate$ -- 345
 empty$ -- 669
 format.name$ -- 126
-if$ -- 1841
+if$ -- 1834
 int.to.chr$ -- 0
 int.to.str$ -- 22
 missing$ -- 19
 newline$ -- 113
 num.names$ -- 48
-pop$ -- 136
+pop$ -- 140
 preamble$ -- 1
 purify$ -- 102
 quote$ -- 0
-skip$ -- 256
+skip$ -- 255
 stack$ -- 0
 substring$ -- 546
 swap$ -- 105
@@ -52,5 +52,5 @@ type$ -- 88
 warning$ -- 3
 while$ -- 80
 width$ -- 24
-write$ -- 250
+write$ -- 247
 (There were 2 error messages)

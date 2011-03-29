@@ -1,6 +1,3 @@
-% In this section, the definitions of classical restrictions of SA and new extensions
-% of the algorithm are provided. Afterwards the outstanding parts of the API are presented 
-% putting up a generic and extensible framework to the SA technique.
 \subsection{Constrained Spreading Activation}
 One of the leading features of SA technique is its flexibility to fit to 
 the resolution of different kind of problems. From the configuration point of view
@@ -106,8 +103,7 @@ degradation of the concept using the number of iterations $k$:
 
 \end{description}
 
-\subsection{Specification of the algorithm}\label{impl-sa}
-
+\subsection{Specification of the SA technique}\label{impl-sa}
 The entry point to SA technique is the set of initial concepts that will generate 
 a new set of the most relevant concepts. Ontologies based on the RDF graph model are a graph where each node $n_i$ represents a concept
 $c_i$ and the edge $\omega_{ji}$ is the semantic relation between $c_j$ y $c_i$.
@@ -118,9 +114,7 @@ store information about the state of the algorithm: 1) $\mathbb{D}_{com}$ are al
 and 2) $\Phi$ is the set of initial activated concepts, $c_j^k$  is the spreading concept 
 at the $k$-th iteration (from which other concepts are activated).
 
-\begin{description}
-
-\item [Set $\mathcal{A}$:] queue of {\bf activated} concepts (candidates to be
+Set $\mathcal{A}$: queue of {\bf activated} concepts (candidates to be
 spread).
 
 \begin{align}
@@ -129,17 +123,12 @@ spread).
 >0}\})-{ \{\mathcal{G}^k}\}
 \end{align}
 
-\item [Set $\mathcal{G}$:] set of spread concepts:
+Set $\mathcal{G}$: set of {\bf spread} concepts.
 
 \begin{align}
  \mathcal{G}^0 &=\emptyset \\
  \mathcal{G}^k &= \mathcal{G}^{k-1} \cup \{c_j^k\}
 \end{align}
-
-The output of the algorithm is the new enriched query $\mathcal{G}^k = Q'_{sem}$
-made up of the set of weighted concepts.
-
-\end{description}
 
 Finally, the calculus of the activation value of a concept $c_i$
 at iteration $k$, indicated by $I^k_i$, is defined. At $0$ iteration the
@@ -186,8 +175,7 @@ I^k_i=\begin{cases}%
 \subsection{Improving Spreading Activation}\label{improve:sa}
 Some improvements in the calculus of the activation value of a
 concept have been introduced in order to get a more complete and accurate technique. 
-If some paths of activation converge to the same node, see Fig.~\ref{fig:prize-sa}, 
-and the source nodes are different then this node should be 
+If some paths of activation converge to the same node and the source nodes are different then this node should be 
 relevant and a reward is applied to the nodes presented in these paths. 
 
 \begin{definition}
@@ -213,14 +201,12 @@ g(x,y) = x (\log(y+1)+1)
 $x$ is the reward constant, it can be defined according to the context and $y$
 is the number of times that a concept $c_i$ must be rewarded.
 
-\begin{figure}[h]
- \centering
-    \includegraphics[width=6cm]{images/prize-sa}
-    \caption{Paths and rewards in \textit{Spreading Activation}}
- \label{fig:prize-sa}
-\end{figure}
-  
-  
+% \begin{figure}[h]
+%  \centering
+%     \includegraphics[width=6cm]{images/prize-sa}
+%     \caption{Paths and rewards in \textit{Spreading Activation}}
+%  \label{fig:prize-sa}
+% \end{figure}
 \subsection{Refining Spreading Activation}
 The whole configuration of the algorithm can be made by default but a customization
 to a particular domain should be carried out by a domain expert taking into account the
@@ -235,20 +221,20 @@ These control patterns can be put together in order to fit as much as possible t
 direction of the double process of activation and spreading.
 
 \subsection{Design and implementation of ONTOSPREAD}
-ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/genera}
+ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/general}
  is addressed by an open and extensible design applying best practices on software design and development like design patterns and refactoring. 
 The \textit{Player} class handles the execution of the algorithm in a  stepwise way. It is 
 an application of the \textit{Iterator} design pattern to perform the activation and spreading processes. The state of 
-the algorithm is captured in a separate class (\textit{OntoSpreadState}) that make possible to serialize the 
+the algorithm is captured in a separate class (\textit{OntoSpreadState}) that makes possible to serialize the 
 current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
 (see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
 the process carries on the information about the knowledge base using the DAO pattern thus the 
-framework is independent from the modeling language of the semantic network (OWL and RDF vocabularies are now supported).
+framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
 
 \begin{figure}[htb]
 \centering
   \includegraphics[width=8cm]{images/general}
-\caption{ONTOSPREAD Overview Diagram}
+\caption{ONTOSPREAD Overview Diagram.}
 \label{fig:diagramas/general}
 \end{figure}
 
@@ -268,15 +254,14 @@ evaluated to a boolean value.
 restrictions.
   \item The extension points of the algorithm, included through a
 \textit{Template Method} design pattern, are strategies to carry out an specific
-action. Each strategy can be subjected to one or several restrictions.
+action. Each strategy can be subjected to one or more restrictions.
 \item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
   \item Each action is an strategy. \textit{Strategy} pattern.
   \item A strategy implies one restriction (or a set of them) thus the strategy
 is a client of the \textit{Composite} of restrictions.
   \item The evaluation of the restrictions to get their value (boolean) is
 carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
-composite objects.
-  \item The evaluation process consists on: apply the strategy that modifies the state
+composite objects. It consists on: apply the strategy that modifies the state
 of the algorithm and assert this change of state by means of the restrictions applied
 to this strategy.
 \end{itemize}

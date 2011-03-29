@@ -95,7 +95,7 @@ different restrictions of the original model like weight degradation according t
 others coming from the extension of this technique like the converging paths reward. 
 This technique provide a whole framework to ease the information access, 
 common required feature in the exploitation of new and existing digital libraries. 
-Finally, in this work an evaluation methodology and an example using the Galen ontology 
+Finally an evaluation methodology and an example using the Galen ontology 
 are provided to validate the goodness, the improvement and the capabilities of this framework applied 
 to digital libraries.
 \end{abstract}
