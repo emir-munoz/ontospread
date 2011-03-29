@@ -53,10 +53,12 @@ public class JenaConceptBuilder {
             OntClass ontClass = ontResource.asClass();
             Relations relations = concept.getRelations();
             logger.debug("Adding relations "+relations);
+            logger.debug("Adding superclasses "+ ontClass.listSuperClasses(true));
             relations.getRelations().addAll(getRelations(TypeHierarchy.SUPERCLASS, ontClass.listSuperClasses(true)));
             relations.getRelations().addAll(getRelations(TypeHierarchy.SUBCLASS, ontClass.listSubClasses(true)));
             concept.setRelations(relations);
             fillInstances(ontClass, concept);
+            logger.debug("Relations "+relations.getRelations().size());
         }else if(ontResource.isIndividual()){
             Individual individual = ontResource.asIndividual();
             List conceptRelations = concept.getRelations().getRelations();
@@ -183,6 +185,7 @@ public class JenaConceptBuilder {
         LinkedList<Relation> relations = new LinkedList<Relation>();
         while (iterator.hasNext()) { // concat . map
             OntClass relatedClass = (OntClass) iterator.next();
+            logger.debug(relatedClass.getURI());
             if (!isOwlInternalClass(relatedClass)) {
                 Relation relation = factory.createRelation();
                 relation.setHierarchy(hierarchy);                  

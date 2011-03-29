@@ -151,7 +151,8 @@ public class OntoSpreadRunImpl implements OntoSpreadRun {
         //We take all the concepts (and the relation wich join with the  // ''concept'' variable)
         //Iterate over them, and score its spread value
 		//System.out.println("Spreading "+uriDepth);
-		logger.debug("SPREADING "+uriDepth.getUri()+" DEPTH "+uriDepth.getDepth()+" SCORE "+currentScore);
+		logger.debug("SPREADING "+uriDepth.getUri()+" DEPTH "+uriDepth.getDepth()+" SCORE "+currentScore+
+				" related "+conceptOperations.getRelatedConcepts().size());
 		timer.start();
 		for (ConceptRelationPair conceptRelation : conceptOperations.getRelatedConcepts()) {
 	    	final String qualRelationUri = conceptRelation.getOnproperty();

@@ -6,12 +6,16 @@ import java.util.List;
 import org.ontospread.constraints.OntoSpreadRelationWeight;
 import org.ontospread.constraints.OntoSpreadRelationWeightRDFImpl;
 import org.ontospread.dao.DAOUtils;
+import org.ontospread.dao.OntologyDAO;
 import org.ontospread.process.post.OntoSpreadPostAdjustment;
 import org.ontospread.process.post.OntoSpreadPostAdjustmentImpl;
 import org.ontospread.process.pre.OntoSpreadPreAdjustment;
 import org.ontospread.process.pre.OntoSpreadPreAdjustmentConfig;
 import org.ontospread.process.pre.OntoSpreadPreAdjustmentConfigImpl;
 import org.ontospread.process.pre.OntoSpreadPreAdjustmentImpl;
+import org.ontospread.process.run.OntoSpreadDegradationFunction;
+import org.ontospread.process.run.OntoSpreadDegradationFunctionImpl;
+import org.ontospread.process.run.OntoSpreadDegradationFunctionIterationsImpl;
 import org.ontospread.process.run.OntoSpreadRun;
 import org.ontospread.process.run.OntoSpreadRunImpl;
 import org.ontospread.restrictions.OntoSpreadCompositeRestriction;
@@ -67,13 +71,28 @@ public class OntoSpreadTestUtils {
 			createRelationWeight());
 		
 	}
+	
+	public static OntoSpreadRun createDefaultRunWithDegradation(int min, int max,  double minActivation, 
+			OntoSpreadDegradationFunction degradationFunction) {	
+		return new OntoSpreadRunImpl(
+			DAOUtils.createOntologyDAO(), 
+			createStopStrategy(min,max, minActivation), 
+			createSelectStrategy(),
+			createRelationWeight(),
+			degradationFunction);
+		
+	}
 
 	private static OntoSpreadRelationWeight createRelationWeight() {		
 		return new OntoSpreadRelationWeightRDFImpl(DAOUtils.createModelWrapper());
 	}
 
+	private static OntoSpreadRelationWeight createRelationWeightGalen() {		
+		return new OntoSpreadRelationWeightRDFImpl(DAOUtils.createGalenModelWrapper());
+	}
+	
 	public static OntoSpreadPostAdjustment createDefaultPost() {
-		return new OntoSpreadPostAdjustmentImpl();
+		return new OntoSpreadPostAdjustmentImpl(Boolean.TRUE);
 	}
 
 	public static OntoSpreadProcess createDefaultOntoSpreadProcess(int min, int max,  double minActivation){
@@ -84,4 +103,20 @@ public class OntoSpreadTestUtils {
 				createDefaultPost()); 
 	}
 
+	public static OntoSpreadDegradationFunction createDegradationFunction() {		
+			return new OntoSpreadDegradationFunctionImpl(); //h1
+		//return new OntoSpreadDegradationFunctionIterationsImpl();
+//		}else if(this.functionType.equals(FunctionType.H_2)){
+//			this.function =  new OntoSpreadDegradationFunctionIterationsImpl();
+//		}
+	}
+
+	public static OntoSpreadProcess createDefaultGalenOntoSpreadProcess(int min, int max,  double minActivation, OntologyDAO dao, 
+			OntoSpreadDegradationFunction degradationFunction){
+		return new OntoSpreadProcess(
+				dao,
+				createDefaultPreAdjustment(), 
+				createDefaultRunWithDegradation(min, max, minActivation,degradationFunction), 
+				createDefaultPost()); 
+	}
 }

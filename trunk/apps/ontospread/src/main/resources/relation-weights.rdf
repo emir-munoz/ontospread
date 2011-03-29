@@ -5,7 +5,7 @@
   
   <rdf:Description
       rdf:about="http://ontospread.sf.net#default"
-      onto:point="0.0" /> <!-- disable default relations -->
+      onto:point="1.0" /> <!-- disable default relations -->
   
   <rdf:Description
       rdf:about="http://ontospread.sf.net#SUPERCLASS"
