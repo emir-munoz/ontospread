@@ -1,0 +1,31 @@
+The Spreading Activation technique (hereafter SA) introduced by~\cite{Collins_Loftus_1975}, in the field of 
+psycho linguistics and semantic priming, proposes a model in which all relevant information is mapped
+on a graph as nodes with a certain ''activation value``. Relations between two concepts
+are represented by a weighted edge. If a node is activated their activation value is spread
+to their neighbor nodes. This technique was adopted by the computer science community and applied
+to the resolution of different problems, see Sect.~\ref{related-work}, and it is relevant to
+the the digital libraries field in the scope of: 1) construction of hybrid semantic search engines and 2) ranking of
+information resources according to an input set of weighted resources. Thus this technique
+eases the information access providing a connectionist method to retrieve data like brain can do. 
+Although SA is widely used, more specifically in recent years has been successfully applied 
+to ontologies, a common and standard framework is missing and each third party interested in its application
+ must to implement its own version~\cite{SpreadingLarkc} of SA.
+
+Taking into account the new information realm and the leading features of putting together 
+the SA technique and the Semantic Web and Linked Data initiatives, new enriched services of searching, 
+matchmaking, recommendation or contextualization can be implemented to fulfill the requirements
+of access information in digital libraries of different trending scopes like e-procurement, 
+legal document databases~\cite{bopaEstonia}, e-tourism or e-health.
+
+The proposed work aims to afford a framework for SA to ease the configuration, customization 
+and execution over graph-based structures and more specifically over RDF graphs and ontologies. It is relevant
+to digital libraries access and interoperability due to the fact that this technique provides
+a set of proven algorithms for retrieving and recommending information resources in large knowledge bases. 
+Following the specific contributions of this work are listed: 1) study and revision of the classical constrained SA;
+2) study and definition of new restrictions for SA applied to RDF graphs and ontologies; 
+3) implementation of a whole and extensible framework (called ONTOSPREAD) to customize 
+and perform the SA based; 4) outlining of a methodology to configure and refine the execution of SA and 
+5) an example of configuration and refinement applying SA over a well-known ontology, the Galen ontology.
+
+
+%FIXME: This paper is structured as follows...
