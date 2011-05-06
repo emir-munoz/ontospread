@@ -1,33 +1,105 @@
 Since SA was introduced by~\cite{Collins_Loftus_1975} in the field of 
 psycho linguistics and semantic priming it has been applied to the resolution
-of problems trying to simulate the behaviour of the brain using a connectionist method
+of problems trying to simulate the behavior of the brain using a connectionist method
 to provide an ``intelligent'' way to retrieve information and data. 
 
-The use of SA was motivated due to the research on graph exploration~\cite{Scott1981,AndersonTheory,Cohen1987}. Nevertheless
-the sucess of this technique is specially relevant to the fields of Document~\cite{turtle91inference} 
-and Information Retrieval~\cite{SpreadingActivationIR,Helmut2004,Agosti1993,Grinberg:2011:ASA:1940632.1940674}. It has
-also been demonstrated its application to extract correlations between query terms and documents analyzing user 
+The use of SA was motivated due to the research on graph exploration~\cite{Scott1981,AndersonTheory}. Nevertheless
+the success of this technique is specially relevant to the fields of Document~\cite{turtle91inference} 
+and Information Retrieval~\cite{Cohen1987}. It has
+been also demonstrated its application to extract correlations between query terms and documents analyzing user 
 logs~\cite{Cui03} and to retrieve resources amongst multiple systems~\cite{Schumacher+2008search} 
-in which ontologies are used to link and annotate resoruces.
+in which ontologies are used to link and annotate resources.
 
 In recent years and regarding the emerging use of ontologies in the Semantic Web area new applications of SA have
 appeared to explore concepts~\cite{Qiu93,Chen95} addressing the two important issues: 1) the selection and 2) the weighting of
-additional search terms. On the other hand, there are works~\cite{DBLP:journals/cogsr/KatiforiVD10,DBLP:journals/ijsc/DixKLVS10} 
+additional search terms and to measure conceptual similarity~\cite{gouws-vanrooyen-engelbrecht:2010:CCSR}. 
+On the other hand, there are works~\cite{DBLP:journals/cogsr/KatiforiVD10} 
 exploring the application of the SA on ontologies in order to create context inference models.The 
-semi-automatically extension and refinement of ontologies~\cite{liu_et_al_2005} is other trending topic in the application
-of SA in combination with other techniques based on natural language processing. Data mining,
+semi-automatically extension and refinement of ontologies~\cite{liu_et_al_2005} is other trending topic to apply SA
+in combination with other techniques based on natural language processing. Data mining,
 more specifically mining socio-semantic networks\cite{paper:troussov:2008}, and applications 
 to collaborative filtering (community detection based on tag recommendations, expertise location, etc.) are other 
-potential scenarios to apply the SA theory due to the high performance and high scalability of the technique.
+potential scenarios to apply the SA theory due to the high performance and high scalability of the technique. In particular, 
+annotation and tagging~\cite{labraTagging2007} services to gather meta-data~\cite{GelgiVD05} from the Web or to predict social annotation~\cite{Chen:2007:PSA:1780653.1780702} and recommending 
+systems based on the combination of ontologies and SA~\cite{citeulike:3779904} are taken advantage of using SA technique. 
+Also the semantic search~\cite{conf-sofsem-Suchal08} is a highlight area to apply SA following
+hybrid approaches~\cite{bopaEstonia,RochaSA04} or user query expansion~\cite{767402} combining metadata 
+and user information.
 
-In particular, annotation and tagging services to gather meta-data~\cite{GelgiVD05} from the Web or 
-to predict social annotation~\cite{Chen:2007:PSA:1780653.1780702,labraTagging2007},
+Although SA is widely accepted and applied to different fields open implementations\footnote{ 
+Texai company~(\url{http://texai.org/}) offers a proprietary implementation of SA.} are missing. Moreover 
+the Apache Mahout~\footnote{\url{http://mahout.apache.org/}} project, a recent scalable machine learning library 
+that supports large data sets, does not include an implementation of SA instead of 
+providing algorithms for the classification, clustering, pattern mining, 
+recommendation and collaborative filtering of resources in which SA should be representative. 
+ 
+From a medical point of view the majority of errors in health delivery
+systems are not necessarily due to human errors, in some cases
+the organization and the processes and services are in charge of
+some decissions~\cite{Bouamrane:2010:EUO:1940334.1940339}. 
+Clinical Decision Support Systems (CDSS)~\cite{citeulike:6634523,citeulike:7653300}
+show potential benefits in their integration with the existing human
+practices including the ability to:
+\begin{itemize}
+ \item influence clinicians behaviour and reduce variability of outcomes across
+various health professionals and increase the standardisation of processes towards
+evidence-based guidelines.
+\item combine and synthesise complex related pieces of information.
+\item facilitate access to clinical information and reporting of results through
+greater accessibility of data and improved display of information.
+\item identify patterns within the patient data which must be acted upon (e.g. abnormal or inconsistent findings, alerts,...)
+\item \ldots
+\item doing all of the aforementioned while preserving the independence of health professionals.
+\end{itemize}
 
- tagging~\cite{labraTagging2007,LabraWesoNet} or
-recommendation~\cite{citeulike:3779904,gouws-vanrooyen-engelbrecht:2010:CCSR}. It has been also used in the development of 
-semantic search~\cite{conf-sofsem-Suchal08,Wolverton94retrievingsemantically} engines
-based on hybrid approaches~\cite{bopaEstonia,RochaSA04}, user query expansion~\cite{767402}
-combining metadata and user information or improving web data annotations~\cite{GelgiVD05}.
-% 
-% Althoug this technique is widely implemented and applied to different fields...
+CDSSs can become important process standardisation and error preventing tools but
+the inherent difficulty and complexity in designing explicit conceptual models of
+the medical diagnosis and algorithms to exploit this information would limit the usefulness 
+of such systems. Besides they have other inherent limitations: recommendations issued by the systems 
+can only be as good as the techniques can manage the models, data and information. 
+In that sense new approaches have appeared to develop clinical diagnosis systems 
+by using semantic web technologies to infer diseases from symptoms, signs and laboratory tests 
+formalized as logical descriptions like~\cite{DBLP:journals/eswa/Garcia-CrespoGMBP10,DBLP:conf/cbms/GonzalezGAGP09,DBLP:conf/etelemed/RodriguezMAPGA09}
+
+
+GALEN~\cite{citeulike:3156699} is a large project developing terminology servers and data entry systems based on a Common
+Reference, or CORE~\footnote{\url{http://www.opengalen.org/}}, model for medical terminology. The authors use the term ``ontology'' here 
+to indicate the model of the categories within the universe of discourse, 
+plus sufficient information about those categories to allow them to be classified automatically.
+They take``ontologies'' to be language independent, using the broader term ‘terminology’ for an ontology
+linked to linguistic information. The GALEN ontology is attempting to meet five challenges:
+\begin{itemize}\item To reconcile diversity of needs for terminology with the requirement to share information
+\item To avoid exponentially rising costs for harmonisation of variants
+\item To facilitate clinical applications
+\item To bridge the gap between the detail required for patient care and the abstractions required for statistical, management, and research purposes.
+\item To provide multilingual systems which preserve the underlying meaning and representation
+\end{itemize}
+
+
+
+In the case of ontologies in medical systems, 
+SNOMED has been used in medical information systems like Pathology information systems (PathIS)
+for many years. Cancer Protocols published by the College of American Pathologists (CAP) 
+are being encoded with SNOMED CT concepts with the main objective of consistently capture 
+the explicit meaning of each checklist item. 
+This can simplify reporting for cancer registries and improve retrieval 
+and analysis of cancer data~\cite{14728542}. In~\cite{citeulike:7749740} a system to classify 
+lung TNM (Classification of Malignant Tumors) stages from free-text pathology reports, 
+using SNOMED CT for the extraction of  key lung cancer characteristics from free-text reports is presented. 
+Other application of SNOMED CT is a system~\cite{20351885} to automatically assign SNOMED CT codes for anatomic sites, 
+tissues, pathologic findings and diagnoses in full-text pathology reports (excluding cytology) 
+to SNOMED CT concept descriptors, that shows a positive predictive value for anatomic 
+concepts of $92.3\%$ and positive predictive value for diagnostic concepts of $84.4\%$ .Nowadays, 
+the most common uses~\cite{21346970} of SNOMED CT are concept search ($72\%$) and coding of clinical data ($60\%$).
+On the other hand, the January 2011 SNOMED CT International Release content hierarchy 
+includes more than $293,000$ active concepts with formal logic-based definitions, 
+organized into top-level hierarchies. SNOMED CT contains more than $765,000$ active 
+English-language descriptions for flexibility in expressing clinical concepts. It also provides more 
+than $830,000$ logically-defining relationships enable consistency of data retrieval and analysis. This review
+of SNOMED implies that 1) it is widely accepted in the construction of medical systems with different
+purposes and 2) it represents a large controlled vocabulary with logical foundations that requires
+efficient algorithms for its exploitation and navigation.
+
+
+
 

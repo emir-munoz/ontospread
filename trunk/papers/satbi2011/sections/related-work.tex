@@ -26,12 +26,76 @@ Also the semantic search~\cite{conf-sofsem-Suchal08} is a highlight area to appl
 hybrid approaches~\cite{bopaEstonia,RochaSA04} or user query expansion~\cite{767402} combining metadata 
 and user information.
 
-Although this technique is widely accepted and applied to different fields open implementations\footnote{ 
-Texai company~(\url{http://texai.org/}) offers a proprietary implementation of SA.}, are missing. Moreover 
+Although SA is widely accepted and applied to different fields open implementations\footnote{ 
+Texai company~(\url{http://texai.org/}) offers a proprietary implementation of SA.} are missing. Moreover 
 the Apache Mahout~\footnote{\url{http://mahout.apache.org/}} project, a recent scalable machine learning library 
 that supports large data sets, does not include an implementation of SA instead of 
 providing algorithms for the classification, clustering, pattern mining, 
 recommendation and collaborative filtering of resources in which SA should be representative. 
  
+From a medical point of view the majority of errors in health delivery
+systems are not necessarily due to human errors, in some cases
+the organization and the processes and services are in charge of
+some decissions~\cite{Bouamrane:2010:EUO:1940334.1940339}. 
+Clinical Decision Support Systems (CDSS)~\cite{citeulike:6634523,citeulike:7653300}
+show potential benefits in their integration with the existing human
+practices including the ability to:
+\begin{itemize}
+ \item influence clinicians behaviour and reduce variability of outcomes across
+various health professionals and increase the standardisation of processes towards
+evidence-based guidelines.
+\item combine and synthesise complex related pieces of information.
+\item facilitate access to clinical information and reporting of results through
+greater accessibility of data and improved display of information.
+\item identify patterns within the patient data which must be acted upon (e.g. abnormal or inconsistent findings, alerts,...)
+\item \ldots
+\item doing all of the aforementioned while preserving the independence of health professionals.
+\end{itemize}
+
+CDSSs can become important process standardisation and error preventing tools but
+the inherent difficulty and complexity in designing explicit conceptual models of
+the medical diagnosis and algorithms to exploit this information would limit the usefulness 
+of such systems. Besides they have other inherent limitations: recommendations issued by the systems 
+can only be as good as the techniques can manage the models, data and information. 
+In that sense new approaches have appeared to develop clinical diagnosis systems 
+by using semantic web technologies to infer diseases from symptoms, signs and laboratory tests 
+formalized as logical descriptions like~\cite{DBLP:journals/eswa/Garcia-CrespoGMBP10,DBLP:conf/cbms/GonzalezGAGP09,DBLP:conf/etelemed/RodriguezMAPGA09}
+
+
+In the case of ontologies in medical systems, two main well-known ontologies are being used:
+
+1) GALEN~\cite{citeulike:3156699} is a large project developing terminology servers and data ($23,141$ concepts and $950$ relations) 
+entry systems based on a Common Reference, or CORE~\footnote{\url{http://www.opengalen.org/}}, model for medical terminology. 
+The authors use the term ``ontology'' here to indicate the model of the categories within the universe of discourse, 
+plus sufficient information about those categories to allow them to be classified automatically.
+They take``ontologies'' to be language independent, using the broader term ‘terminology’ for an ontology
+linked to linguistic information. The GALEN ontology is attempting to meet five challenges\footnote{\url{http://www.opengalen.org/background/background0.html}}, highlighting:
+1) to facilitate clinical applications and 2) to bridge the gap between the detail required for patient care and the abstractions required for statistical, management, and research purposes.
+
+
+2) SNOMED has been used in medical information systems like Pathology information systems (PathIS)
+for many years. Cancer Protocols published by the College of American Pathologists (CAP) 
+are being encoded with SNOMED CT concepts with the main objective of consistently capture 
+the explicit meaning of each checklist item. 
+This can simplify reporting for cancer registries and improve retrieval 
+and analysis of cancer data~\cite{14728542}. In~\cite{citeulike:7749740} a system to classify 
+lung TNM (Classification of Malignant Tumors) stages from free-text pathology reports, 
+using SNOMED CT for the extraction of  key lung cancer characteristics from free-text reports is presented. 
+Other application of SNOMED CT is a system~\cite{20351885} to automatically assign SNOMED CT codes for anatomic sites, 
+tissues, pathologic findings and diagnoses in full-text pathology reports (excluding cytology) 
+to SNOMED CT concept descriptors, that shows a positive predictive value for anatomic 
+concepts of $92.3\%$ and positive predictive value for diagnostic concepts of $84.4\%$ .Nowadays, 
+the most common uses~\cite{21346970} of SNOMED CT are concept search ($72\%$) and coding of clinical data ($60\%$).
+On the other hand, the January 2011 SNOMED CT International Release content hierarchy 
+includes more than $293,000$ active concepts with formal logic-based definitions, 
+organized into top-level hierarchies. SNOMED CT contains more than $765,000$ active 
+English-language descriptions for flexibility in expressing clinical concepts. It also provides more 
+than $830,000$ logically-defining relationships enable consistency of data retrieval and analysis. 
+
+This review of GALEN and SNOMED implies that 1) they are widely accepted in the construction of medical systems with different
+purposes and 2) they represent a large controlled vocabularies and models with logical foundations that requires
+efficient algorithms for its exploitation and navigation.
+
+
 
 

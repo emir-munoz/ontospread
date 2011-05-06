@@ -10,7 +10,6 @@
 
 \usepackage{paralist}
 
-\usepackage{url}
 \usepackage{theorem}
 %%%Math
 %\usepackage{latexsym}
@@ -56,7 +55,7 @@
 
 \begin{document}
 
-\title{Application of the Spreading Activation Technique for Recommending Concepts of well-known Ontologies in Medical Systems}
+\title{Application of the Spreading Activation Technique for Recommending Concepts of well-known ontologies in Medical Systems}
 
 \numberofauthors{4}
 % 
@@ -97,12 +96,13 @@
         \affaddr{Computer Science Department-Facultad de Ciencias, C/Calvo Sotelo, S/N, 33007}\\
         \affaddr{Oviedo, Spain}\\
         \email{josem.alvarez@weso.es}
+% 2nd. author
 \alignauthor
- Luis Polo\\
-        \affaddr{Fundación CTIC}\\
-        \affaddr{Parque Científico Tecnológico de Gijón, C/ Ada Byron, 39, 33203}\\
-        \affaddr{Gijón, Spain}\\
-        \email{luis.polo@fundacionctic.org}
+ Pablo Abella\\
+        \affaddr{WESO-University of Oviedo}\\
+        \affaddr{Computer Science Department-Facultad de Ciencias, C/Calvo Sotelo, S/N, 33007}\\
+        \affaddr{Oviedo, Spain}\\
+        \email{pablo.abella@weso.es}
 % 3rd. author
 \alignauthor 
  Weena Jimenez\\
@@ -111,13 +111,6 @@
         \affaddr{Oviedo, Spain}\\
         \email{weena.jimenez@weso.es}
 \and  % use '\and' if you need 'another row' of author names
-% 2nd. author
-\alignauthor
- Pablo Abella\\
-        \affaddr{WESO-University of Oviedo}\\
-        \affaddr{Computer Science Department-Facultad de Ciencias, C/Calvo Sotelo, S/N, 33007}\\
-        \affaddr{Oviedo, Spain}\\
-        \email{pablo.abella@weso.es}
 % 4th. author
 \alignauthor 
  Jose Emilio Labra\\
@@ -130,49 +123,45 @@
 \maketitle
 
 \begin{abstract}
-The aim of this paper is to present the application of the Spreading
-Activation Technique in the scope of medical systems. This technique 
-is implemented through the ONTOSPREAD framework for the development,
+The present paper introduces the ONTOSPREAD framework for the development,
 configuration, customization and execution of the Spreading Activation
 technique over graph-based structures, more specifically over RDF graphs and ontologies 
-arising from the Semantic Web area. It has been used to
+arising from the Semantic Web area. This technique has been used to
 the efficient exploration and querying of large and heterogeneous knowledge bases 
-based on semantic networks in the Information and Document Retrieval domains.
+based on semantic networks in the Information and Document Retrieval domains. 
 ONTOSPREAD implements the double process of activation and spreading of concepts in ontologies applying 
 different restrictions of the original model like weight degradation according to the distance or 
 others coming from the extension of this technique like the converging paths reward. 
-It is considered to be relevant to support the recommendation of concepts for tagging clinical records
-and to provide a tool for decision-support in clinical diagnosis.
-Finally an evaluation methodology and two examples using the well-known ontologies Galen and SNOMED CT 
-are presented to validate the goodness, the improvement and the capabilities 
-of this technique applied to medical systems.
+This technique provide a whole framework to ease the information access, 
+common required feature in the exploitation of new and existing digital libraries. 
+Finally an evaluation methodology and an example using the Galen ontology 
+are provided to validate the goodness, the improvement and the capabilities of this framework applied 
+to digital libraries.
 \end{abstract}
 
 % A category with the (minimum) three required fields
-\category{K.4}{Computers and Society}{Miscellaneous}
+\category{H.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
-\category{K.4.1}{Public Policy Issues}{Computer-related health issue}[algorithms, recommendation systems, decision support systems]
-\category{D.2}{Software Engineering}{}
-\category{D.2.2}{Design Tools and Techniques}{Software libraries}[Computer-Aided Clinical Diagnostic Decision-Support Tool]
+\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
-\terms{Recommending and tagging systems, Information retrieval, Clinical Decision-Support, Algorithms}
+\terms{Theory}
 
-\keywords{spreading activation, recommending system, information retrieval, algorithms} % NOT required for Proceedings
+\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
 
 \newdef{definition}{Definition}
 
 \section{Introduction}
 \input{sections/intro}
 \section{Related Work}\label{related-work}
-\input{sections/related-work}
+%\input{sections/related-work}
 \section{ONTOSPREAD Framework}
 \subsection{Background}\label{background}
-\input{sections/background}
-\input{sections/sa}
+%\input{sections/background}
+%\input{sections/sa}
 \section{Evaluation of ONTOSPREAD}
-\input{sections/evaluation}
-\section{Conclusions and Future Work}
-\input{sections/conclussions}
+%\input{sections/evaluation}
+\section{Conclussions and Future Work}
+%\input{sections/conclussions}
 
 
 \bibliographystyle{abbrv}

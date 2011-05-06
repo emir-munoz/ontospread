@@ -108,21 +108,11 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 @inproceedings{ Qiu93,
     author = "Y. Qiu and HP. Frei",
     title = {{Concept-based query expansion}},
-    booktitle = "Proceedings of {SIGIR}-93, 16th {ACM} International Conference on Research and Development in Information Retrieval",
+    booktitle = "Proceedings of {SIGIR}-93",
     address = "Pittsburgh, US",
     pages = "160--169",
     year = "1993",
     url = "citeseer.ist.psu.edu/qiu93concept.html" }
-
-@inproceedings{GelgiVD05,
-  author    = {Fatih Gelgi and
-               Srinivas Vadrevu and
-               Hasan Davulcu},
-  title     = {{I}mproving {W}eb {D}ata {A}nnotations with {S}preading {A}ctivation},
-  booktitle = {WISE},
-  year      = {2005},
-  pages     = {95-106},  
-}
 
 
 @inproceedings{XueHYZCM04,
@@ -194,10 +184,9 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 }
 
 @inproceedings{Chen:2007:PSA:1780653.1780702,
- author = {Chen, Abon and Chen, Hsin-Hsi and Huang, Polly},
+ author = {A. Chen and H-H. Chen and P. Huang},
  title = {{Predicting social annotation by spreading activation}},
- booktitle = {Proceedings of the 10th international conference on Asian digital libraries: looking back 10 years and forging new frontiers},
- series = {ICADL'07},
+ booktitle = {Proc. of ICADL'07},
  year = {2007},
  isbn = {3-540-77093-3, 978-3-540-77093-0},
  location = {Hanoi, Vietnam},
@@ -205,12 +194,11 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
  numpages = {10},
  url = {http://portal.acm.org/citation.cfm?id=1780653.1780702},
  acmid = {1780702},
- publisher = {Springer-Verlag},
  address = {Berlin, Heidelberg}
 } 
 
 @inproceedings{paper:troussov:2008,
-  author = {Alexander Troussov and Mikhail Sogrin and John Judge and Dmitri Botvich},
+  author = {A. Troussov and M. Sogrin and J. Judge and D. Botvich},
   interhash = {98804516d86042e49ec672ad30645b7b},
   intrahash = {a2c61e9dfe13ee8618d333cab37319b0},
   title = {{Mining Socio-Semantic Networks Using Spreading Activation Technique}},
@@ -236,8 +224,8 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 @InProceedings{ citeulike:3779904,
 	abstract = "{Since the current web is largely unorganized and there is a rapid growth of information volumes, the recommendation system whose major purpose is to reduce irrelevant content and to provide users with more pertinent and tailored information becomes an important research area. A key issue in this area is how to discover user's interest and behavior effectively. In this paper we investigate an approach to recommendation system based on user ontology and spreading activation model. Through combining the user ontology and spreading activation model, the capability of discovering of user's potential interests is enhanced. A prototype system is also developed base on this methodology.}",
 	address = "Washington, DC, USA",
-	author = "Qi Gao and Junwei Yan and Min Liu",
-	booktitle = "NPC '08: Proceedings of the 2008 IFIP International Conference on Network and Parallel Computing",
+	author = "Q. Gao and J. Yan and M. Liu",
+	booktitle = "NPC '08: Proc. of the 2008 IFIP",
 	citeulike-article-id = "3779904",
 	citeulike-linkout-0 = "http://portal.acm.org/citation.cfm?id=1441425.1441845",
 	citeulike-linkout-1 = "http://dx.doi.org/10.1109/NPC.2008.74",
@@ -255,27 +243,25 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 
 
 @InProceedings{gouws-vanrooyen-engelbrecht:2010:CCSR,
-  author    = {Gouws, Stephan  and  van Rooyen, G-J  and  Engelbrecht, Herman A.},
+  author    = {S. Gouws and  G-J. Van Rooyen and HE. Engelbrecht},
   title     = {{Measuring Conceptual Similarity by Spreading Activation over Wikipedia's Hyperlink Structure}},
   booktitle = {Proceedings of the {2nd} Workshop on {The People's Web Meets NLP: Collaboratively Constructed Semantic Resources}},
   month     = {August},
   year      = {2010},
   address   = {Beijing, China},
-  publisher = {Coling 2010 Organizing Committee},
   pages     = {46--54},
   url       = {http://www.aclweb.org/anthology/W10-3506}
 }
 
 
 @inproceedings{conf-sofsem-Suchal08,
-  author = {Ján Suchal},
+  author = {J. Suchal},
   booktitle = {SOFSEM (2)},
-  crossref = {conf/sofsem/2008-2},
   editor = {Viliam Geffert and Juhani Karhumäki and Alberto Bertoni and Bart Preneel and Pavol Návrat and Mária Bieliková},
   interhash = {da2ce4258353824517f3e3a4c47bae11},
   intrahash = {c4010673bb4ceed14cc98a3c40d58f49},
   pages = {124-130},
-  publisher = {Safarik University, Kosice, Slovakia},
+  publisher = {Safarik University, Slovakia},
   title = {{On finding power method in spreading activation search.}},
   url = {http://dblp.uni-trier.de/db/conf/sofsem/sofsem2008srf.html#Suchal08},
   year = 2008,
@@ -324,7 +310,7 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 
 
 @inproceedings{Schumacher+2008search,
-  author = {Kinga Schumacher and Michael Sintek and Leo Sauermann},
+  author = {K. Schumacher and M. Sintek and L. Sauermann},
   booktitle = {Proc. of ESWC},
   editor = {Sean Bechhofer and Manfred Hauswirth and Jörg Hoffmann and Manolis Koubarakis},
   interhash = {2f2d1b7693916befa1e650d812472068},
@@ -369,19 +355,16 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 %http://videolectures.net/ecmlpkdd09_berthold_psap/
 
 @inproceedings{bopaEstonia,	
-	author  = {Diego Berrueta and Jose Emilio Labra and Luis Polo},
+	author  = {D. Berrueta and JE. Labra and L. Polo},
 	title     = {{Searching over Public Administration Legal Documents Using Ontologies}},
-	booktitle = {Proceedings of Joint Conferente On Knowledge-Based Software Engineering (JCKBSE 2006)},
-	month = {July--August},
+	booktitle = {Proc. of JCKBSE 2006},
 	pages = {167 - 175},
 	isbn      = {978-1-58603-640-9},
 	year = {2006}
 }
 
 @inproceedings{RochaSA04,
-  author    = {Cristiano Rocha and
-               Daniel Schwabe and
-               Marcus Poggi de Arag{\~a}o},
+  author    = {C. Rocha and D. Schwabe and MP. de Arag{\~a}o},
   title     = {{A} {H}ybrid {A}pproach for {S}earching in the {S}emantic {W}eb},
   booktitle = {WWW},
   year      = {2004},
@@ -401,11 +384,10 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 
 
 @TechReport{SpreadingLarkc,
-  author =       {Proletina Todorova and Atanas Kiryakov and Damyan Ognyanoff and Ivan Peikov and Ruslan Velkov and Zdravko Tashev},
+  author =       {P. Todorova and A. Kiryakov and D. Ognyanoff and I. Peikov and R. Velkov and Z. Tashev},
   title =        {{D2.4.1 Spreading Activation Components (v1)}},
   institution =  {LarKC FP7 project–215535},
-  year =         {2009},
-  type = {Deliverable or research project}
+  year =         {2009}
 }
 
 
@@ -441,7 +423,7 @@ abstractNote={Presents a spreading-activation theory of human semantic processin
 }
 
 @inproceedings{labraTagging2007,
-  author = {Jose Emilio Labra Gayo and Patricia Ordo\'{n}ez de Pablos and Juan M. Cueva Lovelle},
+  author = {JE. Labra and P. Ordo\'{n}ez and JM. Cueva},
   editor = {Proceedings of 2nd International Conference on Metadata and Greece Semantic Web Research},
   interhash = {42c0e8e6126a0a40564f927b0df553d7},
   intrahash = {ee0b45f30b5aea840d1d6f967ae9a6aa},

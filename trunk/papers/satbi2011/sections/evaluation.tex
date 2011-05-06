@@ -15,16 +15,21 @@ of the algorithm is subjected to these conditions but a step-wise refinement met
   \item Repeat these steps until getting the most appropriated set of output concepts to that domain knowledge.
 \end{enumerate}
 
-To apply this methodology, the Galen Ontology~\footnote{\url{http://www.opengalen.org/}} has been selected. 
-It is the reference ontology in the biomedicine domain and it is widely used in reasoning and decision support processes. 
+To apply this methodology, the GALEN and SNOMED CT~\footnote{The OWL version of SNOMED CT has been generated using ``Simple SNOMED Module Extractor'' provided by the OWL Research Group at Manchester University:~\url{http://owl.cs.manchester.ac.uk/snomed/}. Other tests 
+have been carried out using the OWL version of SNOMED CT provided by the IHTSDO.} ontologies have been selected. 
+They are well-known and referenced ontologies in the biomedicine domain and they are widely used in reasoning and decision support processes. 
 The design of the experiment depends on: the ontology, the weights of relations, the set of initial concepts, 
-the set of restrictions, the degradation function and the extensions to reward nodes. The set of initial 
-concepts ($\Phi$) with an initial value $1.0$ is: ``\#AdvancedBreastCancer'' and ``\#NAMEDSymptom''. The weights of the 
-relations are fixed to a default value of $1.0$. The refinement of the algorithm will enable us to get
+the set of restrictions, the degradation function and the extensions to reward nodes. 
+In the case of GALEN, the set of initial concepts ($\Phi$) with an initial value $1.0$ is: 
+``\#AdvancedBreastCancer'' and ``\#NAMEDSymptom''. The weights of the 
+relations are fixed to a default value of $1.0$. On the other hand, the set of initial concepts ($\Phi$) with an initial value $1.0$ 
+in SNOMED-CT is: ``\#Articular\_cartilage\_of\_lunate'' and ``\#Articular\_tissue\_sample''
+
+The refinement of the algorithm will enable us to get
 a set of output concepts similar to the process that a brain will do. The degradation functions
 and the reward technique will be alternatively combined checking the output of the algorithm. 
 
-\begin{table}[!h]
+\begin{table*}[!h]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
 \begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
@@ -48,12 +53,41 @@ and the reward technique will be alternatively combined checking the output of t
   \caption{Configuration and statistics of results after the execution and refinement of SA over the Galen ontology.}
   \label{tabla:test-restricciones}
   \end{center}
-\end{table} 
+\end{table*} 
 
-After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones}, some statistics have been extracted out of the results. 
+After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} and Tab.~\ref{tabla:test-snomed}, 
+some statistics have been extracted out of the results. 
 The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
-of the algorithm through the graph and the structure of Galen ontology (23,141 concepts and 950 relations). 
+of the algorithm through the graph and the structure of the ontologies. 
 It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
 that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
 algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
 large databases with enriched queries.
+
+
+\begin{table*}[!h]
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+        \textbf{Config \& Stats/Test}&$T_1$&$T_2$&$T_3$&$T_4$&$T_5$&$T_6$\\ \hline
+        \hline
+        Minimum activation value $N_{\min}$ &$1.0$ &$1.0$ &$1.0$ &$1.0$&$1.0$&$1.0$ \\ \hline
+	Maximum number of spread concepts $\mathbb{M}$&$50$ &$50$ &$10$ &$10$&$50$&$50$\\ \hline
+	Minimum number of spread concepts $\mathbb{M_{\min}}$&$20$ &$20$ &$5$ &$5$&$20$&$20$  \\ \hline
+	Output Degradation $O_j$ & $h_1$ &$h_2$ &$h_1$ &$h_2$&$h_1$&$h_2$\\ \hline
+	Reward (No,Yes) &N &N &N &N&Y&Y\\ \hline
+	\hline
+	Context of activation $\mathbb{D}_{com}$&\multicolumn{6}{|c|}{DEFAULT} \\ \hline
+	Activated Nodes &$136$ &$76$ &$16$ &$16$&$136$&$76$ \\ \hline
+	Spread Nodes &$20$ &$20$ &$5$ &$5$&$20$&$20$ \\ \hline
+	Highest activation value &$2.16$ &$9.49$ &$1.5$ &$1.85$&$4.14$&$13.68$\\ \hline
+	Deepest spread path &$10$ &$7$&$3$ &$3$&$10$&$16$\\ \hline
+	Concepts (name:value) & Upper extremity part: $2.16$, Articular cartilage of wrist joint: $1.66$ &Structure of radioulnar joint: $9.49$, Inferior radioulnar joint structure: $8.5$ &Articular cartilage of lunate: $1.5$, Wrist region structure: $1.0$ &Articular cartilage of lunate: $1.85$, Joint structure of wrist and/or hand: $1.0$&Upper extremity part: $4.14$, Joint structure of wrist and/or hand: $1.2$&Wrist joint structure: $13.68$, Inferior radioulnar joint structure: $8.5$ \\ \hline
+	Time (msec.) & $36$ &$17$ &$3$ &$4$&$42$&$17$ \\ \hline
+\end{tabular}
+  \caption{Configuration and statistics of results after the execution and refinement of SA over the SNOMED CT ontology.}
+  \label{tabla:test-snomed}
+  \end{center}
+\end{table*} 
+

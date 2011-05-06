@@ -4,9 +4,10 @@ on a graph as nodes with a certain ''activation value``. Relations between two c
 are represented by a weighted edge. If a node is activated their activation value is spread
 to their neighbor nodes. This technique was adopted by the computer science community and applied
 to the resolution of different problems, see Sect.~\ref{related-work}, and it is relevant to
-the the digital libraries field in the scope of: 1) construction of hybrid semantic search engines and 2) ranking of
-information resources according to an input set of weighted resources. Thus this technique
-eases the information access providing a connectionist method to retrieve data like brain can do. 
+the medical fields sector in the scope of: 1) construction of hybrid semantic search engines;  2) ranking of
+information resources according to an input set of weighted resources 3) recommendation of medical terms using
+well-known ontologies in a particular sector and 4) decission-support easing the access to the information
+in large databases . Thus this technique provides a connectionist method to retrieve data like brain can do. 
 Although SA is widely used, more specifically in recent years has been successfully applied 
 to ontologies, a common and standard framework is missing and each third party interested in its application
  must to implement its own version~\cite{SpreadingLarkc} of SA.
@@ -14,18 +15,30 @@ to ontologies, a common and standard framework is missing and each third party i
 Taking into account the new information realm and the leading features of putting together 
 the SA technique and the Semantic Web and Linked Data initiatives, new enriched services of searching, 
 matchmaking, recommendation or contextualization can be implemented to fulfill the requirements
-of access information in digital libraries of different trending scopes like e-procurement, 
-legal document databases~\cite{bopaEstonia}, e-tourism or e-health.
+of access information in different trending scopes like e-health, e-procurement, e-tourism or legal 
+document databases~\cite{bopaEstonia}. More specifically in the e-health sector there 
+is a growing need to automate the processes related to the tagging of electronic clinical records and to create 
+tools for the clinical decission support. That is why SA is relevant to the field of clinical knowledge management 
+technologies through its capacity to process large databases and exploit the know-how
+of previous records easing the recommendations of information resources.
 
-The proposed work aims to afford a framework for SA to ease the configuration, customization 
+
+The proposed work aims to provide a framework for SA to ease the configuration, customization 
 and execution over graph-based structures and more specifically over RDF graphs and ontologies. It is relevant
-to digital libraries access and interoperability due to the fact that this technique provides
+to medical systems access and interoperability due to the fact that this technique is based on
 a set of proven algorithms for retrieving and recommending information resources in large knowledge bases. 
 Following the specific contributions of this work are listed: 1) study and revision of the classical constrained SA;
 2) study and definition of new restrictions for SA applied to RDF graphs and ontologies; 
 3) implementation of a whole and extensible framework (called ONTOSPREAD) to customize 
 and perform the SA based; 4) outlining of a methodology to configure and refine the execution of SA and 
-5) an example of configuration and refinement applying SA over a well-known ontology, the Galen ontology.
+5) an example of configuration and refinement applying SA over two well-known ontologies: Galen and SNOMED-CT.
 
 
 %FIXME: This paper is structured as follows...
+\subsection{Organization}
+This paper is structured as follows: in Section 2, we review the relevant
+work in medical systems and the common applications of SA. In Section 3, we provide a description of the design and implementation
+of an open framework for SA technique, explaining the algorithm, restrictions, etc. Afterwards, in Section 4 
+we apply the ONTOSPREAD framework over the GALEN and SNOMED-CT ontologies to evaluate the SA
+technique for recommending concepts in medical systems. Finally, we
+evaluate the results of the previous executions and present some conclusions.
