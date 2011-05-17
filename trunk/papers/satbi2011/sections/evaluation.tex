@@ -29,7 +29,7 @@ The refinement of the algorithm will enable us to get
 a set of output concepts similar to the process that a brain will do. The degradation functions
 and the reward technique will be alternatively combined checking the output of the algorithm. 
 
-\begin{table*}[!h]
+\begin{table*}[p]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
 \begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
@@ -50,22 +50,14 @@ and the reward technique will be alternatively combined checking the output of t
 	Concepts (name:value) & NAMED Symptom: $7.5$, Primate: $2.28$ &Multi Cellular Eukaryota: $3.9896$, Opis thokonts: $3.9885$ &NAMED Symptom: $1.5$, Advanced Breast Cancer: $2.28$ &NAMED Symptom: $1.90$, Advanced Breast Cancer: $1.90$&NAMED Symptom: $7.5$, Primate: $2.28$&Multi Cellular Eukaryota: $3.9896$, Opis thokonts: $3.9885$ \\ \hline
 	Time (msec.) & $9$ &$8$ &$2$ &$3$&$11$&$12$ \\ \hline
 \end{tabular}
-  \caption{Configuration and statistics of results after the execution and refinement of SA over the Galen ontology.}
+  \caption{Configuration and statistics of results after the execution and refinement of SA over the GALEN ontology.}
   \label{tabla:test-restricciones}
   \end{center}
 \end{table*} 
 
-After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} and Tab.~\ref{tabla:test-snomed}, 
-some statistics have been extracted out of the results. 
-The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
-of the algorithm through the graph and the structure of the ontologies. 
-It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
-that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
-algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
-large databases with enriched queries.
 
 
-\begin{table*}[!h]
+\begin{table*}[p]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
 \begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
@@ -91,3 +83,12 @@ large databases with enriched queries.
   \end{center}
 \end{table*} 
 
+
+After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} and Tab.~\ref{tabla:test-snomed}, 
+some statistics have been extracted out of the results. 
+The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
+of the algorithm through the graph and the structure of the ontologies. 
+It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
+that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
+algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
+large databases with enriched queries.

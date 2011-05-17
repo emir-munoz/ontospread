@@ -1,4 +1,4 @@
-\documentclass{acm_proc_article-sp}
+\documentclass{sig-alternate}
 
 %\usepackage{llncsdoc}
 
@@ -53,8 +53,13 @@
 	xrightmargin=0cm
 }
 
+\hyphenation{ON-TO-SPREAD}
 
 \begin{document}
+
+\conferenceinfo{ACM-BCB}{'11 August 1-3, Chicago, IL, USA}
+\CopyrightYear{2011} 
+\crdata{978-1-4503-0796-3/11/08}
 
 \title{Application of the Spreading Activation Technique for Recommending Concepts of well-known Ontologies in Medical Systems}
 
@@ -100,7 +105,7 @@
 \alignauthor
  Luis Polo\\
         \affaddr{Fundación CTIC}\\
-        \affaddr{Parque Científico Tecnológico de Gijón, C/ Ada Byron, 39}\\
+        \affaddr{Parque Científico Tecnológico de Gijón, C/ Ada Byron, 39, 33203}\\
         \affaddr{Gijón, Spain}\\
         \email{luis.polo@fundacionctic.org}
 % 3rd. author
@@ -143,10 +148,12 @@ different restrictions of the original model like weight degradation according t
 others coming from the extension of this technique like the converging paths reward. 
 It is considered to be relevant to support the recommendation of concepts for tagging clinical records
 and to provide a tool for decision-support in clinical diagnosis.
-Finally an evaluation methodology and two examples using the well-known ontologies Galen and SNOMED CT 
+Finally an evaluation methodology and two examples using the well-known ontologies GALEN and SNOMED CT 
 are presented to validate the goodness, the improvement and the capabilities 
 of this technique applied to medical systems.
 \end{abstract}
+
+
 
 % A category with the (minimum) three required fields
 \category{K.4}{Computers and Society}{Miscellaneous}
@@ -157,7 +164,9 @@ of this technique applied to medical systems.
 
 \terms{Recommending and tagging systems, Information retrieval, Clinical Decision-Support, Algorithms}
 
-\keywords{spreading activation, recommending system, information retrieval, algorithms} % NOT required for Proceedings
+%\keywords{spreading activation, recommending system, information retrieval, algorithms} % NOT required for Proceedings
+
+
 
 \newdef{definition}{Definition}
 

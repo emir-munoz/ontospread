@@ -29,7 +29,7 @@ The refinement of the algorithm will enable us to get
 a set of output concepts similar to the process that a brain will do. The degradation functions
 and the reward technique will be alternatively combined checking the output of the algorithm. 
 
-\begin{table*}[!h]
+\begin{table*}[p]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
 \begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
@@ -55,17 +55,9 @@ and the reward technique will be alternatively combined checking the output of t
   \end{center}
 \end{table*} 
 
-After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} and Tab.~\ref{tabla:test-snomed}, 
-some statistics have been extracted out of the results. 
-The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
-of the algorithm through the graph and the structure of the ontologies. 
-It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
-that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
-algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
-large databases with enriched queries.
 
 
-\begin{table*}[!h]
+\begin{table*}[p]
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
 \begin{tabular}{|p{3cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
@@ -86,8 +78,17 @@ large databases with enriched queries.
 	Concepts (name:value) & Upper extremity part: $2.16$, Articular cartilage of wrist joint: $1.66$ &Structure of radioulnar joint: $9.49$, Inferior radioulnar joint structure: $8.5$ &Articular cartilage of lunate: $1.5$, Wrist region structure: $1.0$ &Articular cartilage of lunate: $1.85$, Joint structure of wrist and/or hand: $1.0$&Upper extremity part: $4.14$, Joint structure of wrist and/or hand: $1.2$&Wrist joint structure: $13.68$, Inferior radioulnar joint structure: $8.5$ \\ \hline
 	Time (msec.) & $36$ &$17$ &$3$ &$4$&$42$&$17$ \\ \hline
 \end{tabular}
-  \caption{Configuration and statistics of results after the execution and refinement of SA over the SNOMED-CT ontology.}
+  \caption{Configuration and statistics of results after the execution and refinement of SA over the SNOMED CT ontology.}
   \label{tabla:test-snomed}
   \end{center}
 \end{table*} 
 
+
+After the execution of the different configurations, see Tab.~\ref{tabla:test-restricciones} and Tab.~\ref{tabla:test-snomed}, 
+some statistics have been extracted out of the results. 
+The main differences between the tests lies in the number of activated nodes and their activation values due to the restrictions that guide the evolution
+of the algorithm through the graph and the structure of the ontologies. 
+It is also remarkable that the reward of paths, in this case, does not imply changes in the output set. This situation demonstrates 
+that a depth knowledge of the semantic network is needed to take advantage of the SA extensions. Nevertheless the output of the
+algorithm helps us to establish a set of weighted resources that can be used to retrieve documents, make recommendations or search in 
+large databases with enriched queries.

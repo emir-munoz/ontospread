@@ -6,7 +6,7 @@ to their neighbor nodes. This technique was adopted by the computer science comm
 to the resolution of different problems, see Sect.~\ref{related-work}, and it is relevant to
 the medical fields sector in the scope of: 1) construction of hybrid semantic search engines;  2) ranking of
 information resources according to an input set of weighted resources 3) recommendation of medical terms using
-well-known ontologies in a particular sector and 4) decission-support easing the access to the information
+well-known ontologies in a particular sector and 4) decision-support easing the access to the information
 in large databases . Thus this technique provides a connectionist method to retrieve data like brain can do. 
 Although SA is widely used, more specifically in recent years has been successfully applied 
 to ontologies, a common and standard framework is missing and each third party interested in its application
@@ -18,7 +18,7 @@ matchmaking, recommendation or contextualization can be implemented to fulfill t
 of access information in different trending scopes like e-health, e-procurement, e-tourism or legal 
 document databases~\cite{bopaEstonia}. More specifically in the e-health sector there 
 is a growing need to automate the processes related to the tagging of electronic clinical records and to create 
-tools for the clinical decission support. That is why SA is relevant to the field of clinical knowledge management 
+tools for the clinical decision support. That is why SA is relevant to the field of clinical knowledge management 
 technologies through its capacity to process large databases and exploit the know-how
 of previous records easing the recommendations of information resources.
 
