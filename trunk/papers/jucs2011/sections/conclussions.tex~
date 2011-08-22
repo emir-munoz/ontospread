@@ -1,0 +1,35 @@
+This work provides a configurable and extensible framework to support the SA technique. It allows
+the configuration of restrictions and their combination to get
+the most accurate set of output concepts. One of the features that
+turns SA to a widely accepted algorithm lies in its flexibility 
+but some disadvantages are also presented: the adjusting and refinement of
+restrictions and weights of the relations, the selection of the
+degradation function and the use of reward functions. This framework
+minimizes these advantages with an extensible library that can be
+applied to different scenarios like medical systems, in particular
+biomedicine, CDSS, etc. providing enriched services
+of annotation, searching or recommendation.
+
+The main improvement in the algorithm consists on the flexibility of
+the refinement methodology. An automatic learning algorithm to create SA configurations
+according to ontologies should be developed. Thus, the training stage of SA could generate
+the best configuration for a specific domain. The algorithm could optimize the selection 
+of input parameters like the weights of the relations, the degradation functions 
+or the combination of restrictions. Beside new measures related to instances such as `Cluster
+Measure'', ``Specifity Measure'' or both could be used in the process of activation/spreading.
+Also the selection of the next node to spread is based on a ``first
+better'' strategy (if two nodes have the same activation value) because of this fact
+other selection strategies should be implemented. Finally a new version of the SA
+is being specified and developed following the Map/Reduce\footnote{\url{http://labs.google.com/papers/mapreduce.html}} programming model with the objective
+of getting a distributed version of this technique for processing large data sets.
+
+\textbf{Acknowledgements}. ONTOSPREAD was initially developed in BOPA~\cite{bopaEstonia} project that is
+one of \textit{Semantic Web Use Cases and Case
+Studies}\footnote{\url{http://www.w3.org/2001/sw/sweo/public/UseCases/CTIC/}}
+collected by W3C. Currently it is being applied to the process of searching
+public procurement notices in the ``10ders Information Services''\footnote{\url{http://rd.10ders.net}} project, partially funded by 
+the Spanish Ministry of Industry, Commerce and Tourism (TSI-020100-2010-919) 
+and the European Regional Development Fund (EFDR), leaded by ``Gateway Strategic Consultancy Services''\footnote{\url{http://gateway-scs.es/}} 
+and developed in cooperation with ``Exis TI''\footnote{\url{http://www.exis-ti.com/}}  and WESO Research Group. Also we would like 
+to thank the Spanish Ministry of Health for the license of 
+SNOMED-CT~\footnote{\url{http://www.msps.es/profesionales/hcdsns/areaRecursosSem/snomed-ct/}}. 

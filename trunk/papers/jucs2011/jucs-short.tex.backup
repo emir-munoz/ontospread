@@ -1,0 +1,273 @@
+\documentclass{article}[10pt]
+
+\usepackage{jucs2e}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{paralist}
+
+\usepackage{theorem}
+%%%Math
+%\usepackage{latexsym}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{longtable}
+
+\usepackage{listings}
+
+\usepackage{color}
+
+\definecolor{darkred}{rgb}{0.5, 0, 0}
+\definecolor{violet}{rgb}{1, 0, 1}
+\definecolor{green}{rgb}{0.3, 0.95, 0.3}
+\definecolor{listinggray}{gray}{0.97}
+
+\lstset{
+	basewidth=0.45em,
+	backgroundcolor=\color{listinggray},
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,
+	keywordstyle=\bfseries,
+	stringstyle=\itshape,
+	commentstyle=\itshape,
+	showspaces=false,
+	showtabs=false,
+	showstringspaces=false,
+	frame=trbl,
+	frameround=tttt,
+	extendedchars=true,
+	numbers=none,
+	aboveskip=0.5cm,
+	belowskip=0.5cm,
+	xleftmargin=0cm,
+	xrightmargin=0cm
+}
+
+\hyphenation{ON-TO-SPREAD}
+
+\begin{document}
+
+\title{ONTOSPREAD: A Framework for Supporting the Activation of Concepts in Graph-based Structures through the Spreading
+Activation technique}
+
+
+\author{{\bfseries Jose Mar\'{i}a \'{A}lvarez\\
+   (Department of Computer Science, University of Oviedo, Spain \\
+   josem.alvarez@weso.es)
+   \and
+   {\bfseries Jos\'{e} Emilio Labra}\\
+   (Department of Computer Science, University of Oviedo, Spain \\
+   jelabra@weso.es)\\
+   \and
+   {\bfseries Patricia Ordo\'{n}ez}\\
+   (Department of Business Management, University of Oviedo, Spain  \\
+   patriop@uniovi.es)\\
+}}
+\maketitle
+
+\begin{abstract}
+A short and pregnant description of the content and intent of the article. Please try to avoid mathematical symbols and special characters as much as possible.
+\end{abstract}
+
+\begin{keywords}
+metadata, knowledge management, structural computing
+\end{keywords}
+
+\begin{category}
+H.2, H.3.7, H.5.4 
+\end{category}
+
+\section{Introduction}
+
+In this paper, we begin by introducing ...
+
+\section{Structural computing}
+
+\subsection{History}
+
+Hypermedia has become a concept familiar to many people ... The term
+\emph{structural computing} was coined to describe this unification of
+various hypermedia variants within a common framework \cite{sc}.
+
+\subsection{Comparing data- and structure-based approaches}
+
+Structural computing environments are distinguished by their focus on
+the construction and management of structural abstractions ...
+
+This realization significantly complicates certain otherwise
+well-understood problems....  
+
+Similar examples of structural complications in version control and
+access control have been discussed at length within the hypermedia and
+structural computing communities (e.g., \cite{tois-ver, hoss}).
+
+
+\subsection{Current status}
+
+There is much ongoing work within the structural computing field (see,
+for example, the proceedings of the last three workshops on structural
+computing \cite{sc2-proc, sc1-proc, sc3-proc}).  Two modern structural
+computing systems are Callimachus \cite{callimachus} and Construct
+\cite{construct}....  It is a codebase
+successor to three lines of hypermedia research systems --
+specifically, DHM \cite{dhm}, HOSS \cite{hoss}, and HyperDisco
+\cite{hyperdisco}.  Both the Callimachus and Construct systems
+implement a wide variety of structural services.  Recently, a metadata
+service, allowing the tagging of WWW pages with arbitrary metadata
+records, has been added to Construct \cite{construct-md}.
+
+\section{Metadata as first-class structure}
+
+Metadata is not simply data ...
+
+Secondly, a given metadatum may be related to more than one datum.
+For example, two data that share identical authors may both be related
+to an identical author metadatum.  This ``transclusion'' \cite{nelson}
+model of building metadata references is atypical -- generally, two
+metadata records for data that share identical authors simple both
+share, for example, identical text in an author key field.  At one
+level of abstraction (e.g., the user interface), this model of
+metadata may be useful -- a metadata browser may want that matadata
+presented as keyword/value pairs.  However, from an implementation
+perspective, the keyword/value pair model is a poor choice.  It makes
+several types of operations, such as updating information (e.g.,
+``change all instances of \emph{Joe Public} to \emph{Joe
+Q. Public}''), querying for related information (e.g., ``find all
+articles authored by \emph{Joe Q. Public}''), or differentiating
+information (e.g., ``which of the three authors named \emph{Joe
+Q. Public} authored this article?'')  unnecessarily difficult...  
+
+\section{Generalized first-class metadata management}
+
+In this section, we present some brief examples of how implementing
+metadata management ...The implementation and implications of such
+examples are described at greater length elsewhere (e.g.,
+\cite{tois-ver, hoss}).
+
+\subsection{Data mining}
+
+If metadata are treated as structure ...
+
+\subsection{Adaptive systems}
+
+When structures (both metadata itself, and the structure that binds it
+to data) are treated as first-class, they may then be manipulated as
+any data object, including being tagged ith attriubute/value pairs and
+being versioned.  Both of these characteristics are very useful in
+adaptive systems \cite{adapt}...
+
+
+
+\section{Conclusions and Future Work}
+
+Until recently, focus in metadata research has focused on what
+metadata is and how it should be represented to the user.  However,
+there has been a lack of focus on how it should be managed at a system
+level.  We have shown that treating metadata as simple data out of the
+context of the relationships to which it belongs, and which it
+defines, although the current default model, is insufficient.  We
+advocate borrowing structure management techniques from fields such as
+structural computing to manage metadata more effectively.
+
+\begin{thebibliography}{5}
+
+\bibitem[Anderson and Reich 2000]{sc2-proc} Anderson, K., Reich,
+S. (eds.): ``Proceedings of the Second Workshop on Structural
+Computing''; Lect. Notes Comp. Sci. 1903, Springer, Berlin.
+
+\bibitem[Christodoulakis et~al. 1999]{callimachus} Christodoulakis,
+D., Vaitis, M., Papadopoulos, A., Tzagarakis, M.: ``The Callimachus
+approach to distributed hypermedia''; Proc. 10$^{th}$ ACM
+Conf. Hypert., ACM, New York (Feb 1999).
+
+\bibitem[Gr{\o}nb{\ae}k and Trigg 1994]{dhm} Gr{\o}nb{\ae}k, K.,
+Trigg, R.: ``Design issues for a Dexter-based hypermedia system'';
+Comm. ACM 37, 2 (Feb 1994), 40-49.
+
+\bibitem[Hicks et~al. 1998]{tois-ver} Hicks, D., Leggett, J.,
+N\"{u}rnberg, P., Schnase, J.: ``A hypermedia version control
+framework''; ACM Trans. Inf. Sys., 16, 2 (Apr 1998l) 127-160.
+
+\bibitem[LOC 2000]{marc21} Library of Congress: MARC 21 specifications
+for record structure, character sets, and exchange media. (2000)
+\url{http://www.loc.gov/marc/specifications/spechome.html}.
+
+\bibitem[Marshall et~al. 1994]{viki} Marshall, C., Shipman, F.,
+Coombs, J.: ``VIKI: spatial hypertext supporting emergent structure'';
+Proc. 1994 Euro. Conf. Hyperm. Tech. (Sep) 13-23.
+
+\bibitem[Martinez 2002]{mpeg7} Martinez, J.: ``Coding of moving
+pictures and audio: Overview of the MPEG-7 standard (version 6.0)''
+ISO/IEC JTC1/SC29/WG11 N4509 (2001)
+\url{http://mpeg.telecomitalialab.com/standards/mpeg-7/mpeg-7.htm}
+
+\bibitem[McCall et~al. 1990]{phidias} McCall, R., Bennett, P.,
+D'Oronzio, P., Ostwald, J., Shipman, F., Wallace, N.: ``PHIDIAS:
+Integrating CAD graphics into dynamic hypertext''; Proc. 1$^{st}$
+Euro. Conf. Hypert. 1990 (Nov), 152-165.
+
+\bibitem[Nelson 1993]{nelson} Nelson, T.: ``Literary Machines'';
+Mindful, Sausalito, CA.
+
+\bibitem[Neveu et~al. 2001]{construct-md} Neveu, Y., Guervilly, Y.,
+Wiil, U., Hicks, D.: ``Providing metadata services on the World Wide
+Web'' Tech. Rep. CSE-01-01, Dept. Comp. Sci. \& Eng, Aalborg
+U. Esbjerg, (Mar) \url{http://www.cs.aue.auc.dk/publications}
+
+\bibitem[N{\"{u}}rnberg 1999]{sc1-proc} N\"{u}rnberg, P. (ed.):
+``Proceedings of the Workshop on Structural Computing (SC1)''.
+Technical Report CSE-99-04, Dept. Comp. Sci. \& Eng., Aalborg
+U. Esbjerg, (Feb) \url{http://www.cs.aue.auc.dk/publications}
+
+\bibitem[N{\"{u}}rnberg et~al. 1998]{ecdl} N\"{u}rnberg, P., Wiil, U.,
+Leggett, J.: ``Structuring facilities in digital libraries'';
+Proc. Euro. Conf. Dig. Lib. 1998 (Sep).
+
+\bibitem[N{\"{u}}rnberg et~al. 1997]{sc} N\"{u}rnberg, P., Leggett,
+J., Schneider, E.: ``As we should have thought''; Proc. ACM Hypert.
+'97, ACM, New York (1997).
+
+\bibitem[N{\"{u}}rnberg et~al. 1996]{hoss} N\"{u}rnberg, P., Leggett,
+J., Schneider, E., Schnase, J.: ``HOSS: a new paradigm for
+computing''; Proc. 7$^{th}$ ACM Conf. Hypert, ACM, New York (Mar
+1996) 194-202.
+
+\bibitem[Reich et~al. 2001]{sc3-proc} Reich, S., Tzagarakis, M., De
+Bra, P. (eds.): ``Proceedings of the Third Workshop on Structural
+Computing''; Lect. Notes Comp. Sci. 2266, Springer, Berlin.
+
+\bibitem[Schraefel 2000]{adapt} Schraefel, M.: ``ConTexts: Adaptable
+hypermedia"; Proc. Adapt. Hypermedia and Adapt. Web-Based
+Sys. Int. Conf., Lect. Notes in Comp. Sci. 1892, Springer, Berlin (Aug
+2000), 369-375.
+
+\bibitem[Wiebel et~al. 1998]{dublincore} Weibel, S., Kunze, J.,
+Lagoze, C., Wolf, M.: ``Dublin Core metadata for resource discovery'';
+IETF RFC 2413 (1998) \url{http://www.ietf.org/rfc/rfc2413.txt}
+
+\bibitem[Wiil and Leggett 1996]{hyperdisco} Wiil, U. Leggett, J.:
+``The HyperDisco approach to open hypermedia systems''; Proc. ACM
+Conf. Hypert. 1996, ACM, New York (Mar), 140-148.
+
+\bibitem[Wiil and Leggett 1992]{hyperform} Wiil, U. Leggett, J.:
+``Hyperform: Using extensibility to develop dynamic, open and
+distributed hypertext systems''; Proc. 4$^{th}$ ACM Conf. Hypert.,
+ACM, New York (Nov 1992), 251-261.
+
+\bibitem[Wiil and N{\"{u}}rnberg 1999]{construct} Wiil, U.,
+N\"{u}rnberg, P.: ``Evolving hypermedia middleware services: Lessons
+and observations''; Proc. ACM Symp. Appl. Comp., ACM, New York (Mar
+1999).
+
+\end{thebibliography}
+
+\end{document}
