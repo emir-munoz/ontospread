@@ -103,168 +103,168 @@ degradation of the concept using the number of iterations $k$:
 
 \end{description}
 
-\subsection{Specification of the SA technique}\label{impl-sa}
-The entry point to SA technique is the set of initial concepts that will generate 
-a new set of the most relevant concepts. Ontologies based on the RDF graph model are a graph where each node $n_i$ represents a concept
-$c_i$ and the edge $\omega_{ji}$ is the semantic relation between $c_j$ y $c_i$.
-The final result of the algorithm is a set of sorted pairs $(n_i, I_i)$
-that builds the set of output concepts, where $n_i\approx c_i$ and $I_i\approx w_i$ (the
-relevance of the concept). The implementation of \textit{SA}, see Algorithm~\ref{alg:as}, comprises of two sets of concepts that
-store information about the state of the algorithm: 1) $\mathbb{D}_{com}$ are all the concepts in the semantic network 
-and 2) $\Phi$ is the set of initial activated concepts, $c_j^k$  is the spreading concept 
-at the $k$-th iteration (from which other concepts are activated).
-
-Set $\mathcal{A}$: queue of {\bf activated} concepts (candidates to be
-spread).
-
-\begin{align}
- \mathcal{A}^0 &=\Phi \\
- \mathcal{A}^k &=(\mathcal{A}^{k-1} \cup \{c_i: {\forall c_i /  \omega_{ji}^k
->0}\})-{ \{\mathcal{G}^k}\}
-\end{align}
-
-Set $\mathcal{G}$: set of {\bf spread} concepts.
-
-\begin{align}
- \mathcal{G}^0 &=\emptyset \\
- \mathcal{G}^k &= \mathcal{G}^{k-1} \cup \{c_j^k\}
-\end{align}
-
-Finally, the calculus of the activation value of a concept $c_i$
-at iteration $k$, indicated by $I^k_i$, is defined. At $0$ iteration the
-activation value $c_i$ is calculated as follows:
-\begin{equation}
-I^0_i=\begin{cases}%
-  1 & \text{if $c_i \in \Phi$} \\%
-  0 & \text{if $c_i \notin \Phi$} \\%
- \end{cases}
-\end{equation}
-
-at $k$ iteration, the activation value of $c_i$ from element
-$c_j^{k}$ to $c_i$ is calculated as follows:
-
-\begin{equation}
-I^k_i=\begin{cases}%
-  I^{k-1}_i & \text{if } \omega_{ji}^k = 0 \\%
-  I^{k-1}_i + \omega_{ji}^k I^{k-1}_j  & \text{if }  \omega_{ji}^k > 0  \\%
- \end{cases}
-\end{equation}
-
-\begin{algorithm}
-\caption{\textit{Pseudocode of Spreading Activation}}
-\label{alg:as}
-\begin{algorithmic}
-  \REQUIRE $\Phi \neq \emptyset$  
-  \ENSURE $\mathcal{G} \neq \emptyset$
-  \STATE $\mathcal{A} \leftarrow \Phi$
-  \STATE $\mathcal{G} \leftarrow \emptyset$
-  \WHILE{$\mathcal{A} \neq \emptyset$ AND $card(\mathcal{G}) <
-\mathcal{G}_{\min}$ AND $N_k \ge N_{\min}$}
-	\STATE $n_k \leftarrow  extract(\mathcal{A})$
-	\STATE $\mathcal{G} \leftarrow \{n_k\} \cup \mathcal{G}$	  	
-	  \FORALL{$n_i / w_{ki} > 0$}	  	
-	  	\STATE $N_i \leftarrow N_i + w_{ki}N_k$	
-		\STATE $\mathcal{A} \leftarrow (\{n_i\} \cup \mathcal{A}) -
-\mathcal{G}$		
-	    \ENDFOR
-  \ENDWHILE
- \RETURN $\mathcal{G}$
-\end{algorithmic}
-\end{algorithm}\label{alg:as}
-
-\subsection{Improving Spreading Activation}\label{improve:sa}
-Some improvements in the calculus of the activation value of a
-concept have been introduced in order to get a more complete and accurate technique. 
-If some paths of activation converge to the same node and the source nodes are different then this node should be 
-relevant and a reward is applied to the nodes presented in these paths. 
-
-\begin{definition}
-Let $p_i$ the number of paths that start and finish in different nodes of
-$\Phi$\footnote{The reward is not applied to nodes in  $\Phi$.} and they go
-through the node $c_i$ and they only contain nodes belonging to $\mathcal{G}$.
-This improvement assigns a new value to the activation value of each node $c_i$
-indicated by $I^*_i$ and it is calculated by means of the function $g$:
-\end{definition}
-
-\begin{equation}
-I^*_i = g(I_i,p_i)
-\end{equation}
-
-In this case, a relaxed reward function has been chosen, Eq.~\ref{f:recompensa},
-and, it is applied in the \textit{Postadjustment} stage, thus the
-original semantics and behavior of \textit{SA} algorithm remains. 
-
-\begin{equation}\label{f:recompensa}
-g(x,y) = x (\log(y+1)+1)
-\end{equation}
-
-$x$ is the reward constant, it can be defined according to the context and $y$
-is the number of times that a concept $c_i$ must be rewarded.
-
-% \begin{figure}[h]
-%  \centering
-%     \includegraphics[width=6cm]{images/prize-sa}
-%     \caption{Paths and rewards in \textit{Spreading Activation}}
-%  \label{fig:prize-sa}
+% \subsection{Specification of the SA technique}\label{impl-sa}
+% The entry point to SA technique is the set of initial concepts that will generate 
+% a new set of the most relevant concepts. Ontologies based on the RDF graph model are a graph where each node $n_i$ represents a concept
+% $c_i$ and the edge $\omega_{ji}$ is the semantic relation between $c_j$ y $c_i$.
+% The final result of the algorithm is a set of sorted pairs $(n_i, I_i)$
+% that builds the set of output concepts, where $n_i\approx c_i$ and $I_i\approx w_i$ (the
+% relevance of the concept). The implementation of \textit{SA}, see Algorithm~\ref{alg:as}, comprises of two sets of concepts that
+% store information about the state of the algorithm: 1) $\mathbb{D}_{com}$ are all the concepts in the semantic network 
+% and 2) $\Phi$ is the set of initial activated concepts, $c_j^k$  is the spreading concept 
+% at the $k$-th iteration (from which other concepts are activated).
+% 
+% Set $\mathcal{A}$: queue of {\bf activated} concepts (candidates to be
+% spread).
+% 
+% \begin{align}
+%  \mathcal{A}^0 &=\Phi \\
+%  \mathcal{A}^k &=(\mathcal{A}^{k-1} \cup \{c_i: {\forall c_i /  \omega_{ji}^k
+% >0}\})-{ \{\mathcal{G}^k}\}
+% \end{align}
+% 
+% Set $\mathcal{G}$: set of {\bf spread} concepts.
+% 
+% \begin{align}
+%  \mathcal{G}^0 &=\emptyset \\
+%  \mathcal{G}^k &= \mathcal{G}^{k-1} \cup \{c_j^k\}
+% \end{align}
+% 
+% Finally, the calculus of the activation value of a concept $c_i$
+% at iteration $k$, indicated by $I^k_i$, is defined. At $0$ iteration the
+% activation value $c_i$ is calculated as follows:
+% \begin{equation}
+% I^0_i=\begin{cases}%
+%   1 & \text{if $c_i \in \Phi$} \\%
+%   0 & \text{if $c_i \notin \Phi$} \\%
+%  \end{cases}
+% \end{equation}
+% 
+% at $k$ iteration, the activation value of $c_i$ from element
+% $c_j^{k}$ to $c_i$ is calculated as follows:
+% 
+% \begin{equation}
+% I^k_i=\begin{cases}%
+%   I^{k-1}_i & \text{if } \omega_{ji}^k = 0 \\%
+%   I^{k-1}_i + \omega_{ji}^k I^{k-1}_j  & \text{if }  \omega_{ji}^k > 0  \\%
+%  \end{cases}
+% \end{equation}
+% 
+% \begin{algorithm}
+% \caption{\textit{Pseudocode of Spreading Activation}}
+% \label{alg:as}
+% \begin{algorithmic}
+%   \REQUIRE $\Phi \neq \emptyset$  
+%   \ENSURE $\mathcal{G} \neq \emptyset$
+%   \STATE $\mathcal{A} \leftarrow \Phi$
+%   \STATE $\mathcal{G} \leftarrow \emptyset$
+%   \WHILE{$\mathcal{A} \neq \emptyset$ AND $card(\mathcal{G}) <
+% \mathcal{G}_{\min}$ AND $N_k \ge N_{\min}$}
+% 	\STATE $n_k \leftarrow  extract(\mathcal{A})$
+% 	\STATE $\mathcal{G} \leftarrow \{n_k\} \cup \mathcal{G}$	  	
+% 	  \FORALL{$n_i / w_{ki} > 0$}	  	
+% 	  	\STATE $N_i \leftarrow N_i + w_{ki}N_k$	
+% 		\STATE $\mathcal{A} \leftarrow (\{n_i\} \cup \mathcal{A}) -
+% \mathcal{G}$		
+% 	    \ENDFOR
+%   \ENDWHILE
+%  \RETURN $\mathcal{G}$
+% \end{algorithmic}
+% \end{algorithm}\label{alg:as}
+% 
+% \subsection{Improving Spreading Activation}\label{improve:sa}
+% Some improvements in the calculus of the activation value of a
+% concept have been introduced in order to get a more complete and accurate technique. 
+% If some paths of activation converge to the same node and the source nodes are different then this node should be 
+% relevant and a reward is applied to the nodes presented in these paths. 
+% 
+% \begin{definition}
+% Let $p_i$ the number of paths that start and finish in different nodes of
+% $\Phi$\footnote{The reward is not applied to nodes in  $\Phi$.} and they go
+% through the node $c_i$ and they only contain nodes belonging to $\mathcal{G}$.
+% This improvement assigns a new value to the activation value of each node $c_i$
+% indicated by $I^*_i$ and it is calculated by means of the function $g$:
+% \end{definition}
+% 
+% \begin{equation}
+% I^*_i = g(I_i,p_i)
+% \end{equation}
+% 
+% In this case, a relaxed reward function has been chosen, Eq.~\ref{f:recompensa},
+% and, it is applied in the \textit{Postadjustment} stage, thus the
+% original semantics and behavior of \textit{SA} algorithm remains. 
+% 
+% \begin{equation}\label{f:recompensa}
+% g(x,y) = x (\log(y+1)+1)
+% \end{equation}
+% 
+% $x$ is the reward constant, it can be defined according to the context and $y$
+% is the number of times that a concept $c_i$ must be rewarded.
+% 
+% % \begin{figure}[h]
+% %  \centering
+% %     \includegraphics[width=6cm]{images/prize-sa}
+% %     \caption{Paths and rewards in \textit{Spreading Activation}}
+% %  \label{fig:prize-sa}
+% % \end{figure}
+% \subsection{Refining Spreading Activation}
+% The whole configuration of the algorithm can be made by default but a customization
+% to a particular domain should be carried out by a domain expert taking into account the
+% specific issues of that domain and considering it as a new stage of 
+% the ontology o graph modeling process. Since \textit{SA} uses weights in relations  to calculate the activation
+% value of the concepts, different ``patterns'' have been identified to manage the direction 
+% of the spreading process: 1) Ascending seeks for the activation of concepts more generic than
+% the current (``superclass''); 2) Descending seeks for the activation of concepts more specific than
+% the current (``subclass''); 3) Nominal seeks for the activation of instances instead of concepts (``instance of'')
+% and 4) Crossing  seeks for the activation of concepts and instances connected through a certain relation $\mathcal{R}$.
+% These control patterns can be put together in order to fit as much as possible the focus and 
+% direction of the double process of activation and spreading.
+% 
+% \subsection{Design and implementation of ONTOSPREAD}
+% ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/general}
+%  is addressed by an open and extensible design applying best practices on software design and development like design patterns and refactoring. 
+% The \textit{Player} class handles the execution of the algorithm in a  stepwise way. It is 
+% an application of the \textit{Iterator} design pattern to perform the activation and spreading processes. The state of 
+% the algorithm is captured in a separate class (\textit{OntoSpreadState}) that makes possible to serialize the 
+% current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
+% (see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
+% the process carries on the information about the knowledge base using the DAO pattern thus the 
+% framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
+% 
+% \begin{figure}[htb]
+% \centering
+%   \includegraphics[width=8cm]{images/general}
+% \caption{ONTOSPREAD Overview Diagram.}
+% \label{fig:diagramas/general}
 % \end{figure}
-\subsection{Refining Spreading Activation}
-The whole configuration of the algorithm can be made by default but a customization
-to a particular domain should be carried out by a domain expert taking into account the
-specific issues of that domain and considering it as a new stage of 
-the ontology o graph modeling process. Since \textit{SA} uses weights in relations  to calculate the activation
-value of the concepts, different ``patterns'' have been identified to manage the direction 
-of the spreading process: 1) Ascending seeks for the activation of concepts more generic than
-the current (``superclass''); 2) Descending seeks for the activation of concepts more specific than
-the current (``subclass''); 3) Nominal seeks for the activation of instances instead of concepts (``instance of'')
-and 4) Crossing  seeks for the activation of concepts and instances connected through a certain relation $\mathcal{R}$.
-These control patterns can be put together in order to fit as much as possible the focus and 
-direction of the double process of activation and spreading.
-
-\subsection{Design and implementation of ONTOSPREAD}
-ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/general}
- is addressed by an open and extensible design applying best practices on software design and development like design patterns and refactoring. 
-The \textit{Player} class handles the execution of the algorithm in a  stepwise way. It is 
-an application of the \textit{Iterator} design pattern to perform the activation and spreading processes. The state of 
-the algorithm is captured in a separate class (\textit{OntoSpreadState}) that makes possible to serialize the 
-current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
-(see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
-the process carries on the information about the knowledge base using the DAO pattern thus the 
-framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
-
-\begin{figure}[htb]
-\centering
-  \includegraphics[width=8cm]{images/general}
-\caption{ONTOSPREAD Overview Diagram.}
-\label{fig:diagramas/general}
-\end{figure}
-
-The keypoint to design the algorithm lies in how and where
-the information will be available at different iterations. Secondly, an unique entry point
-to the state of the algorithm should be available trying to avoid
-illegal accesses. This object (\textit{OntoSpreadState}) stores the next information: \begin{inparaenum}\item Spread
-concepts. \item Active concepts. \item Paths of activation. \item Concept to be
-spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
-Moreover, the extensibility and flexibility of the algorithm is subjected to a good design
-of the restrictions and their evaluation process. The next features and design patterns 
-are used to design and implement the model of restrictions of SA:
-\begin{itemize}
-  \item Any restriction can be considered as a simple restriction and can be
-evaluated to a boolean value.
-  \item Conditions or actions in the algorithm can be comprised of several
-restrictions.
-  \item The extension points of the algorithm, included through a
-\textit{Template Method} design pattern, are strategies to carry out an specific
-action. Each strategy can be subjected to one or more restrictions.
-\item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
-  \item Each action is an strategy. \textit{Strategy} pattern.
-  \item A strategy implies one restriction (or a set of them) thus the strategy
-is a client of the \textit{Composite} of restrictions.
-  \item The evaluation of the restrictions to get their value (boolean) is
-carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
-composite objects. It consists on: apply the strategy that modifies the state
-of the algorithm and assert this change of state by means of the restrictions applied
-to this strategy.
-\end{itemize}
+% 
+% The keypoint to design the algorithm lies in how and where
+% the information will be available at different iterations. Secondly, an unique entry point
+% to the state of the algorithm should be available trying to avoid
+% illegal accesses. This object (\textit{OntoSpreadState}) stores the next information: \begin{inparaenum}\item Spread
+% concepts. \item Active concepts. \item Paths of activation. \item Concept to be
+% spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
+% Moreover, the extensibility and flexibility of the algorithm is subjected to a good design
+% of the restrictions and their evaluation process. The next features and design patterns 
+% are used to design and implement the model of restrictions of SA:
+% \begin{itemize}
+%   \item Any restriction can be considered as a simple restriction and can be
+% evaluated to a boolean value.
+%   \item Conditions or actions in the algorithm can be comprised of several
+% restrictions.
+%   \item The extension points of the algorithm, included through a
+% \textit{Template Method} design pattern, are strategies to carry out an specific
+% action. Each strategy can be subjected to one or more restrictions.
+% \item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
+%   \item Each action is an strategy. \textit{Strategy} pattern.
+%   \item A strategy implies one restriction (or a set of them) thus the strategy
+% is a client of the \textit{Composite} of restrictions.
+%   \item The evaluation of the restrictions to get their value (boolean) is
+% carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
+% composite objects. It consists on: apply the strategy that modifies the state
+% of the algorithm and assert this change of state by means of the restrictions applied
+% to this strategy.
+% \end{itemize}
 
 % \subsection{Development of ONTOSPREAD API and Supporting Tools}
 % The development of the API has been performed using Semantic Web and Java technologies

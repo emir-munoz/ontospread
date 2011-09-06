@@ -23,7 +23,7 @@ other selection strategies should be implemented. Finally a new version of the S
 is being specified and developed following the Map/Reduce\footnote{\url{http://labs.google.com/papers/mapreduce.html}} programming model with the objective
 of getting a distributed version of this technique for processing large data sets.
 
-\textbf{Acknowledgements}. ONTOSPREAD has been initially developed in BOPA~\cite{bopaEstonia} project that is
+\textbf{Acknowledgements}. ONTOSPREAD was initially developed in BOPA~\cite{bopaEstonia} project that is
 one of \textit{Semantic Web Use Cases and Case
 Studies}\footnote{\url{http://www.w3.org/2001/sw/sweo/public/UseCases/CTIC/}}
 collected by W3C. Currently it is being applied to the process of searching

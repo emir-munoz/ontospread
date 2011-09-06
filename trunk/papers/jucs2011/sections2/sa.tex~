@@ -229,7 +229,7 @@ the algorithm is captured in a separate class (\textit{OntoSpreadState}) that ma
 current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
 (see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
 the process carries on the information about the knowledge base using the DAO pattern thus the 
-framework is independent from the modeling language of the semantic network (OWL and RDF vocabularies are now supported).
+framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
 
 \begin{figure}[htb]
 \centering
