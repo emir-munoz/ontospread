@@ -266,156 +266,81 @@ of the algorithm and assert this change of state by means of the restrictions ap
 to this strategy.
 \end{itemize}
 
-% \subsection{Development of ONTOSPREAD API and Supporting Tools}
-% The development of the API has been performed using Semantic Web and Java technologies
-% like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
-% http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
-% Maven\footnote{\url{http://maven.apache.org}} o
-% Spring\footnote{\url{http://www.springframework.org/}}. Besides two tools are provided to test and debug different configurations
-% of the algorithm:
-% 
-% \begin{itemize}
-%  \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
-% of batch tests. It provides an user-oriented framework to configure, combine and load several
-% configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
-% pattern has been defined to build the configuration of the \textit{SA} process.
-%  The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
-% automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
-% load and serialize the different configurations and results. 
-% 
-% \item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
-% using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
-% the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
-%  run (one step or stepwise) and view the evolution of the semantic network 
-%  with the concepts (activated, spread, weights, relations, etc.).
-% \end{itemize}
-% 
-% Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
-% metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
-% quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
-% of the software.
-%    \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
-%         
-%         \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline\subsection{Development of ONTOSPREAD API and Supporting Tools}
-% The development of the API has been performed using Semantic Web and Java technologies
-% like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
-% http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
-% Maven\footnote{\url{http://maven.apache.org}} o
-% Spring\footnote{\url{http://www.springframework.org/}}. Besides two tools are provided to test and debug different configurations
-% of the algorithm:
-% 
-% \begin{itemize}
-%  \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
-% of batch tests. It provides an user-oriented framework to configure, combine and load several
-% configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
-% pattern has been defined to build the configuration of the \textit{SA} process.
-%  The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
-% automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
-% load and serialize the different configurations and results. 
-% 
-% \item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
-% using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
-% the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
-%  run (one step or stepwise) and view the evolution of the semantic network 
-%  with the concepts (activated, spread, weights, relations, etc.).
-% \end{itemize}
-% 
-% Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
-% metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
-% quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
-% of the software.
-%    \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
-%         
-%         \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
-% \textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endfirsthead
-%         \caption[]{Source Code Metrics (continue)}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
-% \textit{Std.
-%         Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endhead
-%         \hline
-%         \multicolumn{7}{|c|}{Continue $\ldots$}\\
-%         \hline
-%         \endfoot
-%         \hline
-%         \endlastfoot
-% 		TLOC&Total Lines of Code.&5272&&&& \\ \hline
-%     		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
-% 		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
-% 		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
-% 		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
-% 		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
-% 		%NOP&Number of Packages.&42&&&& \\ \hline
-% 		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
-% 		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
-% 		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
-% 		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
-% 		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
-% 		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
-% 		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
-% 		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
-% 		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
-% 		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
-% 		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
-% 		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
-% 		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
-%     	 \hline
-%         \end{longtable}      
-% 
-% All of these values are in the default range defined in the plugin thus the quality of the source code 
-% with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
-% %         \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
-% % \textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-% %         \endfirsthead
-% %         \caption[]{Source Code Metrics (continue)}\\
-% %         \hline
-% %         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-% %         \hline
-% %         \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
-% % \textit{Std.
-% %         Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-% %         \endhead
-% %         \hline
-% %         \multicolumn{7}{|c|}{Continue $\ldots$}\\
-% %         \hline
-% %         \endfoot
-% %         \hline
-% %         \endlastfoot
-% % 		TLOC&Total Lines of Code.&5272&&&& \\ \hline
-% %     		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
-% % 		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
-% % 		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
-% % 		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
-% % 		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
-% % 		%NOP&Number of Packages.&42&&&& \\ \hline
-% % 		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
-% % 		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
-% % 		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
-% % 		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
-% % 		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
-% % 		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
-% % 		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
-% % 		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
-% % 		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
-% % 		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
-% % 		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
-% % 		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
-% % 		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
-% %     	 \hline
-% %         \end{longtable}      
-% % 
-% % All of these values are in the default range defined in the plugin thus the quality of the source code 
-% % with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
+\subsection{Development of ONTOSPREAD API and Supporting Tools}
+The development of the API has been performed using Semantic Web and Java technologies
+like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
+http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
+Maven\footnote{\url{http://maven.apache.org}} o
+Spring\footnote{\url{http://www.springframework.org/}}. Moreover two tools are provided to test and debug different configurations
+of the algorithm:
+
+\begin{itemize}
+ \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
+of batch tests. It provides an user-oriented framework to configure, combine and load several
+configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
+vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
+pattern has been defined to build the configuration of the \textit{SA} process.
+ The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
+automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
+load and serialize the different configurations and results. 
+
+\item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
+using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
+the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
+ run (one step or stepwise) and view the evolution of the semantic network 
+ with the concepts (activated, spread, weights, relations, etc.).
+\end{itemize}
+
+
+Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
+metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
+quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
+of the software.
+   \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
+        
+        \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
+\textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endfirsthead
+        \caption[]{Source Code Metrics (continue)}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
+\textit{Std.
+        Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endhead
+        \hline
+        \multicolumn{7}{|c|}{Continue $\ldots$}\\
+        \hline
+        \endfoot
+        \hline
+        \endlastfoot
+		TLOC&Total Lines of Code.&5272&&&& \\ \hline
+    		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
+		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
+		NOM&&$0.065$&$0.296$&3&&Type. \\ \hline 
+		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
+		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
+		%NOP&Number of Packages.&42&&&& \\ \hline
+		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
+		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
+		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
+		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
+		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
+		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
+		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
+		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
+		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
+		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
+		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
+		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
+		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
+    	 \hline
+        \end{longtable}      
+
+All of these values are in the default range defined in the plugin thus the quality of the source code 
+with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.

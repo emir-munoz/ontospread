@@ -172,250 +172,175 @@ I^k_i=\begin{cases}%
 \end{algorithmic}
 \end{algorithm}\label{alg:as}
 
-% \subsection{Improving Spreading Activation}\label{improve:sa}
-% Some improvements in the calculus of the activation value of a
-% concept have been introduced in order to get a more complete and accurate technique. 
-% If some paths of activation converge to the same node and the source nodes are different then this node should be 
-% relevant and a reward is applied to the nodes presented in these paths. 
-% 
-% \begin{definition}
-% Let $p_i$ the number of paths that start and finish in different nodes of
-% $\Phi$\footnote{The reward is not applied to nodes in  $\Phi$.} and they go
-% through the node $c_i$ and they only contain nodes belonging to $\mathcal{G}$.
-% This improvement assigns a new value to the activation value of each node $c_i$
-% indicated by $I^*_i$ and it is calculated by means of the function $g$:
-% \end{definition}
-% 
-% \begin{equation}
-% I^*_i = g(I_i,p_i)
-% \end{equation}
-% 
-% In this case, a relaxed reward function has been chosen, Eq.~\ref{f:recompensa},
-% and, it is applied in the \textit{Postadjustment} stage, thus the
-% original semantics and behavior of \textit{SA} algorithm remains. 
-% 
-% \begin{equation}\label{f:recompensa}
-% g(x,y) = x (\log(y+1)+1)
-% \end{equation}
-% 
-% $x$ is the reward constant, it can be defined according to the context and $y$
-% is the number of times that a concept $c_i$ must be rewarded.
-% 
-% % \begin{figure}[h]
-% %  \centering
-% %     \includegraphics[width=6cm]{images/prize-sa}
-% %     \caption{Paths and rewards in \textit{Spreading Activation}}
-% %  \label{fig:prize-sa}
-% % \end{figure}
-% \subsection{Refining Spreading Activation}
-% The whole configuration of the algorithm can be made by default but a customization
-% to a particular domain should be carried out by a domain expert taking into account the
-% specific issues of that domain and considering it as a new stage of 
-% the ontology o graph modeling process. Since \textit{SA} uses weights in relations  to calculate the activation
-% value of the concepts, different ``patterns'' have been identified to manage the direction 
-% of the spreading process: 1) Ascending seeks for the activation of concepts more generic than
-% the current (``superclass''); 2) Descending seeks for the activation of concepts more specific than
-% the current (``subclass''); 3) Nominal seeks for the activation of instances instead of concepts (``instance of'')
-% and 4) Crossing  seeks for the activation of concepts and instances connected through a certain relation $\mathcal{R}$.
-% These control patterns can be put together in order to fit as much as possible the focus and 
-% direction of the double process of activation and spreading.
-% 
-% \subsection{Design and implementation of ONTOSPREAD}
-% ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/general}
-%  is addressed by an open and extensible design applying best practices on software design and development like design patterns and refactoring. 
-% The \textit{Player} class handles the execution of the algorithm in a  stepwise way. It is 
-% an application of the \textit{Iterator} design pattern to perform the activation and spreading processes. The state of 
-% the algorithm is captured in a separate class (\textit{OntoSpreadState}) that makes possible to serialize the 
-% current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
-% (see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
-% the process carries on the information about the knowledge base using the DAO pattern thus the 
-% framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
-% 
-% \begin{figure*}[htb]
-% \centering
-%   \includegraphics[width=8cm]{images/general}
-% \caption{ONTOSPREAD Overview Diagram.}
-% \label{fig:diagramas/general}
-% \end{figure*}
-% 
-% The keypoint to design the algorithm lies in how and where
-% the information will be available at different iterations. Secondly, an unique entry point
-% to the state of the algorithm should be available trying to avoid
-% illegal accesses. This object (\textit{OntoSpreadState}) stores the next information: \begin{inparaenum}\item Spread
-% concepts. \item Active concepts. \item Paths of activation. \item Concept to be
-% spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
-% Moreover, the extensibility and flexibility of the algorithm is subjected to a good design
-% of the restrictions and their evaluation process. The next features and design patterns 
-% are used to design and implement the model of restrictions of SA:
-% \begin{itemize}
-%   \item Any restriction can be considered as a simple restriction and can be
-% evaluated to a boolean value.
-%   \item Conditions or actions in the algorithm can be comprised of several
-% restrictions.
-%   \item The extension points of the algorithm, included through a
-% \textit{Template Method} design pattern, are strategies to carry out an specific
-% action. Each strategy can be subjected to one or more restrictions.
-% \item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
-%   \item Each action is an strategy. \textit{Strategy} pattern.
-%   \item A strategy implies one restriction (or a set of them) thus the strategy
-% is a client of the \textit{Composite} of restrictions.
-%   \item The evaluation of the restrictions to get their value (boolean) is
-% carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
-% composite objects. It consists on: apply the strategy that modifies the state
-% of the algorithm and assert this change of state by means of the restrictions applied
-% to this strategy.
-% \end{itemize}
+\subsection{Improving Spreading Activation}\label{improve:sa}
+Some improvements in the calculus of the activation value of a
+concept have been introduced in order to get a more complete and accurate technique. 
+If some paths of activation converge to the same node and the source nodes are different then this node should be 
+relevant and a reward is applied to the nodes presented in these paths. 
 
-% \subsection{Development of ONTOSPREAD API and Supporting Tools}
-% The development of the API has been performed using Semantic Web and Java technologies
-% like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
-% http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
-% Maven\footnote{\url{http://maven.apache.org}} o
-% Spring\footnote{\url{http://www.springframework.org/}}. Besides two tools are provided to test and debug different configurations
-% of the algorithm:
-% 
-% \begin{itemize}
-%  \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
-% of batch tests. It provides an user-oriented framework to configure, combine and load several
-% configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
-% pattern has been defined to build the configuration of the \textit{SA} process.
-%  The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
-% automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
-% load and serialize the different configurations and results. 
-% 
-% \item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
-% using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
-% the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
-%  run (one step or stepwise) and view the evolution of the semantic network 
-%  with the concepts (activated, spread, weights, relations, etc.).
-% \end{itemize}
-% 
-% Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
-% metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
-% quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
-% of the software.
-%    \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
-%         
-%         \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline\subsection{Development of ONTOSPREAD API and Supporting Tools}
-% The development of the API has been performed using Semantic Web and Java technologies
-% like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
-% http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
-% Maven\footnote{\url{http://maven.apache.org}} o
-% Spring\footnote{\url{http://www.springframework.org/}}. Besides two tools are provided to test and debug different configurations
-% of the algorithm:
-% 
-% \begin{itemize}
-%  \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
-% of batch tests. It provides an user-oriented framework to configure, combine and load several
-% configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
-% vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
-% pattern has been defined to build the configuration of the \textit{SA} process.
-%  The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
-% automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
-% load and serialize the different configurations and results. 
-% 
-% \item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
-% using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
-% the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
-%  run (one step or stepwise) and view the evolution of the semantic network 
-%  with the concepts (activated, spread, weights, relations, etc.).
-% \end{itemize}
-% 
-% Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
-% metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
-% quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
-% of the software.
-%    \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
-%         
-%         \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
-% \textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endfirsthead
-%         \caption[]{Source Code Metrics (continue)}\\
-%         \hline
-%         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-%         \hline
-%         \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
-% \textit{Std.
-%         Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-%         \endhead
-%         \hline
-%         \multicolumn{7}{|c|}{Continue $\ldots$}\\
-%         \hline
-%         \endfoot
-%         \hline
-%         \endlastfoot
-% 		TLOC&Total Lines of Code.&5272&&&& \\ \hline
-%     		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
-% 		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
-% 		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
-% 		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
-% 		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
-% 		%NOP&Number of Packages.&42&&&& \\ \hline
-% 		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
-% 		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
-% 		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
-% 		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
-% 		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
-% 		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
-% 		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
-% 		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
-% 		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
-% 		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
-% 		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
-% 		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
-% 		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
-%     	 \hline
-%         \end{longtable}      
-% 
-% All of these values are in the default range defined in the plugin thus the quality of the source code 
-% with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
-% %         \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
-% % \textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-% %         \endfirsthead
-% %         \caption[]{Source Code Metrics (continue)}\\
-% %         \hline
-% %         \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
-% %         \hline
-% %         \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
-% % \textit{Std.
-% %         Dev.} & \textit{Max}& \textit{Scope} \\ \hline
-% %         \endhead
-% %         \hline
-% %         \multicolumn{7}{|c|}{Continue $\ldots$}\\
-% %         \hline
-% %         \endfoot
-% %         \hline
-% %         \endlastfoot
-% % 		TLOC&Total Lines of Code.&5272&&&& \\ \hline
-% %     		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
-% % 		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
-% % 		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
-% % 		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
-% % 		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
-% % 		%NOP&Number of Packages.&42&&&& \\ \hline
-% % 		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
-% % 		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
-% % 		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
-% % 		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
-% % 		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
-% % 		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
-% % 		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
-% % 		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
-% % 		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
-% % 		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
-% % 		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
-% % 		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
-% % 		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
-% %     	 \hline
-% %         \end{longtable}      
-% % 
-% % All of these values are in the default range defined in the plugin thus the quality of the source code 
-% % with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
+\begin{definition}
+Let $p_i$ the number of paths that start and finish in different nodes of
+$\Phi$\footnote{The reward is not applied to nodes in  $\Phi$.} and they go
+through the node $c_i$ and they only contain nodes belonging to $\mathcal{G}$.
+This improvement assigns a new value to the activation value of each node $c_i$
+indicated by $I^*_i$ and it is calculated by means of the function $g$:
+\end{definition}
+
+\begin{equation}
+I^*_i = g(I_i,p_i)
+\end{equation}
+
+In this case, a relaxed reward function has been chosen, Eq.~\ref{f:recompensa},
+and, it is applied in the \textit{Postadjustment} stage, thus the
+original semantics and behavior of \textit{SA} algorithm remains. 
+
+\begin{equation}\label{f:recompensa}
+g(x,y) = x (\log(y+1)+1)
+\end{equation}
+
+$x$ is the reward constant, it can be defined according to the context and $y$
+is the number of times that a concept $c_i$ must be rewarded.
+
+% \begin{figure}[h]
+%  \centering
+%     \includegraphics[width=6cm]{images/prize-sa}
+%     \caption{Paths and rewards in \textit{Spreading Activation}}
+%  \label{fig:prize-sa}
+% \end{figure}
+\subsection{Refining Spreading Activation}
+The whole configuration of the algorithm can be made by default but a customization
+to a particular domain should be carried out by a domain expert taking into account the
+specific issues of that domain and considering it as a new stage of 
+the ontology o graph modeling process. Since \textit{SA} uses weights in relations  to calculate the activation
+value of the concepts, different ``patterns'' have been identified to manage the direction 
+of the spreading process: 1) Ascending seeks for the activation of concepts more generic than
+the current (``superclass''); 2) Descending seeks for the activation of concepts more specific than
+the current (``subclass''); 3) Nominal seeks for the activation of instances instead of concepts (``instance of'')
+and 4) Crossing  seeks for the activation of concepts and instances connected through a certain relation $\mathcal{R}$.
+These control patterns can be put together in order to fit as much as possible the focus and 
+direction of the double process of activation and spreading.
+
+\subsection{Design and implementation of ONTOSPREAD}
+ONTOSPREAD framework\footnote{\url{http://code.google.com/p/ontospread/}}, see Fig.~\ref{fig:diagramas/general}
+ is addressed by an open and extensible design applying best practices on software design and development like design patterns and refactoring. 
+The \textit{Player} class handles the execution of the algorithm in a  stepwise way. It is 
+an application of the \textit{Iterator} design pattern to perform the activation and spreading processes. The state of 
+the algorithm is captured in a separate class (\textit{OntoSpreadState}) that makes possible to serialize the 
+current state and back to a previous one. On the other hand, the \textit{SA} process comprises of three sub-processes 
+(see Sect.~\ref{background}): \textit{OntoSpreadPreAdjustment}; \textit{OntoSpreadRun}; and \textit{OntoSpreadPostAdjustment}. Moreover, 
+the process carries on the information about the knowledge base using the DAO pattern thus the 
+framework is independent from the modeling language of the semantic network (RDF-based vocabularies and OWL are now supported).
+
+\begin{figure*}[htb]
+\centering
+  \includegraphics[width=8cm]{images/general}
+\caption{ONTOSPREAD Overview Diagram.}
+\label{fig:diagramas/general}
+\end{figure*}
+
+The keypoint to design the algorithm lies in how and where
+the information will be available at different iterations. Secondly, an unique entry point
+to the state of the algorithm should be available trying to avoid
+illegal accesses. This object (\textit{OntoSpreadState}) stores the next information: \begin{inparaenum}\item Spread
+concepts. \item Active concepts. \item Paths of activation. \item Concept to be
+spread. \item Generic swap area (to share information among iterations). \end{inparaenum}
+Moreover, the extensibility and flexibility of the algorithm is subjected to a good design
+of the restrictions and their evaluation process. The next features and design patterns 
+are used to design and implement the model of restrictions of SA:
+\begin{itemize}
+  \item Any restriction can be considered as a simple restriction and can be
+evaluated to a boolean value.
+  \item Conditions or actions in the algorithm can be comprised of several
+restrictions.
+  \item The extension points of the algorithm, included through a
+\textit{Template Method} design pattern, are strategies to carry out an specific
+action. Each strategy can be subjected to one or more restrictions.
+\item Each restriction can be simple or comprised of others. \textit{Composite} pattern.
+  \item Each action is an strategy. \textit{Strategy} pattern.
+  \item A strategy implies one restriction (or a set of them) thus the strategy
+is a client of the \textit{Composite} of restrictions.
+  \item The evaluation of the restrictions to get their value (boolean) is
+carried out through a \textit{Visitor} pattern that fits perfectly to evaluate and walk in
+composite objects. It consists on: apply the strategy that modifies the state
+of the algorithm and assert this change of state by means of the restrictions applied
+to this strategy.
+\end{itemize}
+
+\subsection{Development of ONTOSPREAD API and Supporting Tools}
+The development of the API has been performed using Semantic Web and Java technologies
+like: Jena\footnote{\url{http://jena.sf.net}} API, JAXB\footnote{\url{
+http://java.sun.com/developer/technicalArticles/WebServices/jaxb/}}, 
+Maven\footnote{\url{http://maven.apache.org}} o
+Spring\footnote{\url{http://www.springframework.org/}}. Moreover two tools are provided to test and debug different configurations
+of the algorithm:
+
+\begin{itemize}
+ \item [ONTOSPREAD-TEST] It is a tool for the automatic execution and reporting
+of batch tests. It provides an user-oriented framework to configure, combine and load several
+configurations (e.g. restrictions, weights, initial concepts, etc.) for \textit{SA} and get results. A XML
+vocabulary using XML-Schema and the \textit{Extensible Content Model} XML design
+pattern has been defined to build the configuration of the \textit{SA} process.
+ The designing of this vocabulary is oriented to be used with JAXB, this technology enables us 
+automatically the processes of marshalling and unmarshalling Java classes providing an easy way to configure, 
+load and serialize the different configurations and results. 
+
+\item [ONTOSPREAD Inspector.] It is a graphical debugger of \textit{SA} algorithm 
+using the graph library JpowerGraph\footnote{\url{http://jpowergraph.sf.net}} and
+the SWT\footnote{\url{http://www.eclipse.org/swt/}} toolkit. It enables to configure, load, 
+ run (one step or stepwise) and view the evolution of the semantic network 
+ with the concepts (activated, spread, weights, relations, etc.).
+\end{itemize}
+
+
+Finally, a set of source code metrics using Eclipse\footnote{\url{http://www.eclipse.org}} and the 
+metrics plugin\footnote{\url{http://metrics.sf.net/}} have been extracted to demonstrate and measure its 
+quality. Table\ref{tabla:metricas-valores} presents these metrics that measures cohesion and coupling 
+of the software.
+   \begin{longtable}{|p{1cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
+        
+        \caption{Source Code Metrics} \label{tabla:metricas-valores}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} &  \textit{Def.} &  \textit{Total} &  \textit{Avg.}& 
+\textit{Std. Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endfirsthead
+        \caption[]{Source Code Metrics (continue)}\\
+        \hline
+        \multicolumn{7}{|c|}{\textbf{Source Code Metrics}}\\
+        \hline
+        \textit{ID} & \textit{Def} & \textit{Total} &  \textit{Avg.}& 
+\textit{Std.
+        Dev.} & \textit{Max}& \textit{Scope} \\ \hline
+        \endhead
+        \hline
+        \multicolumn{7}{|c|}{Continue $\ldots$}\\
+        \hline
+        \endfoot
+        \hline
+        \endlastfoot
+		TLOC&Total Lines of Code.&5272&&&& \\ \hline
+    		CA&Afferent Coupling.&&$6.524$&$10.545$&48&Package.\\ \hline
+		RMD&Normalized Distance, $|RMA + RMI - 1 |$.&&$0.32$&$0.347$&1&Package. \\ \hline
+		NOM&&$0.065$&$0.296$&3&Type. \\ \hline 
+		RMI&Instability: $CE / (CA + CE)$&&$0.567$&$0.387$&1&Package. \\ \hline
+		%NOF&Number of Atributtes.&147&$1.256$&$2.039$&12&Type. \\ \hline
+		%NOP&Number of Packages.&42&&&& \\ \hline
+		%MLOC&Method Lines of Code.&2661&$4.05$&$6.179$&88&Method. \\ \hline
+		%WMC&Weighted methods per Class.&852&$7.282$&$6.859$&42&Type. \\ \hline
+		%NORM&Number of Overriden Methods (no ``Object'' methods).&20&$0.171$&$0.419$&2&Type. \\ \hline
+		%NSF&Number of Static Attributes.&58&$0.496$&$0.622$&$3$&Type. \\ \hline
+		NBD&Nested Block Depth.&&$1.204$&$0.516$&4&Method. \\ \hline
+		%NOM&Number of Methods.&594&$5.077$&$5.297$&33&Type.\\	\hline 
+		LCOM&Lack of Cohesion of Methods (\textit{Henderson-Sellers}).&&$0.18$&$0.289$&$0.957$&Type.\\ \hline 
+		VG&McCabe Cyclomatic Complexity.&&$1.297$&$0.735$&6&Method. \\ \hline
+		RMA&Abstractness.&&$0.113$&$0.186$&0.667&Package. \\ \hline
+		%NOI&Number of Interfaces.&11&$0.262$&$0.537$&2&Package. \\ \hline
+		CE&Efferent Coupling.&&$1.976$&$1.282$&5&Package. \\ \hline
+		%NC&11&$0.094$&$0.539$&5&N/A&Media y máximo por tipo. \\ \hline
+		DIT&Depth of Inheritance Tree.&&$1.607$&$0.915$&4&Type. \\ \hline
+    	 \hline
+        \end{longtable}      
+
+All of these values are in the default range defined in the plugin thus the quality of the source code 
+with the desired feautures of \textit{high cohesion} and \textit{low coupling} are assured.
