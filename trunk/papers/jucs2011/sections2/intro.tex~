@@ -14,8 +14,8 @@ to ontologies, a common and standard framework is missing and each third party i
 Taking into account the new information realm and the leading features of putting together 
 the SA technique and the Semantic Web and Linked Data initiatives, new enriched services of searching, 
 matchmaking, recommendation or contextualization can be implemented to fulfill the requirements
-of access information in digital libraries of different trending scopes like e-procurement, 
-legal document databases~\cite{bopaEstonia}, e-tourism or e-health.
+of access information in digital libraries of different trending scopes like legal document databases~\cite{bopaEstonia}, 
+e-procurement, e-tourism or e-health.
 
 The proposed work aims to afford a framework for SA to ease the configuration, customization 
 and execution over graph-based structures and more specifically over RDF graphs and ontologies. It is relevant

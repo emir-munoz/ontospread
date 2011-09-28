@@ -1,0 +1,156 @@
+\documentclass{article}[10pt]
+
+\usepackage{jucs2e}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{paralist}
+
+\usepackage{theorem}
+%%%Math
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amsthm}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{longtable}
+
+\usepackage{listings}
+
+\usepackage{color}
+
+\definecolor{darkred}{rgb}{0.5, 0, 0}
+\definecolor{violet}{rgb}{1, 0, 1}
+\definecolor{green}{rgb}{0.3, 0.95, 0.3}
+\definecolor{listinggray}{gray}{0.97}
+
+\lstset{
+	basewidth=0.45em,
+	backgroundcolor=\color{listinggray},
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,
+	keywordstyle=\bfseries,
+	stringstyle=\itshape,
+	commentstyle=\itshape,
+	showspaces=false,
+	showtabs=false,
+	showstringspaces=false,
+	frame=trbl,
+	frameround=tttt,
+	extendedchars=true,
+	numbers=none,
+	aboveskip=0.5cm,
+	belowskip=0.5cm,
+	xleftmargin=0cm,
+	xrightmargin=0cm
+}
+
+\hyphenation{ON-TO-SPREAD}
+
+\begin{document}
+
+\title{ONTOSPREAD: A Framework for Supporting the Activation of Concepts in Graph-based Structures through the Spreading
+Activation technique}
+
+%\title{Application of the Spreading Activation Technique for Recommending Concepts of well-known Ontologies in Medical Systems}
+
+\author{{\bfseries Jose Mar\'{i}a \'{A}lvarez Rodr\'{i}guez\\
+   (Department of Computer Science, University of Oviedo, Spain \\
+   josem.alvarez@weso.es)
+   \and
+   {\bfseries Jos\'{e} Emilio Labra Gayo}\\
+   (Department of Computer Science, University of Oviedo, Spain \\
+   jelabra@weso.es)\\
+   \and
+   {\bfseries Patricia Ordo\'{n}ez De Pablos}\\
+   (Department of Business Management, University of Oviedo, Spain  \\
+   patriop@uniovi.es)\\
+}}
+\maketitle
+
+\begin{abstract}
+The present paper~\footnote{This is the short version of the paper, some sections have been dropped in order to adjust the contents to 6 pages. 
+The extended version will again include them.} introduces the ONTOSPREAD framework for the development,
+configuration, customization and execution of the Spreading Activation
+technique over graph-based structures, more specifically over RDF graphs and ontologies 
+arising from the Semantic Web area. This technique has been used to
+the efficient exploration and querying of large and heterogeneous knowledge bases 
+based on semantic networks in the Information and Document Retrieval domains. 
+ONTOSPREAD implements the double process of activation and spreading of concepts in ontologies applying 
+different restrictions of the original model like weight degradation according to the distance or 
+others coming from the extension of this technique like the converging paths reward. 
+This technique provide a whole framework to ease the information access, 
+common required feature in the exploitation of the current Web of Data. Moreover,
+it is considered to be relevant to support the recommendation of concepts in different fields liked e-health,
+e-procurement or e-tourism with the objective of getting a set of ranked resources.
+Finally an evaluation methodology and two examples using ontologies from different domains
+are provided to validate the goodness, the improvement and the capabilities of this framework applied 
+to digital libraries.
+% The aim of this paper is to present the application of the Spreading
+% Activation Technique in the scope of medical systems. This technique 
+% is implemented through the ONTOSPREAD framework for the development,
+% configuration, customization and execution of the Spreading Activation
+% technique over graph-based structures, more specifically over RDF graphs and ontologies 
+% arising from the Semantic Web area. It has been used to
+% the efficient exploration and querying of large and heterogeneous knowledge bases 
+% based on semantic networks in the Information and Document Retrieval domains.
+% ONTOSPREAD implements the double process of activation and spreading of concepts in ontologies applying 
+% different restrictions of the original model like weight degradation according to the distance or 
+% others coming from the extension of this technique like the converging paths reward. 
+% It is considered to be relevant to support the recommendation of concepts for tagging clinical records
+% and to provide a tool for decision-support in clinical diagnosis.
+% Finally an evaluation methodology and two examples using the well-known ontologies GALEN and SNOMED CT 
+% are presented to validate the goodness, the improvement and the capabilities 
+% of this technique applied to medical systems.
+\end{abstract}
+
+\begin{keywords}
+recommending and tagging systems, information and document retrieval, decision-support systems, algorithms, api
+\end{keywords}
+
+\begin{category}
+K.4, K.4.1, D.2, D.2.2
+\end{category}
+
+% \section{Introduction}
+% \input{sections/intro}
+% \section{Related Work}\label{related-work}
+% \input{sections/related-work}
+% \section{ONTOSPREAD Framework}
+% \subsection{Background}\label{background}
+% \input{sections/background}
+% \input{sections/sa}
+% \section{Evaluation of ONTOSPREAD}
+% \input{sections/evaluation}
+% \section{Conclusions and Future Work}
+% \input{sections/conclussions}
+
+\section{Introduction}
+\input{sections2/intro}
+\section{Related Work}\label{related-work}
+\input{sections2/related-work}
+\section{ONTOSPREAD Framework}
+%\subsection{Background}\label{background}
+%\input{sections2/background}
+\input{sections2/sa}
+%\section{Evaluation of ONTOSPREAD}
+%\input{sections2/evaluation}
+\section{Conclussions and Future Work}
+\input{sections2/conclussions}
+
+
+
+\bibliographystyle{abbrv}
+% %\bibliographystyle{unsrt}
+% %\bibliographystyle{acm}
+\bibliography{bib/references}
+% \renewcommand{\bibname}{References}
+
+\end{document}
