@@ -31,7 +31,7 @@ Following the specific contributions of this work are listed: 1) study and revis
 2) study and definition of new restrictions for SA applied to RDF graphs and ontologies; 
 3) implementation of a whole and extensible framework (called ONTOSPREAD) to customize 
 and perform the SA based; 4) outlining of a methodology to configure and refine the execution of SA and 
-5) an example of configuration and refinement applying SA over two well-known ontologies: Galen and SNOMED-CT.
+5) an example of configuration and refinement applying SA over two well-known ontologies: GALEN and SNOMED-CT.
 
 
 %FIXME: This paper is structured as follows...
